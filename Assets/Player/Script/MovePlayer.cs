@@ -33,9 +33,10 @@ public class MovePlayer : MonoBehaviour
 
         mov += Input.GetAxis("Horizontal") * transform.right;
 
-        if (Input.GetKey(correr))
+        if (Input.GetKey(correr) && GetComponent<HealthAmmo>().Stamina > 0)
         {
             mov *= (sensibilidade *aumentoVelocidade) * Time.deltaTime;
+            GetComponent<HealthAmmo>().Stamina -= Time.deltaTime * 6;
         }
         else
         {

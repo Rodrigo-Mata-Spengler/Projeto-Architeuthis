@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class HealthAmmo : MonoBehaviour
 {
+    // Start is called before the first frame update
     public float Life;
     public float Stamina;
 
@@ -17,20 +18,17 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ammo = 0;
-        Life = 0;
-        Stamina = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        AmmoText.text = ammo.ToString();
+        AmmoText.text = ammo.ToString(); //manda o valor da variavél para o texto na tela
 
 
-        if(Input.GetButtonDown("Fire1") && ammo > 0)
+        if (Input.GetButtonDown("Fire1") && ammo > 0) //atira
         {
-            ammo --;
+            ammo--;
         }
 
         HealthStamina(Life, Stamina);
@@ -38,7 +36,8 @@ public class Player : MonoBehaviour
 
     public void HealthStamina(float health, float Stamina)
     {
-        HealthBar.value = health;
+        HealthBar.value = health;// passa o valor das variaveis para o "value" do slider
         StaminaBar.value = Stamina;
     }
+
 }
