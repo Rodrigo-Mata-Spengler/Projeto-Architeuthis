@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovePlayer : MonoBehaviour
+{
+    private CharacterController controller;// Pega o controlador do personagem
+
+    public float sensibilidade; //sensibilidade do movimento do player
+
+    public KeyCode correr;//botão para começar a corrida
+
+    public float aumentoVelocidade;//multiplicador de velocidade ao correr
+
+    Vector3 mov;
+
+    //variaveis para o pulo
+    public float jumpSpeed;//quantidade do pulo
+    private float ySpeed;//variavel de velocidade do eixo y
+    private float originalStepOffset;
+
+    private void Start()
+    {
+        controller = transform.GetComponent<CharacterController>();//pega o controlador do player
+
+        originalStepOffset = controller.stepOffset;
+    }
+
+    private void Update()
+    {
+
+        mov = Input.GetAxis("Vertical") * transform.forward;
+
+        mov += Input.GetAxis("Horizontal") * transform.right;
+
+        if (Input.GetKey(correr))
+        {
+            mov *= (sensibilidade *aumentoVelocidade) * Time.deltaTime;
+        }
+        else
+        {
+            mov *= sensibilidade * Time.deltaTime;
+        }
+
+        Debug.Log(mov);
+
+        ySpeed += Physics.gravity.y * Time.deltaTime;
+
+        if (controller.isGrounded)
+        {
+            controller.stepOffset = originalStepOffset;
+            ySpeed = -0.5f;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                ySpeed = jumpSpeed;
+            }
+        }
+        else
+        {
+            controller.stepOffset = 0;
+        }
+
+        mov.y = ySpeed;
+
+        controller.Move(mov);
+    }
+
+    
+}
