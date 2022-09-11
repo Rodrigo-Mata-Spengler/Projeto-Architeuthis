@@ -2,3 +2,4 @@
 2.vá na aba GameObjects/cinemachine e cria um freelook
 3.coloque o freelook para seguir o GameObject BasePlayer
 4.coloque o freelook para olahr para o player
+5. dentro da opção lens na camera Freelook, coloque o POV em 60

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1997766072}
   - component: {fileID: 1997766071}
   - component: {fileID: 1997766073}
+  - component: {fileID: 8659846758509644851}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101,6 +102,7 @@ MonoBehaviour:
   correr: 304
   aumentoVelocidade: 1.6
   jumpSpeed: 0.25
+  diminuiVelocidade: 0.6
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +118,24 @@ MonoBehaviour:
   dashForca: 12
   dashTime: 0.25
   key: 306
+--- !u!114 &8659846758509644851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746057523273833871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273f23901970b414ba3946f783239984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crouchTime: 0.25
+  curentHeight: 2
+  targettHeight: 0.5
+  currenteCenter: {x: 0, y: 0, z: 0}
+  targetCenter: {x: 0, y: 0.5, z: 0}
+  key: 99
 --- !u!1 &8429315336687542358
 GameObject:
   m_ObjectHideFlags: 0

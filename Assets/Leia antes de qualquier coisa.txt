@@ -1,0 +1,5 @@
+Regras do unity:
+1. não entre na cena de outra pessoa, fazer isso pode causar problemas;
+2. não de commit ou push com o unity aberto, pode conrromper arquivos;
+3. deixe os aqrquivos organizados;
+4. não meixa em algo que não foi criado por você sem a permisão do criador; 

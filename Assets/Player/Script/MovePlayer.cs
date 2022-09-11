@@ -8,7 +8,7 @@ public class MovePlayer : MonoBehaviour
 
     public float sensibilidade; //sensibilidade do movimento do player
 
-    public KeyCode correr;//botão para começar a corrida
+    public KeyCode correr;//botï¿½o para comeï¿½ar a corrida
 
     public float aumentoVelocidade;//multiplicador de velocidade ao correr
 
@@ -19,31 +19,37 @@ public class MovePlayer : MonoBehaviour
     private float ySpeed;//variavel de velocidade do eixo y
     private float originalStepOffset;
 
+    private Crouch agacha;
+    [SerializeField] private float diminuiVelocidade;
+
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();//pega o controlador do player
 
         originalStepOffset = controller.stepOffset;
+
+        agacha = transform.GetComponent<Crouch>();
     }
 
     private void Update()
     {
-
+        float sensi = sensibilidade;
         mov = Input.GetAxis("Vertical") * transform.forward;
 
         mov += Input.GetAxis("Horizontal") * transform.right;
 
         if (Input.GetKey(correr) && GetComponent<HealthAmmo>().Stamina > 0)
         {
-            mov *= (sensibilidade *aumentoVelocidade) * Time.deltaTime;
+            sensi *= aumentoVelocidade;
             GetComponent<HealthAmmo>().Stamina -= Time.deltaTime * 6;
         }
-        else
+        
+        if (Input.GetKey(agacha.key))
         {
-            mov *= sensibilidade * Time.deltaTime;
+            sensi *= diminuiVelocidade;
         }
-
-        Debug.Log(mov);
+        
+        mov *= sensi * Time.deltaTime;
 
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
