@@ -1518,7 +1518,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1452538424}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1617469389
+--- !u!114 &1617469386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1527,15 +1527,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1617469384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6173db13cd427ea4cb7b649de5633b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e436573995f8214c8091b52b4e714f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina: 100
+  StaminaBar: {fileID: 678606966}
+--- !u!114 &1617469387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617469384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289fdf1900cacc7439e2c535f79ea069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 100
-  Stamina: 100
-  ammo: 100
-  AmmoText: {fileID: 1837148081}
   HealthBar: {fileID: 1334648764}
-  StaminaBar: {fileID: 678606966}
+--- !u!114 &1617469388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617469384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa00808b232949945f04c9a13b603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 10
+  AmmoText: {fileID: 1837148081}
 --- !u!1 &1811437108
 GameObject:
   m_ObjectHideFlags: 0
