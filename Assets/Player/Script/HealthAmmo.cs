@@ -9,12 +9,28 @@ public class HealthAmmo : MonoBehaviour
     public float Life;
     public float Stamina;
 
+    public int ammo;
+    public Text AmmoText;
+
     public Slider HealthBar;
     public Slider StaminaBar;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
     {
+        AmmoText.text = ammo.ToString(); //manda o valor da variavél para o texto na tela
+
+
+        if (Input.GetButtonDown("Fire1") && ammo > 0) //atira
+        {
+            ammo--;
+        }
+
         HealthStamina(Life, Stamina);
     }
 

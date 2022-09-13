@@ -1530,26 +1530,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6173db13cd427ea4cb7b649de5633b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 0
-  Stamina: 0
-  ammo: 0
-  AmmoText: {fileID: 0}
-  HealthBar: {fileID: 0}
-  StaminaBar: {fileID: 0}
---- !u!114 &1617469390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1617469384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81adcb0df690614e966531c37eb6af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammo: 30
+  Life: 100
+  Stamina: 100
+  ammo: 100
   AmmoText: {fileID: 1837148081}
+  HealthBar: {fileID: 1334648764}
+  StaminaBar: {fileID: 678606966}
 --- !u!1 &1811437108
 GameObject:
   m_ObjectHideFlags: 0
