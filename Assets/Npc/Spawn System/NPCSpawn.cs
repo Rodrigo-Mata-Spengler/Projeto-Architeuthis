@@ -8,7 +8,7 @@ public class NPCSpawn : MonoBehaviour
 
     [SerializeField] private GameObject[] spawnAreas;//locais de onde os npcs podem spawnar
 
-    [SerializeField] private float[] npcCount;//quantidade de npc de cada tipo que serão criados no começo da cena 
+    [SerializeField] private int[] npcCount;//quantidade de npc de cada tipo que serão criados no começo da cena 
 
     [SerializeField] private Transform closet;//locais onde os npcs ficam guardados até serem ativados
 
@@ -16,14 +16,27 @@ public class NPCSpawn : MonoBehaviour
 
     [SerializeField] private Vector3 offsetz;
 
-    private GameObject[][] npcInCloset;//contem todos os npcs separados por tipo
-
     [SerializeField] private float timeSpawn;//tempo entre spawns de npcs
 
-    [SerializeField] private GameObject[,] npcInGame;//npcs sendo usados no momento;
-    
+    private GameObject[] npc1; // npcs que exitem no closet do tipo 1
+    private GameObject[] npc2; // npcs que exitem no closet do tipo 2
+    private GameObject[] npc3; // npcs que exitem no closet do tipo 3
+
+    private int npc1InCloset;
+    private int npc2InCloset;
+    private int npc3InCloset;
+
     private void Start()
     {
+        npc1 = new GameObject[npcCount[0]];
+        npc1InCloset = npc1.Length;
+
+        npc2 = new GameObject[npcCount[1]];
+        npc2InCloset = npc2.Length - 1;
+
+        npc3 = new GameObject[npcCount[2]];
+        npc3InCloset = npc3.Length - 1;
+
         Createcloset();
     }
 
@@ -33,28 +46,57 @@ public class NPCSpawn : MonoBehaviour
 
         GameObject npc;
 
-        for (int i = 0; i < npcPrefab.Length; i++)
+        for (int z = 0; z < npcCount[0]; z++)
         {
-            for (int z = 0; z < npcCount[i]; z++)
-            {
-                 npc = Instantiate(npcPrefab[i],placeHere,transform.rotation);
-                
-                npcInCloset[i][z] = npc;
+            npc = Instantiate(npcPrefab[0], placeHere, transform.rotation);
 
-                placeHere += offsetX;
-                Debug.Log("entrei");
-            }
-            placeHere.x = 0f;
+            npc1[z] = npc;
 
-            placeHere += offsetz;
+            placeHere += offsetX;
         }
+        placeHere.x = 0f;
+
+        placeHere += offsetz;
+
+        for (int z = 0; z < npcCount[1]; z++)
+        {
+            npc = Instantiate(npcPrefab[1], placeHere, transform.rotation);
+
+            npc2[z] = npc;
+
+            placeHere += offsetX;
+        }
+        placeHere.x = 0f;
+
+        placeHere += offsetz;
+
+        for (int z = 0; z < npcCount[2]; z++)
+        {
+            npc = Instantiate(npcPrefab[2], placeHere, transform.rotation);
+
+            npc3[z] = npc;
+
+            placeHere += offsetX;
+        }
+        placeHere.x = 0f;
+
+        placeHere += offsetz;
     }
 
-    /*public bool SpawnNpc(int spawnArea,int tipo,int quantidade)
+    public bool SpawnNpc(int spawnArea,int tipo,int quantidade)
     {
-        if (spawnAreas.Length >= spawnArea && npcPrefab.Length >= tipo && npcInCloset[tipo].Length >= quantidade)
+        bool quanti = false;
+        switch (tipo)
         {
-            StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade, tipo));
+            case 0: quanti = npc1.Length >= quantidade;break;
+            case 1: quanti = npc2.Length >= quantidade;break;
+            case 2: quanti = npc3.Length >= quantidade;break;
+            default: quanti = false;break;
+        }
+
+        if (spawnAreas.Length >= spawnArea && npcPrefab.Length >= tipo && quanti)
+        {
+            StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade-1, tipo));
             return true;
         }
         else
@@ -65,19 +107,44 @@ public class NPCSpawn : MonoBehaviour
 
     IEnumerator Spawning(GameObject area, int quantidade, int tipo)
     {
-        //systema temporario, no futuro tera a função wake e função sleep para os npcs
-        for (int i = 0; i <= quantidade; quantidade--)
+        switch (tipo)
         {
-            npcInGame[tipo][i] = npcInCloset[tipo][quantidade];//muda para a lista de ativos
+            case 0:
+                int aux = npc1InCloset - quantidade;
+                Debug.Log(aux);
+                for (int i = npc1InCloset-1;i >= aux;i--)
+                {
+                    //Debug.Log(i);
+                    npc1[i].transform.position = area.transform.position;//coloca no local 
+                    npc1[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-            npcInGame[tipo][i].transform.position = area.transform.position;//coloca no local 
-            npcInGame[tipo][i].transform.rotation = area.transform.rotation;//coloca na rotação certa
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                }
+                //npc1InCloset -= quantidade;
+                break;
+            case 1:
+                for (int i = 0; i <= quantidade;i++)
+                {
+                    npc2[i].transform.position = area.transform.position;//coloca no local 
+                    npc2[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-            new WaitForSeconds(timeSpawn);//espera por segundos
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                }
+
+                break;
+            case 2:
+                for (int i = 0; i <= quantidade;i++)
+                {
+                    npc3[i].transform.position = area.transform.position;//coloca no local 
+                    npc3[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
+
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                }
+
+                break;
         }
 
-
         yield return null;
-    }*/
+    }
 
 }

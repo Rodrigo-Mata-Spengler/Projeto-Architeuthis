@@ -21,6 +21,7 @@ public class MovePlayer : MonoBehaviour
 
     private Crouch agacha;
     [SerializeField] private float diminuiVelocidade;
+    [SerializeField]private float sensicamera;
 
     private void Start()
     {
@@ -71,6 +72,8 @@ public class MovePlayer : MonoBehaviour
         mov.y = ySpeed;
 
         controller.Move(mov);
+
+        transform.Rotate(0, Input.GetAxis("Mouse X") * sensicamera, 0);
     }
 
     
