@@ -30,10 +30,10 @@ public class Dash : MonoBehaviour
     {
         float starttime = Time.time;
 
-        while (Time.time < starttime+dashTime && GetComponent<HealthAmmo>().Stamina > 0)
+        while (Time.time < starttime+dashTime && GetComponent<Stamina>().stamina > 0)
         {
             controller.Move((Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward) * dashForca * Time.deltaTime);
-            GetComponent<HealthAmmo>().Stamina -= Time.deltaTime * 18;
+            GetComponent<Stamina>().stamina -= Time.deltaTime * 18;
 
             yield return null;
         }
