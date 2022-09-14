@@ -21,8 +21,9 @@ public class MovePlayer : MonoBehaviour
 
     private Crouch agacha;
     [SerializeField] private float diminuiVelocidade;
-    [SerializeField]private float sensicamera;
+    [SerializeField] private float sensicamera;
 
+    [SerializeField] private float gastoStamina = 6;
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();//pega o controlador do player
@@ -42,7 +43,7 @@ public class MovePlayer : MonoBehaviour
         if (Input.GetKey(correr) && GetComponent<Stamina>().stamina > 0)
         {
             sensi *= aumentoVelocidade;
-            GetComponent<Stamina>().stamina -= Time.deltaTime * 6;
+            GetComponent<Stamina>().stamina -= Time.deltaTime * gastoStamina;
         }
         
         if (Input.GetKey(agacha.key))
