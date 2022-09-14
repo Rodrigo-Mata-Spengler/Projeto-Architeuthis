@@ -55,13 +55,13 @@ public class GrabSystem : MonoBehaviour
     }
     public void GiveAmmo()
     {
-        if(Player.GetComponent<HealthAmmo>().ammo + AmmoGive > 100)
+        if(Player.GetComponent<Ammo>().ammo + AmmoGive > 100)
         {
-            Player.GetComponent<HealthAmmo>().ammo = 100;
+            Player.GetComponent<Ammo>().ammo = 100;
         }
         else
         {
-            Player.GetComponent<HealthAmmo>().ammo += AmmoGive; ;
+            Player.GetComponent<Ammo>().ammo += AmmoGive; ;
         }
         
         
@@ -69,13 +69,13 @@ public class GrabSystem : MonoBehaviour
 
     public void GiveLive()
     {
-        if (Player.GetComponent<HealthAmmo>().Life + LifeGive > 100)
+        if (Player.GetComponent<Health>().Life + LifeGive > 100)
         {
-            Player.GetComponent<HealthAmmo>().Life = 100;
+            Player.GetComponent<Health>().Life = 100;
         }
         else
         {
-            Player.GetComponent<HealthAmmo>().Life += LifeGive;
+            Player.GetComponent<Health>().Life += LifeGive;
         }
         
         

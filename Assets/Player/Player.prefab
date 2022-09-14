@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 1997766071}
   - component: {fileID: 1997766073}
   - component: {fileID: 8659846758509644851}
+  - component: {fileID: 1617469386}
+  - component: {fileID: 1617469387}
+  - component: {fileID: 1617469388}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,6 +106,7 @@ MonoBehaviour:
   aumentoVelocidade: 1.6
   jumpSpeed: 0.25
   diminuiVelocidade: 0.6
+  sensicamera: 0
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +140,48 @@ MonoBehaviour:
   currenteCenter: {x: 0, y: 0, z: 0}
   targetCenter: {x: 0, y: 0.5, z: 0}
   key: 99
+--- !u!114 &1617469386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746057523273833871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289fdf1900cacc7439e2c535f79ea069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Life: 100
+  HealthBar: {fileID: 0}
+--- !u!114 &1617469387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746057523273833871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e436573995f8214c8091b52b4e714f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina: 100
+  StaminaBar: {fileID: 0}
+--- !u!114 &1617469388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746057523273833871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa00808b232949945f04c9a13b603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 100
+  AmmoText: {fileID: 0}
 --- !u!1 &8429315336687542358
 GameObject:
   m_ObjectHideFlags: 0
