@@ -107,6 +107,7 @@ MonoBehaviour:
   jumpSpeed: 0.25
   diminuiVelocidade: 0.6
   sensicamera: 0
+  gastoStamina: 6
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ffa00808b232949945f04c9a13b603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Maxammo: 30
   ammo: 100
+  MaxBag: 90
   AmmoText: {fileID: 0}
+  AmmoBagText: {fileID: 0}
 --- !u!1 &8429315336687542358
 GameObject:
   m_ObjectHideFlags: 0
