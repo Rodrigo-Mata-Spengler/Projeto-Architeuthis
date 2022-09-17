@@ -53,7 +53,7 @@ public class GrabSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj && gameObject.CompareTag("AmmoPistol"))
         {
             GiveAmmo();
-            Destroy(gameObject);
+            
 
         }
 
@@ -68,27 +68,28 @@ public class GrabSystem : MonoBehaviour
 
     public void GiveAmmo()
     {
-        if(Player.GetComponent<Ammo>().ammo + AmmoGive > 100)
+        if (Player.GetComponent<Ammo>().MaxBag + AmmoGive > 90)
         {
-            Player.GetComponent<Ammo>().ammo = 100;
+            Player.GetComponent<Ammo>().MaxBag = 90;
         }
         else
         {
-            Player.GetComponent<Ammo>().ammo += AmmoGive; ;
+            Player.GetComponent<Ammo>().MaxBag += AmmoGive; ;
         }
-        
-        
+        Destroy(gameObject);
+
+
     }
 
     public void GiveAmmoRifle()
     {
-        if (Player.GetComponent<AmmoRifle>().ammo + AmmoGive > 100)
+        if (Player.GetComponent<AmmoRifle>().MaxBag + AmmoGive > Player.GetComponent<AmmoRifle>().MaxBag)
         {
-            Player.GetComponent<AmmoRifle>().ammo = 100;
+            Player.GetComponent<AmmoRifle>().MaxBag = Player.GetComponent<AmmoRifle>().MaxBag;
         }
         else
         {
-            Player.GetComponent<AmmoRifle>().ammo += AmmoGive; ;
+            Player.GetComponent<AmmoRifle>().MaxBag += AmmoGive; ;
         }
 
 

@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166519570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.392296, y: 7.76, z: -8.179156}
+  m_LocalPosition: {x: -4.392296, y: 0.16, z: -8.179156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 452962408}
   - component: {fileID: 452962407}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Press F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 510848773}
   - component: {fileID: 510848772}
   - component: {fileID: 510848771}
+  - component: {fileID: 510848775}
   m_Layer: 0
   m_Name: Live
   m_TagString: Life
@@ -1130,13 +1131,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510848770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.1, y: 2.1, z: 21.3}
-  m_LocalScale: {x: 5.409467, y: 1.6073308, z: 5.8145814}
+  m_LocalPosition: {x: -21.5, y: -1.3, z: 19.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510848775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510848770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956f0b710663d19409293e73d64960a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1236026778}
+  PressText: {fileID: 452962407}
+  dist: 0
+  distToObj: 7
+  AmmoGive: 0
+  LifeGive: 50
 --- !u!1 &668494898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,7 +2002,7 @@ MonoBehaviour:
   PressText: {fileID: 452962407}
   dist: 0
   distToObj: 7
-  AmmoGive: 10
+  AmmoGive: 20
   LifeGive: 0
 --- !u!65 &1020294337
 BoxCollider:
@@ -2056,8 +2075,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020294335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.2, y: 2.29, z: -2.1}
-  m_LocalScale: {x: 5.196345, y: 1.544005, z: 5.5854983}
+  m_LocalPosition: {x: 12.7, y: -1.13, z: 21.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2113,6 +2132,7 @@ GameObject:
   - component: {fileID: 1153675170}
   - component: {fileID: 1153675169}
   - component: {fileID: 1153675168}
+  - component: {fileID: 1153675172}
   m_Layer: 0
   m_Name: AmmoRifle
   m_TagString: AmmoRifle
@@ -2191,13 +2211,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153675167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 7.8, z: 75.5}
-  m_LocalScale: {x: 3.540998, y: 1.0521472, z: 3.806183}
+  m_LocalPosition: {x: -6.7, y: -1.3, z: 27.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153675172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153675167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956f0b710663d19409293e73d64960a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1236026778}
+  PressText: {fileID: 452962407}
+  dist: 0
+  distToObj: 7
+  AmmoGive: 10
+  LifeGive: 0
 --- !u!1 &1213135358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,6 +2312,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1452538424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1236026787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236026778}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda14c19c89bf8d4f95c2d21887ac9b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxammo: 70
+  ammo: 0
+  MaxBag: 200
+  AmmoText: {fileID: 1837148081}
+  AmmoBagText: {fileID: 89754176}
 --- !u!1 &1328214058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,7 +2515,7 @@ PrefabInstance:
     - target: {fileID: 3432357084242579546, guid: 765ccb9095c556e4190630d352b5be71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.76
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3432357084242579546, guid: 765ccb9095c556e4190630d352b5be71,
         type: 3}
@@ -2559,7 +2614,7 @@ PrefabInstance:
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.76
+      value: -0.24000001
       objectReference: {fileID: 0}
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
