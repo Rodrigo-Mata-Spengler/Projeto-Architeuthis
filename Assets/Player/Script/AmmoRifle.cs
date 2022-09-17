@@ -14,9 +14,14 @@ public class AmmoRifle : MonoBehaviour
     public Text AmmoText;
     public Text AmmoBagText;
 
+    public float FireRate = 15f;
+    private float NextTimeToFire = 0f;
+
     private void Start()
     {
         ammo = Maxammo;
+
+        
     }
     // Update is called once per frame
     void Update()
@@ -24,16 +29,16 @@ public class AmmoRifle : MonoBehaviour
         AmmoText.text = ammo.ToString(); //manda o valor da variavél para o texto na tela
         AmmoBagText.text = MaxBag.ToString();
 
-        if (Input.GetKeyDown(KeyCode.R) && MaxBag > 0)
+        if (Input.GetKeyDown(KeyCode.R) && MaxBag >= 0)
         {
 
-            if (MaxBag <= 30)
+            if (MaxBag <= Maxammo)
             {
                 int subB = (ammo - MaxBag) * -1;
                 ammo += subB;
                 MaxBag -= subB;
             }
-            if ((MaxBag + ammo) < 30)
+            if ((MaxBag + ammo) < Maxammo)
             {
                 ammo = MaxBag + ammo;
 
@@ -49,9 +54,13 @@ public class AmmoRifle : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire1") && ammo > 0) //atira
+        if (Input.GetButton("Fire1")&& Time.time>= NextTimeToFire && ammo > 0) //atira
         {
+            NextTimeToFire = Time.time + 1f / FireRate;
+
             ammo--;
+
+            Debug.Log("Shooting");
         }
     }
 }

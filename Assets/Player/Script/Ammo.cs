@@ -15,6 +15,9 @@ public class Ammo : MonoBehaviour
 
     private int subC;
 
+    public float FireRate = 15f;
+    private float NextTimeToFire = 0f;
+
     private void Start()
     {
         ammo = Maxammo;
@@ -50,9 +53,13 @@ public class Ammo : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire1") && ammo > 0) //atira
+        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo > 0) //atira
         {
+            NextTimeToFire = Time.time + 1f / FireRate;
+
             ammo--;
+
+            Debug.Log("Shooting");
         }
     }
 }

@@ -19,6 +19,18 @@ public class GrabSystem : MonoBehaviour
     public int AmmoGive;
     public float LifeGive;
 
+    private int MaxPistolBag;
+    private int MaxRifleBag;
+    private float MaxLife;
+
+    private void Start()
+    {
+        MaxPistolBag = Player.GetComponent<Ammo>().MaxBag;
+        MaxRifleBag = Player.GetComponent<AmmoRifle>().MaxBag;
+
+        MaxLife = Player.GetComponent<Health>().Life;
+    }
+
 
     private void Update()
     {
@@ -30,7 +42,7 @@ public class GrabSystem : MonoBehaviour
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        Debug.Log(dist);
+        //Debug.Log(dist);
 
         //Checa se o player está perto do objeto e qual o tipo do objeto
         if (dist < distToObj)
@@ -68,9 +80,9 @@ public class GrabSystem : MonoBehaviour
 
     public void GiveAmmo()
     {
-        if (Player.GetComponent<Ammo>().MaxBag + AmmoGive > 90)
+        if (Player.GetComponent<Ammo>().MaxBag + AmmoGive > MaxPistolBag)
         {
-            Player.GetComponent<Ammo>().MaxBag = 90;
+            Player.GetComponent<Ammo>().MaxBag = MaxPistolBag;
         }
         else
         {
@@ -83,9 +95,9 @@ public class GrabSystem : MonoBehaviour
 
     public void GiveAmmoRifle()
     {
-        if (Player.GetComponent<AmmoRifle>().MaxBag + AmmoGive > Player.GetComponent<AmmoRifle>().MaxBag)
+        if (Player.GetComponent<AmmoRifle>().MaxBag + AmmoGive > MaxRifleBag)
         {
-            Player.GetComponent<AmmoRifle>().MaxBag = Player.GetComponent<AmmoRifle>().MaxBag;
+            Player.GetComponent<AmmoRifle>().MaxBag = MaxRifleBag;
         }
         else
         {
@@ -97,9 +109,9 @@ public class GrabSystem : MonoBehaviour
 
     public void GiveLive()
     {
-        if (Player.GetComponent<Health>().Life + LifeGive > 100)
+        if (Player.GetComponent<Health>().Life + LifeGive > MaxLife)
         {
-            Player.GetComponent<Health>().Life = 100;
+            Player.GetComponent<Health>().Life = MaxLife;
         }
         else
         {
