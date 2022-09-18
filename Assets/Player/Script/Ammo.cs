@@ -18,6 +18,10 @@ public class Ammo : MonoBehaviour
     public float FireRate = 15f;
     private float NextTimeToFire = 0f;
 
+    [SerializeField] private Transform pfBulletProjectile;
+    [SerializeField] private Transform spawnBulletPosition;
+    [SerializeField] private Transform SphereDebug;
+
     private void Start()
     {
         ammo = Maxammo;
@@ -59,7 +63,9 @@ public class Ammo : MonoBehaviour
 
             ammo--;
 
-            Debug.Log("Shooting");
+            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
         }
     }
 }

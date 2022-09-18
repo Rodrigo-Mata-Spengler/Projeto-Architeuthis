@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class AmmoRifle : MonoBehaviour
@@ -17,10 +18,14 @@ public class AmmoRifle : MonoBehaviour
     public float FireRate = 15f;
     private float NextTimeToFire = 0f;
 
+    [SerializeField] private Transform pfBulletProjectile;
+    [SerializeField] private Transform spawnBulletPosition;
+    [SerializeField] private Transform SphereDebug;
+
     private void Start()
     {
         ammo = Maxammo;
-
+        Cursor.lockState = CursorLockMode.Locked;
         
     }
     // Update is called once per frame
@@ -60,7 +65,11 @@ public class AmmoRifle : MonoBehaviour
 
             ammo--;
 
-            Debug.Log("Shooting");
+
+            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir,Vector3.up));
+
+           
         }
     }
 }
