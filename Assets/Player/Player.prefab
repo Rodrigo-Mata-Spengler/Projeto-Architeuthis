@@ -518,6 +518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rifle
       objectReference: {fileID: 0}
+    - target: {fileID: 1670057393408375356, guid: 1fbff5dab907a15449017300bebc6d46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1670057393408375359, guid: 1fbff5dab907a15449017300bebc6d46,
         type: 3}
       propertyPath: m_RootOrder
