@@ -204,9 +204,13 @@ MonoBehaviour:
   correr: 304
   aumentoVelocidade: 1.6
   jumpSpeed: 0.25
+  gravidade: -1.5
   diminuiVelocidade: 0.6
   sensicamera: 1
   gastoStamina: 6
+  maincamera: {fileID: 444759855}
+  maxAngulo: 45
+  minAgulo: -45
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
