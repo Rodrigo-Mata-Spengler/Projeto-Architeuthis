@@ -13,9 +13,22 @@ public class Health : MonoBehaviour
     {
         HealthStamina(Life);
     }
+
+    public void DamageHealth(float damage)
+    {
+        Life -= damage;
+
+       
+    }
+    public void GiveHealth(float cure)
+    {
+        Life += cure;
+    }
+
     public void HealthStamina(float health)
     {
         HealthBar.value = health;// passa o valor das variaveis para o "value" do slider
        
     }
+
 }
