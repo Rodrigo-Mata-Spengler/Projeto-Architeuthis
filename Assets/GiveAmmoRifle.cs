@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CureObject : MonoBehaviour
+public class GiveAmmoRifle : MonoBehaviour
 {
+    public GameObject Rifle;
     public GameObject Player;
 
     public Text PressText;
 
     [HideInInspector]
     public float dist;
+
     public float distToObj;
 
-    public float cureValue;
-
-    private float MaxLife;
+    public int AmmoGiveAmount;
 
     private string GrabObj = "Press [F] to grab";
     // Start is called before the first frame update
     void Start()
     {
-        MaxLife = Player.GetComponent<Health>().Life;
+        
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class CureObject : MonoBehaviour
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        //Checa se o player está perto do objeto e qual o tipo do objeto
+
         if (dist < distToObj)
         {
             PressText.text = GrabObj;
@@ -39,11 +39,11 @@ public class CureObject : MonoBehaviour
             PressText.text = "";
         }
 
-
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
         {
-            Player.GetComponent<Health>().GiveHealth(cureValue);
-            Destroy(gameObject);
+            Rifle.GetComponent<AmmoRifle>().GiveAmmo(AmmoGiveAmount);
+
+            Destroy(gameObject, 0.1f);
 
         }
     }

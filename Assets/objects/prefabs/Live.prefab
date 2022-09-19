@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5289884107678170066}
   - component: {fileID: 5289884107678170067}
   - component: {fileID: 5289884107678170068}
-  - component: {fileID: 5289884107678170064}
+  - component: {fileID: 27630028}
   m_Layer: 0
   m_Name: Live
   m_TagString: Life
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5289884107678170064
+--- !u!114 &27630028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5289884107678170069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956f0b710663d19409293e73d64960a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 98da58cb7b075ba4a8e5680fcc1325ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   PressText: {fileID: 0}
   dist: 0
   distToObj: 7
-  AmmoGive: 0
-  LifeGive: 50
+  cureValue: 50

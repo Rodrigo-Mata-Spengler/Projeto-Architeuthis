@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4459557754793066099}
   - component: {fileID: 4459557754793066098}
   - component: {fileID: 4459557754793066097}
-  - component: {fileID: 4459557754793066096}
+  - component: {fileID: 1770988509268921325}
   m_Layer: 0
   m_Name: AmmoPistol
   m_TagString: AmmoPistol
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4459557754793066096
+--- !u!114 &1770988509268921325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4459557754793065999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956f0b710663d19409293e73d64960a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b6417821c3ea74dbbdb65207edaae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   PressText: {fileID: 0}
   dist: 0
   distToObj: 7
-  AmmoGive: 20
-  LifeGive: 0
+  AmmoGiveAmount: 50

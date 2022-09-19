@@ -24,6 +24,8 @@ public class AmmoRifle : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
+    private int MaxRifleBag;
+
     private void Start()
     {
         ammo = Maxammo;
@@ -75,5 +77,19 @@ public class AmmoRifle : MonoBehaviour
 
            
         }
+    }
+
+    public void GiveAmmo(int Ammoamount)
+    {
+
+        if (MaxBag + Ammoamount > MaxRifleBag)
+        {
+            MaxBag = MaxRifleBag;
+        }
+        else
+        {
+            MaxBag += Ammoamount;
+        }
+
     }
 }

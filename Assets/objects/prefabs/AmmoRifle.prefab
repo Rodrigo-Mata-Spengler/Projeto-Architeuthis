@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4434349308708507712}
   - component: {fileID: 4434349308708507715}
   - component: {fileID: 4434349308708507714}
-  - component: {fileID: 4434349308708507718}
+  - component: {fileID: 1192691560993123737}
   m_Layer: 0
   m_Name: AmmoRifle
   m_TagString: AmmoRifle
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4434349308708507718
+--- !u!114 &1192691560993123737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,12 +107,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4434349308708507773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956f0b710663d19409293e73d64960a7, type: 3}
+  m_Script: {fileID: 11500000, guid: f851b85a2e8e65a4dba90ff2c83e698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rifle: {fileID: 0}
   Player: {fileID: 0}
   PressText: {fileID: 0}
   dist: 0
   distToObj: 7
-  AmmoGive: 30
-  LifeGive: 0
+  AmmoGiveAmount: 50

@@ -24,9 +24,13 @@ public class Ammo : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
+    private int MaxPistolBag;
+
     private void Start()
     {
         ammo = Maxammo;
+
+        MaxPistolBag = MaxBag;
 
         pfBulletProjectile.GetComponent<BulletProjectile>().speed = bulletvelocity;
     }
@@ -71,5 +75,19 @@ public class Ammo : MonoBehaviour
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 
         }
+    }
+
+    public void GiveAmmo(int Ammoamount)
+    {
+
+        if (MaxBag + Ammoamount > MaxPistolBag)
+        {
+            MaxBag = MaxPistolBag;
+        }
+        else
+        {
+            MaxBag +=Ammoamount; 
+        }
+
     }
 }
