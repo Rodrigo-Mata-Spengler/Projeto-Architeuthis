@@ -6,24 +6,33 @@ public class MovePlayer : MonoBehaviour
 {
     private CharacterController controller;// Pega o controlador do personagem
 
-    public float sensibilidade; //sensibilidade do movimento do player
+    [SerializeField] private float sensibilidade; //sensibilidade do movimento do player
 
-    public KeyCode correr;//bot�o para come�ar a corrida
+    [SerializeField] private KeyCode correr;//bot�o para come�ar a corrida
 
-    public float aumentoVelocidade;//multiplicador de velocidade ao correr
+    [SerializeField] private float aumentoVelocidade;//multiplicador de velocidade ao correr
 
     Vector3 mov;
 
     //variaveis para o pulo
-    public float jumpSpeed;//quantidade do pulo
+    [SerializeField] private float jumpSpeed;//quantidade do pulo
     private float ySpeed;//variavel de velocidade do eixo y
     private float originalStepOffset;
+    [SerializeField] private float gravidade;
 
-    private Crouch agacha;
-    [SerializeField] private float diminuiVelocidade;
-    [SerializeField] private float sensicamera;
+    private Crouch agacha;//para agachar
+    [SerializeField] private float diminuiVelocidade;//diminui a velocidade ao agachar
 
-    [SerializeField] private float gastoStamina = 6;
+    [SerializeField] private float sensicamera;//sensibilidade da camera
+
+    [SerializeField] private float gastoStamina = 6;//gasto de estamina
+
+    [SerializeField] private GameObject maincamera;//pega o look at
+
+    [SerializeField] private float maxAngulo;//angulo maximo do eixo x da camera
+    [SerializeField] private float minAgulo;//angulo minimo do eixo x da camera
+
+    private float rotation = 0;
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();//pega o controlador do player
@@ -31,6 +40,8 @@ public class MovePlayer : MonoBehaviour
         originalStepOffset = controller.stepOffset;
 
         agacha = transform.GetComponent<Crouch>();
+
+
     }
 
     private void Update()
@@ -53,7 +64,7 @@ public class MovePlayer : MonoBehaviour
         
         mov *= sensi * Time.deltaTime;
 
-        ySpeed += Physics.gravity.y * Time.deltaTime;
+        ySpeed += gravidade * Time.deltaTime;
 
         if (controller.isGrounded)
         {
@@ -75,6 +86,13 @@ public class MovePlayer : MonoBehaviour
         controller.Move(mov);
 
         transform.Rotate(0, Input.GetAxis("Mouse X") * sensicamera, 0);
+
+
+
+        rotation += Input.GetAxis("Mouse Y") * sensicamera;
+
+        rotation = Mathf.Clamp(rotation,minAgulo,maxAngulo);
+        maincamera.transform.localEulerAngles = new Vector3(rotation,0,0);
     }
 
     
