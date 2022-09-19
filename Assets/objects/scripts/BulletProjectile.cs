@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletProjectile : MonoBehaviour
 {
     private Rigidbody bulletRb;
-
+    public float speed;
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
@@ -13,12 +13,18 @@ public class BulletProjectile : MonoBehaviour
 
     private void Start()
     {
-        float speed = 100f;
+        
         bulletRb.velocity = transform.forward * speed;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        Destroy(gameObject, 0.1f);
+
     }
 }

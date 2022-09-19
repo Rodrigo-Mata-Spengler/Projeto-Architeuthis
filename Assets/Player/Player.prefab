@@ -64,6 +64,37 @@ Transform:
   m_Father: {fileID: 1084060631327213844}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952921821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952921825}
+  m_Layer: 0
+  m_Name: ponto aonde vai o tiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952921825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952921821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.9953041, y: 1.7, z: 42.92232}
+  m_LocalScale: {x: 0.31941, y: 0.31941, z: 0.31941}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1084060631327213844}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1171729320
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,13 +118,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171729320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.566, y: 0.13, z: 1.245}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03496239, y: -0.07605331, z: 0.74674076}
+  m_LocalScale: {x: 6.601967, y: 2.7161884, z: 0.9998622}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1084060631327213844}
-  m_RootOrder: 3
+  m_Father: {fileID: 692230482}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2746057523273833871
 GameObject:
@@ -135,7 +166,7 @@ Transform:
   - {fileID: 3604805753321922246}
   - {fileID: 444759856}
   - {fileID: 272010750}
-  - {fileID: 1171729321}
+  - {fileID: 952921825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,6 +289,7 @@ MonoBehaviour:
   pfBulletProjectile: {fileID: 0}
   spawnBulletPosition: {fileID: 0}
   SphereDebug: {fileID: 0}
+  bulletvelocity: 0
 --- !u!114 &1236026787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +311,8 @@ MonoBehaviour:
   pfBulletProjectile: {fileID: 2714439911104572195, guid: 06b6fb42659dcb945a72eed8a982d9b2,
     type: 3}
   spawnBulletPosition: {fileID: 1171729321}
-  SphereDebug: {fileID: 0}
+  SphereDebug: {fileID: 952921825}
+  bulletvelocity: 200
 --- !u!114 &1236026780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,9 +328,7 @@ MonoBehaviour:
   aimColliderLayer:
     serializedVersion: 2
     m_Bits: 1
-  debugTransform: {fileID: 0}
-  pfBulletProjectile: {fileID: 0}
-  spawnBulletPosition: {fileID: 0}
+  debugTransform: {fileID: 952921825}
 --- !u!1 &8429315336687542358
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,9 +22,13 @@ public class Ammo : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform SphereDebug;
 
+    [SerializeField] private float bulletvelocity;
+
     private void Start()
     {
         ammo = Maxammo;
+
+        pfBulletProjectile.GetComponent<BulletProjectile>().speed = bulletvelocity;
     }
     // Update is called once per frame
     void Update()
