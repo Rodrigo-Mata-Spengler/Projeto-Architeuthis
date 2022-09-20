@@ -22,9 +22,9 @@ public class NPCSpawn : MonoBehaviour
     private GameObject[] npc2; // npcs que exitem no closet do tipo 2
     private GameObject[] npc3; // npcs que exitem no closet do tipo 3
 
-    private int npc1InCloset;
-    private int npc2InCloset;
-    private int npc3InCloset;
+    private int npc1InCloset;//tamanho atual do armario 1
+    private int npc2InCloset;//tamanho atual do armario 2
+    private int npc3InCloset;//tamanho atual do armario 3
 
     private void Start()
     {
@@ -32,10 +32,10 @@ public class NPCSpawn : MonoBehaviour
         npc1InCloset = npc1.Length;
 
         npc2 = new GameObject[npcCount[1]];
-        npc2InCloset = npc2.Length - 1;
+        npc2InCloset = npc2.Length;
 
         npc3 = new GameObject[npcCount[2]];
-        npc3InCloset = npc3.Length - 1;
+        npc3InCloset = npc3.Length;
 
         Createcloset();
     }
@@ -96,7 +96,9 @@ public class NPCSpawn : MonoBehaviour
 
         if (spawnAreas.Length >= spawnArea && npcPrefab.Length >= tipo && quanti)
         {
-            StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade-1, tipo));
+            Coroutine criacao  = StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade, tipo));
+            
+            //StopCoroutine(criacao);
             return true;
         }
         else
@@ -107,44 +109,49 @@ public class NPCSpawn : MonoBehaviour
 
     IEnumerator Spawning(GameObject area, int quantidade, int tipo)
     {
+        int aux = 0;
         switch (tipo)
         {
             case 0:
-                int aux = npc1InCloset - quantidade;
-                Debug.Log(aux);
+
+                aux = npc1InCloset - quantidade - 1;
                 for (int i = npc1InCloset-1;i >= aux;i--)
                 {
-                    //Debug.Log(i);
                     npc1[i].transform.position = area.transform.position;//coloca no local 
                     npc1[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
-                //npc1InCloset -= quantidade;
+                npc1InCloset = npc1InCloset- quantidade;
+
                 break;
             case 1:
-                for (int i = 0; i <= quantidade;i++)
+                aux = npc2InCloset - quantidade - 1;
+                
+                for (int i = npc2InCloset - 1; i >= aux; i--)
                 {
                     npc2[i].transform.position = area.transform.position;//coloca no local 
                     npc2[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
-
+                npc2InCloset -= quantidade;
                 break;
             case 2:
-                for (int i = 0; i <= quantidade;i++)
+                aux = npc3InCloset - quantidade - 1;
+                
+                for (int i = npc3InCloset - 1; i >= aux; i--)
                 {
                     npc3[i].transform.position = area.transform.position;//coloca no local 
                     npc3[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
-
+                npc3InCloset -= quantidade;
                 break;
         }
 
-        yield return null;
+        yield break;
     }
 
 }
