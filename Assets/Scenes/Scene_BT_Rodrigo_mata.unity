@@ -619,5 +619,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8302422451336807973, guid: 9825fe1d5d2988d47b90cdb17ca0aea7,
+        type: 3}
+      propertyPath: Maxammo
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302422451336807973, guid: 9825fe1d5d2988d47b90cdb17ca0aea7,
+        type: 3}
+      propertyPath: FireRate
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9825fe1d5d2988d47b90cdb17ca0aea7, type: 3}

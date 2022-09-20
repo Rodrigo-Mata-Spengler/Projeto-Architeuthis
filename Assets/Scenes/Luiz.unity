@@ -1199,6 +1199,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 1837148081}
+    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: AmmoBagText
+      value: 
+      objectReference: {fileID: 89754176}
     - target: {fileID: 8971775729500201850, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_IsActive
@@ -1296,12 +1306,6 @@ MonoBehaviour:
 --- !u!1 &2034852162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1278123143, guid: 7350af167b4528b45883c958ab0ed472,
-    type: 3}
-  m_PrefabInstance: {fileID: 1452538424}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2117487026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 692230481, guid: 7350af167b4528b45883c958ab0ed472,
     type: 3}
   m_PrefabInstance: {fileID: 1452538424}
   m_PrefabAsset: {fileID: 0}
@@ -1640,7 +1644,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Rifle
       value: 
-      objectReference: {fileID: 2117487026}
+      objectReference: {fileID: 0}
     - target: {fileID: 1192691560993123737, guid: 6506f18d5ecfaf342b090cd508187eb8,
         type: 3}
       propertyPath: Player
