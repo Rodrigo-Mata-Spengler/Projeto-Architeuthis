@@ -24,7 +24,7 @@ public class BulletProjectile : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject);
 
     }
 }

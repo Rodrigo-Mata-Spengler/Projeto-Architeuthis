@@ -17,7 +17,7 @@ public class CureObject : MonoBehaviour
 
     private float MaxLife;
 
-    private string GrabObj = "Press [F] to grab";
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,21 +29,23 @@ public class CureObject : MonoBehaviour
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        //Checa se o player está perto do objeto e qual o tipo do objeto
-        if (dist < distToObj)
+        if (dist < distToObj && PressText.enabled == false)
         {
-            PressText.text = GrabObj;
+            PressText.enabled = true;
         }
-        else
+        else if (PressText.enabled == true)
         {
-            PressText.text = "";
+            PressText.enabled = false;
         }
-
 
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
         {
             Player.GetComponent<Health>().GiveHealth(cureValue);
-            Destroy(gameObject);
+           
+
+            Destroy(gameObject, 0.1f);
+
+            PressText.enabled = false;
 
         }
     }

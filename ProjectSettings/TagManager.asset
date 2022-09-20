@@ -9,6 +9,7 @@ TagManager:
   - AmmoPistol
   - AmmoRifle
   - Enemy
+  - colectable
   layers:
   - Default
   - TransparentFX

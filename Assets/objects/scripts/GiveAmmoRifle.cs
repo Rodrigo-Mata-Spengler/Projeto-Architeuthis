@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GivePistolAmmo : MonoBehaviour
+public class GiveAmmoRifle : MonoBehaviour
 {
-    public GameObject Pistol;
+    public GameObject Rifle;
     public GameObject Player;
 
     public Text PressText;
@@ -17,12 +17,11 @@ public class GivePistolAmmo : MonoBehaviour
 
     public int AmmoGiveAmount;
 
-    private string GrabObj = "Press [F] to grab";
-
+ 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
@@ -30,21 +29,20 @@ public class GivePistolAmmo : MonoBehaviour
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        Debug.Log(dist);
 
-        if (dist < distToObj)
+        if (dist < distToObj && PressText.enabled == false)
         {
-            PressText.text = GrabObj;
+            PressText.enabled = true;
         }
-        else
+        else if(PressText.enabled == true)
         {
-            PressText.text = "";
+            PressText.enabled = false;
         }
-
 
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
         {
-            Pistol.GetComponent<Ammo>().GiveAmmo(AmmoGiveAmount);
+            Rifle.GetComponent<AmmoRifle>().GiveAmmo(AmmoGiveAmount);
+           
 
             Destroy(gameObject, 0.1f);
 
