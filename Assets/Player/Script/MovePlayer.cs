@@ -92,7 +92,7 @@ public class MovePlayer : MonoBehaviour
         rotation += Input.GetAxis("Mouse Y") * sensicamera;
 
         rotation = Mathf.Clamp(rotation,minAgulo,maxAngulo);
-        maincamera.transform.localEulerAngles = new Vector3(rotation,0,0);
+        maincamera.transform.localEulerAngles = new Vector3(rotation * -1,0,0);
     }
 
     
