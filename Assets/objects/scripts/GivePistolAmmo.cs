@@ -30,7 +30,7 @@ public class GivePistolAmmo : MonoBehaviour
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        Debug.Log(dist);
+        
         if (dist < distToObj)
         {
             PressText.enabled = true;
