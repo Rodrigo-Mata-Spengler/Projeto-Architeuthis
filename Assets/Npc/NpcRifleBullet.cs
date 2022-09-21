@@ -5,12 +5,32 @@ using UnityEngine;
 public class NpcRifleBullet : MonoBehaviour
 {
     [SerializeField] private float tempoDeVida = 4f;
+    public float speed;
+    [SerializeField] private float Damage;
+
+    private Rigidbody NPCbulletRb;
+
+    private void Awake()
+    {
+        NPCbulletRb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        NPCbulletRb.velocity = transform.forward * speed;
+    }
     void Update()
     {
-        tempoDeVida -= Time.deltaTime;
-        if(tempoDeVida <= 0)
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(transform.gameObject);
+            other.GetComponent<Health>().DamageHealth(Damage);
+            Destroy(gameObject);
         }
+        Destroy(gameObject);
+
     }
 }

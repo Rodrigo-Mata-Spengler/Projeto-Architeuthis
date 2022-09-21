@@ -17,7 +17,7 @@ public class Stamina : MonoBehaviour
     }
     void Update()
     {
-        Staminas(stamina);
+        
 
         if(stamina < MaxStamina)
         {
@@ -34,9 +34,5 @@ public class Stamina : MonoBehaviour
     {
         stamina += GiveAmout; 
     }
-    public void Staminas(float stamina)
-    {
-       // passa o valor das variaveis para o "value" do slider
-        StaminaBar.value = stamina;
-    }
+
 }

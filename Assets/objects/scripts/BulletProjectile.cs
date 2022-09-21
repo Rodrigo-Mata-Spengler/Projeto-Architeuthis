@@ -6,6 +6,8 @@ public class BulletProjectile : MonoBehaviour
 {
     private Rigidbody bulletRb;
     public float speed;
+
+    [SerializeField] private float Damage;
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
@@ -21,7 +23,7 @@ public class BulletProjectile : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyHealth>().DamageHealth(Damage);
             Destroy(gameObject);
         }
         Destroy(gameObject);

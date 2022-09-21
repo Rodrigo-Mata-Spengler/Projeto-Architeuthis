@@ -40,7 +40,7 @@ public class RifleNpc : MonoBehaviour
 
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
             GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * bulletvelocity);
+            
 
             return true;
         }
