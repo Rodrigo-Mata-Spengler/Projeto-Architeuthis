@@ -18,6 +18,8 @@ public class NpcSpawnJ1 : MonoBehaviour
     private void Start()
     {
         npcSpawn = transform.GetComponent<NPCSpawnBeta>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

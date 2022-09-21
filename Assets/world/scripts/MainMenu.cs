@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
 
     public string CreditsSceneName;
 
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
