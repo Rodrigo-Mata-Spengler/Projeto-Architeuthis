@@ -941,10 +941,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1617469387, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: StaminaBar
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: AmmoText
       value: 
