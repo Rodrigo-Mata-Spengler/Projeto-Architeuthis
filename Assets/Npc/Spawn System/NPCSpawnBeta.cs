@@ -11,11 +11,8 @@ public class NPCSpawnBeta : MonoBehaviour
     [SerializeField] private float timeSpawn;//tempo entre spawns de npcs
 
     public void SpawNpc(int spawnArea, int tipo, int quantidade)
-    {
-        
-        Coroutine teste =  StartCoroutine(Spawn(spawnArea, tipo, quantidade));
-        StopCoroutine(teste);
-        
+    { 
+        Coroutine teste =  StartCoroutine(Spawn(spawnArea, tipo, quantidade));        
     }
 
     IEnumerator Spawn(int spawnArea, int tipo, int quantidade)
@@ -23,7 +20,7 @@ public class NPCSpawnBeta : MonoBehaviour
         for (int i = 0; i < quantidade; i++)
         {
             Instantiate(npcPrefab[tipo], spawnAreas[spawnArea].transform.position, spawnAreas[spawnArea].transform.rotation);
-            //yield return new WaitForSeconds(timeSpawn);//espera por segundos
+            yield return new WaitForSeconds(timeSpawn);//espera por segundos
         }
         yield break;
     }

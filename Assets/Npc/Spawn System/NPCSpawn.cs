@@ -50,6 +50,12 @@ public class NPCSpawn : MonoBehaviour
         {
             npc = Instantiate(npcPrefab[0], placeHere, transform.rotation);
 
+            npc.GetComponent<SleepAndReset>().Sleep();
+
+            npc.GetComponent<SleepAndReset>().tipo = 0;
+
+            npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
+
             npc1[z] = npc;
 
             placeHere += offsetX;
@@ -62,6 +68,12 @@ public class NPCSpawn : MonoBehaviour
         {
             npc = Instantiate(npcPrefab[1], placeHere, transform.rotation);
 
+            npc.GetComponent<SleepAndReset>().Sleep();
+
+            npc.GetComponent<SleepAndReset>().tipo = 1;
+
+            npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
+
             npc2[z] = npc;
 
             placeHere += offsetX;
@@ -73,6 +85,12 @@ public class NPCSpawn : MonoBehaviour
         for (int z = 0; z < npcCount[2]; z++)
         {
             npc = Instantiate(npcPrefab[2], placeHere, transform.rotation);
+
+            npc.GetComponent<SleepAndReset>().Sleep();
+
+            npc.GetComponent<SleepAndReset>().tipo = 2;
+
+            npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
             npc3[z] = npc;
 
@@ -120,9 +138,12 @@ public class NPCSpawn : MonoBehaviour
                     npc1[i].transform.position = area.transform.position;//coloca no local 
                     npc1[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
+                    npc1[i].GetComponent<SleepAndReset>().Awake();
+
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
                 npc1InCloset = npc1InCloset- quantidade;
+                yield break;
 
                 break;
             case 1:
@@ -133,9 +154,12 @@ public class NPCSpawn : MonoBehaviour
                     npc2[i].transform.position = area.transform.position;//coloca no local 
                     npc2[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
+                    npc2[i].GetComponent<SleepAndReset>().Awake();
+
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
                 npc2InCloset -= quantidade;
+                yield break;
                 break;
             case 2:
                 aux = npc3InCloset - quantidade - 1;
@@ -145,13 +169,36 @@ public class NPCSpawn : MonoBehaviour
                     npc3[i].transform.position = area.transform.position;//coloca no local 
                     npc3[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
 
+                    npc3[i].GetComponent<SleepAndReset>().Awake();
+
                     yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
                 npc3InCloset -= quantidade;
+                yield break;
                 break;
         }
 
         yield break;
+    }
+
+    public void ReCloset(float tipo,GameObject npcs)
+    {
+        Vector3 placeHere = closet.position;
+        switch (tipo)
+        {
+            case 0:
+                placeHere += offsetX * npc1InCloset;
+                npcs.transform.position = placeHere;
+                npc1InCloset++;
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
     }
 
 }

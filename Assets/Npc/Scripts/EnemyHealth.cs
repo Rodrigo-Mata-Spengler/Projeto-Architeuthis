@@ -6,12 +6,19 @@ public class EnemyHealth : MonoBehaviour
 {
     public float Life;
 
+    public float maxLife;
+
+    private void Start()
+    {
+        Life = maxLife;
+    }
+
 
     void Update()
     {
-        if(Life < 0)
+        if(Life <= 0)
         {
-            Destroy(gameObject);
+            NPCReset();
         }
     }
 
@@ -24,6 +31,13 @@ public class EnemyHealth : MonoBehaviour
     public void GiveHealth(float cure)
     {
         Life += cure;
+    }
+
+    public void NPCReset()
+    {
+        //transform.gameObject.GetComponent<SleepAndReset>().BackToCloset();
+        //Life = maxLife;
+        Destroy(gameObject);
     }
 
 }
