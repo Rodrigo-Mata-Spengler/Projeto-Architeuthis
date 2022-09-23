@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CureObject : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Pai;
 
     public Text PressText;
 
@@ -41,11 +42,10 @@ public class CureObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
         {
             Player.GetComponent<Health>().GiveHealth(cureValue);
-           
 
-            Destroy(gameObject, 0.1f);
-
+            Destroy(Pai, 0.1f);
             PressText.enabled = false;
+
 
         }
     }

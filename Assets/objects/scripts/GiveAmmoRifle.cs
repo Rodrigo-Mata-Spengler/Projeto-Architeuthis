@@ -7,6 +7,7 @@ public class GiveAmmoRifle : MonoBehaviour
 {
     public GameObject Rifle;
     public GameObject Player;
+    public GameObject Pai;
 
     public Text PressText;
 
@@ -42,9 +43,9 @@ public class GiveAmmoRifle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
         {
             Rifle.GetComponent<AmmoRifle>().GiveAmmo(AmmoGiveAmount);
-           
 
-            Destroy(gameObject, 0.1f);
+            Destroy(Pai, 0.1f);
+            PressText.enabled = false;
 
         }
     }

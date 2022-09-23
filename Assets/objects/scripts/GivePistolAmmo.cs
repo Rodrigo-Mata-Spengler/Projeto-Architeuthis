@@ -7,6 +7,7 @@ public class GivePistolAmmo : MonoBehaviour
 {
     public GameObject Pistol;
     public GameObject Player;
+    public GameObject Pai;
 
     public Text PressText;
 
@@ -46,7 +47,8 @@ public class GivePistolAmmo : MonoBehaviour
             
           
 
-            Destroy(gameObject, 0.1f);
+            Destroy(Pai, 0.1f);
+            PressText.enabled = false;
 
         }
     }
