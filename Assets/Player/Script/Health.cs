@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public Image LifeIMG3;
     public Image LifeIMG4;
 
+    public GameObject painelMorto;
+
     void Update()
     {
         UI();
@@ -30,7 +32,7 @@ public class Health : MonoBehaviour
 
     private void UI()
     {
-        if (Life < 100)
+        if (Life < 70)
         {
             //GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), text1);
             LifeIMG1.enabled = true;
@@ -41,7 +43,7 @@ public class Health : MonoBehaviour
         }
 
 
-        if (Life <= 70)
+        if (Life <= 50)
         {
 
 
@@ -53,7 +55,7 @@ public class Health : MonoBehaviour
         }
 
 
-        if (Life <= 40)
+        if (Life <= 10)
         {
 
             LifeIMG3.enabled = true;
@@ -71,6 +73,7 @@ public class Health : MonoBehaviour
             //chamar pause aqui
 
             //chamar painel de morte
+            painelMorto.SetActive(true);
             //DeathPanel.SetActive(true);
 
             LifeIMG4.enabled = true;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         GameisPaused = true;
         PausePanel.SetActive(true);
         Time.timeScale = 0; 
+        Cursor.lockState = CursorLockMode.None;
 
     }
     public void Resume()
@@ -39,6 +41,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         GameisPaused = false;
         PausePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void Options()
     {
@@ -48,4 +51,11 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ResetScene()
+    {
+        Pause();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }
