@@ -239,6 +239,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 100
+  LifeIMG1: {fileID: 0}
+  LifeIMG2: {fileID: 0}
+  LifeIMG3: {fileID: 0}
+  LifeIMG4: {fileID: 0}
+  painelMorto: {fileID: 0}
 --- !u!114 &1617469387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +289,7 @@ GameObject:
   - component: {fileID: 1726516152318598400}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,9 +10,9 @@ public class CureObject : MonoBehaviour
 
     public Text PressText;
 
-    [HideInInspector]
+    /*[HideInInspector]
     public float dist;
-    public float distToObj;
+    public float distToObj;*/
 
     public float cureValue;
 
@@ -23,23 +23,15 @@ public class CureObject : MonoBehaviour
     void Start()
     {
         MaxLife = Player.GetComponent<Health>().Life;
+        PressText.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(Player.transform.position, transform.position);
+        /*dist = Vector3.Distance(Player.transform.position, transform.position);*/
 
-        if (dist < distToObj && PressText.enabled == false)
-        {
-            PressText.enabled = true;
-        }
-        else if (PressText.enabled == true)
-        {
-            PressText.enabled = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
+        if (Input.GetKeyDown(KeyCode.F) /*&& dist < distToObj*/)
         {
             Player.GetComponent<Health>().GiveHealth(cureValue);
 

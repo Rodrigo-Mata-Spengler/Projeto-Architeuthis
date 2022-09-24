@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  Pai: {fileID: 0}
   PressText: {fileID: 0}
   dist: 0
   distToObj: 7

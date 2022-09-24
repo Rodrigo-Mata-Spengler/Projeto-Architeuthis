@@ -11,10 +11,11 @@ public class GiveAmmoRifle : MonoBehaviour
 
     public Text PressText;
 
+    /*
     [HideInInspector]
     public float dist;
 
-    public float distToObj;
+    public float distToObj;*/
 
     public int AmmoGiveAmount;
 
@@ -22,27 +23,17 @@ public class GiveAmmoRifle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PressText.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(Player.transform.position, transform.position);
 
 
-        if (dist < distToObj && PressText.enabled == false)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            PressText.enabled = true;
-        }
-        else if(PressText.enabled == true)
-        {
-            PressText.enabled = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F) && dist < distToObj)
-        {
-            Rifle.GetComponent<AmmoRifle>().GiveAmmo(AmmoGiveAmount);
+            Rifle.GetComponent<Ammo>().GiveAmmo(AmmoGiveAmount);
 
             Destroy(Pai, 0.1f);
             PressText.enabled = false;
