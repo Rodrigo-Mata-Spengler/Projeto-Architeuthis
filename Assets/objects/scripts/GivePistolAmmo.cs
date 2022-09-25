@@ -12,48 +12,44 @@ public class GivePistolAmmo : MonoBehaviour
     public Text PressText;
     public Text IsFullText;
 
-    private int MaxBag;
+    private int MaxBagSee;
 
-   /* [HideInInspector]
-    public float dist;
-    public float distToObj;*/
 
     public int AmmoGiveAmount;
 
     [SerializeField] public bool ActiveText = false;
 
-    void Start()
+    void Awake()
     {
         
-        MaxBag = Pistol.GetComponent<Ammo>().MaxBag;
+        //MaxBagSee = Pistol.GetComponent<Ammo>().MaxBag;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (ActiveText == true)
+        if (Pistol.GetComponent<Ammo>().MaxBag >= 60)
         {
-            if (MaxBag >= Player.GetComponent<Health>().MaxLife)
+            IsFullText.enabled = true;
+        }
+        else
+        {
+            PressText.enabled = true;
+
+
+            if (Input.GetKeyDown(KeyCode.F) && Pistol.GetComponent<Ammo>().MaxBag < 60)
             {
-                IsFullText.enabled = true;
-            }
-            else
-            {
-                PressText.enabled = true;
+                Pistol.GetComponent<Ammo>().GiveAmmo(AmmoGiveAmount);
+
+                GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = false;
+
+                Destroy(Pai, 0.1f);
+
+                PressText.enabled = false;
+                IsFullText.enabled = false;
+
             }
         }
-
-
-        if (Input.GetKeyDown(KeyCode.F) && Pistol.GetComponent<Ammo>().MaxBag < MaxBag)
-        {
-            Pistol.GetComponent<Ammo>().GiveAmmo(AmmoGiveAmount);
-
-            Destroy(Pai, 0.1f);
-            PressText.enabled = false;
-
-        }
-
     }
 }

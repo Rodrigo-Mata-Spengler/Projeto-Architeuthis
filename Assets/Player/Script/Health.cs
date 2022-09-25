@@ -27,7 +27,16 @@ public class Health : MonoBehaviour
     }
     public void GiveHealth(float cure)
     {
-        Life += cure;
+       float sub = Life + cure;
+        if(sub > MaxLife)
+        {
+            Life = MaxLife;
+        }
+        else
+        {
+            Life += cure;
+        }
+        
     }
 
 

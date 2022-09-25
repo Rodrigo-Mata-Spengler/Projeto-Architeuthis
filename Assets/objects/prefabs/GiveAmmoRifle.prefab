@@ -111,9 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rifle: {fileID: 0}
+  Player: {fileID: 0}
   Pai: {fileID: 1237361185196696228}
   PressText: {fileID: 0}
+  IsFullText: {fileID: 0}
   AmmoGiveAmount: 50
+  ActiveText: 0
 --- !u!1 &1237361185196696228
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0f8c4fb6b997548b4d4908ae3f2036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFull: {fileID: 0}
+  PressF: {fileID: 0}
   GiveAmmoRifleObj: {fileID: 1237361184994943318}
 --- !u!54 &1237361186554294967
 Rigidbody:

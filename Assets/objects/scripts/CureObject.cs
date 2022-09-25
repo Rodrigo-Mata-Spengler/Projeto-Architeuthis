@@ -11,13 +11,10 @@ public class CureObject : MonoBehaviour
     public Text PressText;
     public Text IsFullText;
 
-    /*[HideInInspector]
-    public float dist;
-    public float distToObj;*/
-
     public float cureValue;
 
     private float MaxLife;
+    private float Health;
 
     [SerializeField] public bool ActiveText = false;
     
@@ -27,33 +24,39 @@ public class CureObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxLife = Player.GetComponent<Health>().MaxLife;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ActiveText == true)
+        if (Player.GetComponent<Health>().Life >= 100 )
         {
-            if (MaxLife >= Player.GetComponent<Health>().MaxLife)
+            IsFullText.enabled = true;
+        }
+        else
+        {
+            PressText.enabled = true;
+
+            if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<Health>().Life < 100)
             {
-                IsFullText.enabled = true;
-            }
-            else
-            {
-                PressText.enabled = true;
+                Player.GetComponent<Health>().GiveHealth(cureValue);
+
+                
+
+                PressText.enabled = false;
+                
+                GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = false;
+                IsFullText.enabled = false;
+                Destroy(Pai, 0.1f);
+
+                
+
             }
         }
-        /*dist = Vector3.Distance(Player.transform.position, transform.position);*/
-
-        if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<Health>().MaxLife < MaxLife)
-        {
-            Player.GetComponent<Health>().GiveHealth(cureValue);
-
-            Destroy(Pai, 0.1f);
-            PressText.enabled = false;
 
 
-        }
+
     }
 }

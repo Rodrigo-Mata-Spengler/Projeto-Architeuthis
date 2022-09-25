@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 100
+  MaxLife: 100
   LifeIMG1: {fileID: 0}
   LifeIMG2: {fileID: 0}
   LifeIMG3: {fileID: 0}

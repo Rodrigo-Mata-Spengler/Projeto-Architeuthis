@@ -46,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9098253, y: 0.4277385, z: 1.0740643}
-  m_Center: {x: 0.045087337, y: -0.020900697, z: -0.037032127}
+  m_Size: {x: 0.9098253, y: 0.49411434, z: 1.0740643}
+  m_Center: {x: 0.045087337, y: 0.06884822, z: -0.037032127}
 --- !u!114 &6238755596222992652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pistol: {fileID: 0}
+  Player: {fileID: 0}
   Pai: {fileID: 6238755596222992649}
   PressText: {fileID: 0}
-  dist: 0
-  distToObj: 7
+  IsFullText: {fileID: 0}
   AmmoGiveAmount: 50
+  ActiveText: 0

@@ -113,7 +113,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   Pai: {fileID: 1985740567649676885}
   PressText: {fileID: 0}
+  IsFullText: {fileID: 0}
   cureValue: 50
+  ActiveText: 0
 --- !u!1 &1985740567649676885
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702b71d29e9fbf3478b7cef85791ef27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFull: {fileID: 0}
+  PressF: {fileID: 0}
   CureObject: {fileID: 1985740566213494860}
 --- !u!54 &1985740567649677736
 Rigidbody:

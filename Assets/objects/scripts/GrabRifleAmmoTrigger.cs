@@ -9,16 +9,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class GrabRifleAmmoTrigger : MonoBehaviour
 {
-    [SerializeField] private Text IsFull;
-    [SerializeField] private Text PressF;
+
 
     public GiveAmmoRifle GiveAmmoRifleObj;
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             GiveAmmoRifleObj.enabled = true;
-            GiveAmmoRifleObj.ActiveText = true;
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = true;
         }
 
     }
@@ -26,9 +26,7 @@ public class GrabRifleAmmoTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PressF.enabled = false;
-            IsFull.enabled = false;
-            GiveAmmoRifleObj.ActiveText = false;
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = false;
 
             GiveAmmoRifleObj.enabled = false;
 

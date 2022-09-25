@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
     public int PointsNextLevel;
     public int pointsToPass;
 
-    // Start is called before the first frame update
+    public Text PressText;
+    public Text IsFullText;
+
+    [SerializeField] public bool ActiveText = false;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -22,6 +26,12 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //open door or send massage in the UI
+        }
+
+        if(ActiveText == false)
+        {
+            PressText.enabled = false;
+            IsFullText.enabled = false;
         }
     }
     public void GivePointsToPass(int amount)

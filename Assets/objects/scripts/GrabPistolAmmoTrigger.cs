@@ -8,29 +8,24 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class GrabPistolAmmoTrigger : MonoBehaviour
 {
-    [SerializeField] private Text IsFull;
-    [SerializeField] private Text PressF;
-
     public GivePistolAmmo GivePistolAmmoObj;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             GivePistolAmmoObj.enabled = true;
-            GivePistolAmmoObj.ActiveText = true;
-            //GivePistolAmmo.enabled = true;
-            //GiveAmmoRifleObj.enabled = true;
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = true;
         }
 
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        { 
-            PressF.enabled = false;
-            IsFull.enabled = false;
-            GivePistolAmmoObj.ActiveText = false;
+        {
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActiveText = false;
 
             GivePistolAmmoObj.enabled = false;
         }
