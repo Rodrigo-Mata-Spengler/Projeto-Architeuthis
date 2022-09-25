@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 public class GrabCureTrigger : MonoBehaviour
 {
+    [SerializeField] private Text IsFull;
+    [SerializeField] private Text PressF;
 
     public CureObject CureObject;
     //public GiveAmmoRifle GiveAmmoRifleObj;
@@ -18,6 +21,8 @@ public class GrabCureTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CureObject.enabled = true;
+
+            CureObject.ActiveText = true;
             //GivePistolAmmo.enabled = true;
             //GiveAmmoRifleObj.enabled = true;
         }
@@ -27,6 +32,10 @@ public class GrabCureTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PressF.enabled = false;
+            IsFull.enabled = false;
+            CureObject.ActiveText = false;
+
             CureObject.enabled = false;
 
         }

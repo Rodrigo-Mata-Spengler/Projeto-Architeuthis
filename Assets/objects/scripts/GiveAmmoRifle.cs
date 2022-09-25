@@ -11,6 +11,10 @@ public class GiveAmmoRifle : MonoBehaviour
 
     public Text PressText;
 
+    public Text IsFullText;
+
+    private int MaxBag;
+
     /*
     [HideInInspector]
     public float dist;
@@ -19,19 +23,32 @@ public class GiveAmmoRifle : MonoBehaviour
 
     public int AmmoGiveAmount;
 
- 
+    [SerializeField] public bool ActiveText = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        PressText.enabled = true;
+        
+        MaxBag = Rifle.GetComponent<Ammo>().MaxBag;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ActiveText == true)
+        {
+            if (MaxBag >= Player.GetComponent<Health>().MaxLife)
+            {
+                IsFullText.enabled = true;
+            }
+            else
+            {
+                PressText.enabled = true;
+            }
+        }
 
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && Rifle.GetComponent<Ammo>().MaxBag < MaxBag)
         {
             Rifle.GetComponent<Ammo>().GiveAmmo(AmmoGiveAmount);
 

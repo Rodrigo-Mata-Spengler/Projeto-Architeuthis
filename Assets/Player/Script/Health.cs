@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public float Life;
+    public float MaxLife;
 
     public Image LifeIMG1;
     public Image LifeIMG2;
