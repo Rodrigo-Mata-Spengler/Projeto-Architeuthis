@@ -26,8 +26,11 @@ public class Ammo : MonoBehaviour
 
     private int MaxPistolBag;
 
+    
+
     private void Start()
     {
+        
         ammo = Maxammo;
 
         MaxPistolBag = MaxBag;
@@ -74,7 +77,9 @@ public class Ammo : MonoBehaviour
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 
+           
         }
+
     }
 
     public void GiveAmmo(int Ammoamount)
