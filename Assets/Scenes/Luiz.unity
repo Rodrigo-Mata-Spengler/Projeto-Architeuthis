@@ -31151,18 +31151,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1452538424}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1236026780 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1236026780, guid: 7350af167b4528b45883c958ab0ed472,
-    type: 3}
-  m_PrefabInstance: {fileID: 1452538424}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236026778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d2434ed8d720e4e8cdd6079726a2f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1266568408
 GameObject:
   m_ObjectHideFlags: 0
@@ -33333,22 +33321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 444759856, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236026780, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: LookAt
-      value: 
-      objectReference: {fileID: 1514142957}
-    - target: {fileID: 1617469386, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: Life
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617469386, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: MaxLife
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1617469386, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: LifeIMG1
       value: 
@@ -33374,17 +33346,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1837148081}
     - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: mouseWorld
-      value: 
-      objectReference: {fileID: 1236026780}
-    - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: AmmoBagText
       value: 
       objectReference: {fileID: 89754176}
-    - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: ThirdPersonScript
-      value: 
-      objectReference: {fileID: 1236026780}
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_RootOrder
@@ -33455,11 +33419,6 @@ PrefabInstance:
       propertyPath: AmmoBagText
       value: 
       objectReference: {fileID: 89754176}
-    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
-        type: 3}
-      propertyPath: ThirdPersonScript
-      value: 
-      objectReference: {fileID: 1236026780}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
 --- !u!4 &1472603676 stripped
@@ -35058,12 +35017,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1514142957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 444759855, guid: 7350af167b4528b45883c958ab0ed472,
-    type: 3}
-  m_PrefabInstance: {fileID: 1452538424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1530866108
 Mesh:
   m_ObjectHideFlags: 0
