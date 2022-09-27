@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779712153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97, y: 2.5700002, z: -5}
+  m_LocalPosition: {x: 0.97, y: 2.14, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,9 +504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcPrefab:
-  - {fileID: 5588827336370215412, guid: ef017eb5e9cd3d447b49a10938cdb90b, type: 3}
-  - {fileID: 3485281325334878601, guid: f61991689f0ce0a489c896a1977de414, type: 3}
-  - {fileID: 3247076198126723315, guid: 292deebd87b518949b69fcc1ebee91cc, type: 3}
+  - {fileID: 7047989727726486861, guid: 9825fe1d5d2988d47b90cdb17ca0aea7, type: 3}
+  - {fileID: 7047989727726486861, guid: 9825fe1d5d2988d47b90cdb17ca0aea7, type: 3}
+  - {fileID: 7047989727726486861, guid: 9825fe1d5d2988d47b90cdb17ca0aea7, type: 3}
   spawnAreas:
   - {fileID: 913778907}
   - {fileID: 769582466}
@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 3432357084242579546, guid: 765ccb9095c556e4190630d352b5be71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5700002
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 3432357084242579546, guid: 765ccb9095c556e4190630d352b5be71,
         type: 3}
@@ -770,14 +770,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1997766071, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: gravidade
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1997766071, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
-      propertyPath: jumpSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_RootOrder

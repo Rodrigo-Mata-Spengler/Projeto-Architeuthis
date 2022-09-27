@@ -185,8 +185,8 @@ MonoBehaviour:
   sensibilidade: 6
   correr: 304
   aumentoVelocidade: 1.6
-  jumpSpeed: 0.25
-  gravidade: -1.5
+  jumpSpeed: 4
+  gravidade: -8
   diminuiVelocidade: 0.6
   sensicamera: 1
   gastoStamina: 6

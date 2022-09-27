@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NpcSpawnJ1 : MonoBehaviour
 {
-    private NPCSpawnBeta npcSpawn;
+    /*private NPCSpawnBeta npcSpawn;
 
     public float spawntime;
 
@@ -45,5 +45,5 @@ public class NpcSpawnJ1 : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-    }
+    }*/
 }

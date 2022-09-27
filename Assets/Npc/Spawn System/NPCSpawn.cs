@@ -54,6 +54,8 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().tipo = 0;
 
+            npc.GetComponent<SleepAndReset>().restPlace = placeHere;
+
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
             npc1[z] = npc;
@@ -72,6 +74,8 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().tipo = 1;
 
+            npc.GetComponent<SleepAndReset>().restPlace = placeHere;
+
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
             npc2[z] = npc;
@@ -89,6 +93,8 @@ public class NPCSpawn : MonoBehaviour
             npc.GetComponent<SleepAndReset>().Sleep();
 
             npc.GetComponent<SleepAndReset>().tipo = 2;
+
+            npc.GetComponent<SleepAndReset>().restPlace = placeHere;
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
@@ -131,72 +137,104 @@ public class NPCSpawn : MonoBehaviour
         switch (tipo)
         {
             case 0:
-
-                aux = npc1InCloset - quantidade - 1;
-                for (int i = npc1InCloset-1;i >= aux;i--)
+                npc1InCloset -= quantidade;
+                foreach (GameObject  npc in npc1)
                 {
-                    npc1[i].transform.position = area.transform.position;//coloca no local 
-                    npc1[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
+                    if (npc.GetComponent<SleepAndReset>().awake)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        npc.transform.position = area.transform.position;//coloca no local 
+                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-                    npc1[i].GetComponent<SleepAndReset>().Awake();
+                        npc.GetComponent<SleepAndReset>().Awake();
+                        quantidade--;
+                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                    }
 
-                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                    if (quantidade == 0)
+                    {
+                        break;
+                    }
                 }
-                npc1InCloset = npc1InCloset- quantidade;
                 yield break;
 
                 break;
             case 1:
-                aux = npc2InCloset - quantidade - 1;
-                
-                for (int i = npc2InCloset - 1; i >= aux; i--)
-                {
-                    npc2[i].transform.position = area.transform.position;//coloca no local 
-                    npc2[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
-
-                    npc2[i].GetComponent<SleepAndReset>().Awake();
-
-                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
-                }
                 npc2InCloset -= quantidade;
+                foreach (GameObject npc in npc2)
+                {
+                    if (npc.GetComponent<SleepAndReset>().awake)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        npc.transform.position = area.transform.position;//coloca no local 
+                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
+
+                        npc.GetComponent<SleepAndReset>().Awake();
+                        quantidade--;
+                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                    }
+
+                    if (quantidade == 0)
+                    {
+                        break;
+                    }
+                }
                 yield break;
+
                 break;
             case 2:
-                aux = npc3InCloset - quantidade - 1;
-                
-                for (int i = npc3InCloset - 1; i >= aux; i--)
-                {
-                    npc3[i].transform.position = area.transform.position;//coloca no local 
-                    npc3[i].transform.rotation = area.transform.rotation;//coloca na rotação certa
-
-                    npc3[i].GetComponent<SleepAndReset>().Awake();
-
-                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
-                }
                 npc3InCloset -= quantidade;
+                foreach (GameObject npc in npc3)
+                {
+                    if (npc.GetComponent<SleepAndReset>().awake)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        npc.transform.position = area.transform.position;//coloca no local 
+                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
+
+                        npc.GetComponent<SleepAndReset>().Awake();
+                        quantidade--;
+                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
+                    }
+
+                    if (quantidade == 0)
+                    {
+                        break;
+                    }
+                }
                 yield break;
+
                 break;
         }
 
         yield break;
     }
 
-    public void ReCloset(float tipo,GameObject npcs)
+    public void ReCloset(float tipo,GameObject npcs,Vector3 ogPosition)
     {
-        Vector3 placeHere = closet.position;
         switch (tipo)
         {
             case 0:
-                placeHere += offsetX * npc1InCloset;
-                npcs.transform.position = placeHere;
+                npcs.transform.position = ogPosition;
                 npc1InCloset++;
 
                 break;
             case 1:
+                npcs.transform.position = ogPosition;
+                npc2InCloset++;
                 break;
             case 2:
-                break;
-            default:
+                npcs.transform.position = ogPosition;
+                npc3InCloset++;
                 break;
         }
     }

@@ -7,19 +7,30 @@ public class SleepAndReset : MonoBehaviour
     public float tipo;
 
     public GameObject spawnSistem;
+
+    public bool awake;
+
+    public Vector3 restPlace;
+
+    private void Start()
+    {
+        awake = false;
+    }
     public void Sleep()
     {
         transform.GetComponent<BTEnemyV01>().enabled = false;
+        awake = false;
     }
 
     public void Awake()
     {
         transform.GetComponent<BTEnemyV01>().enabled = true;
+        awake = true;
     }
 
     public void BackToCloset()
     {
-        transform.GetComponent<BTEnemyV01>().enabled = false;
-        spawnSistem.GetComponent<NPCSpawn>().ReCloset(tipo,transform.gameObject);
+        Sleep();
+        spawnSistem.GetComponent<NPCSpawn>().ReCloset(tipo,transform.gameObject,restPlace);
     }
 }

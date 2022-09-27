@@ -35,9 +35,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void NPCReset()
     {
-        //transform.gameObject.GetComponent<SleepAndReset>().BackToCloset();
-        //Life = maxLife;
-        Destroy(gameObject);
+        transform.gameObject.GetComponent<SleepAndReset>().BackToCloset();
+        Life = maxLife;
     }
 
 }
