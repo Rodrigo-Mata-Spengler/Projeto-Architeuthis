@@ -20,11 +20,13 @@ public class BTMoverParaPlayer : BTnode
             {
                 npc.transform.LookAt(new Vector3(alvo.transform.position.x, 1, alvo.transform.position.z));
                 npc.transform.Translate(0, 0, 3 * Time.deltaTime);
-            }else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 10 && Vector3.Distance(npc.transform.position, alvo.transform.position) > 2)
+            }
+            else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 10 && Vector3.Distance(npc.transform.position, alvo.transform.position) > 2)
             {
                 status = Status.SUCCESS;
                 break;
-            }else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2)
+            }
+            else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2)
             {
                 npc.transform.LookAt(alvo.transform.position);
                 npc.transform.Translate(0, 0, -2 * Time.deltaTime);
@@ -40,5 +42,6 @@ public class BTMoverParaPlayer : BTnode
             status = Status.FAILURE;
         }
         Print();
+        yield break;
     }
 }

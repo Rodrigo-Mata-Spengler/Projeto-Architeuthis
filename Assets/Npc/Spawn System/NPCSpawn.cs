@@ -26,6 +26,8 @@ public class NPCSpawn : MonoBehaviour
     private int npc2InCloset;//tamanho atual do armario 2
     private int npc3InCloset;//tamanho atual do armario 3
 
+    [SerializeField] private GameObject[] drop;
+
     private void Start()
     {
         npc1 = new GameObject[npcCount[0]];
@@ -58,6 +60,8 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
+            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
+
             npc1[z] = npc;
 
             placeHere += offsetX;
@@ -78,6 +82,8 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
+            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
+
             npc2[z] = npc;
 
             placeHere += offsetX;
@@ -97,6 +103,8 @@ public class NPCSpawn : MonoBehaviour
             npc.GetComponent<SleepAndReset>().restPlace = placeHere;
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
+
+            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
 
             npc3[z] = npc;
 

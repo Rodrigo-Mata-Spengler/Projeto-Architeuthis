@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    [SerializeField] private GameObject ResourceDrop;
+    public GameObject ResourceDrop;
 
     public void DropResources()
     {
