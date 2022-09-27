@@ -15,7 +15,7 @@ public class BTRecarregar : BTnode
         {
             status = Status.SUCCESS;
             Print();
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
         }
         else
         {
