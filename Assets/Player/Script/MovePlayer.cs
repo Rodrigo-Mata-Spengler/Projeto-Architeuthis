@@ -62,7 +62,7 @@ public class MovePlayer : MonoBehaviour
             sensi *= diminuiVelocidade;
         }
         
-        mov *= sensi * Time.deltaTime;
+        mov *= sensi;
 
         ySpeed += gravidade * Time.deltaTime;
 
@@ -83,11 +83,9 @@ public class MovePlayer : MonoBehaviour
 
         mov.y = ySpeed;
 
-        controller.Move(mov);
+        controller.Move(mov * Time.deltaTime);
 
         transform.Rotate(0, Input.GetAxis("Mouse X") * sensicamera, 0);
-
-
 
         rotation += Input.GetAxis("Mouse Y") * sensicamera;
 
