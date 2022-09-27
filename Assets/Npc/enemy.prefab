@@ -219,6 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipo: 0
   spawnSistem: {fileID: 0}
+  awake: 0
+  restPlace: {x: 0, y: 0, z: 0}
 --- !u!1 &8302422451336807998
 GameObject:
   m_ObjectHideFlags: 0

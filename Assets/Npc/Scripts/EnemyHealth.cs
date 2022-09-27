@@ -8,17 +8,30 @@ public class EnemyHealth : MonoBehaviour
 
     public float maxLife;
 
+    public int pointsGive;
+
+    private int TotalPointsToPass;
+
     private void Start()
     {
         Life = maxLife;
+        
+        TotalPointsToPass = GameObject.Find("GameManager").GetComponent<GameManager>().PointsNextLevel;
     }
 
 
     void Update()
     {
-        if(Life <= 0)
+        pointsGive = Random.Range(1, 5);
+
+        if (Life <= 0)
         {
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().PointsNextLevel += pointsGive;
+
+            this.gameObject.GetComponent<DropItem>().DropResources();
             NPCReset();
+
         }
     }
 
@@ -35,6 +48,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void NPCReset()
     {
+        
         transform.gameObject.GetComponent<SleepAndReset>().BackToCloset();
         Life = maxLife;
     }
