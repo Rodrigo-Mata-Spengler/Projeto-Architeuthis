@@ -31,6 +31,7 @@ public class SleepAndReset : MonoBehaviour
     public void BackToCloset()
     {
         Sleep();
+        GetComponent<BTEnemyV01>().Sleep();
         spawnSistem.GetComponent<NPCSpawn>().ReCloset(tipo,transform.gameObject,restPlace);
     }
 }

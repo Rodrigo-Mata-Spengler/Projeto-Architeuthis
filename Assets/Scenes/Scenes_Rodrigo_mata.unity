@@ -516,6 +516,10 @@ MonoBehaviour:
   offsetX: {x: 3, y: 0, z: 0}
   offsetz: {x: 0, y: 0, z: 6}
   timeSpawn: 4
+  drop:
+  - {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c, type: 3}
+  - {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d, type: 3}
+  - {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c, type: 3}
 --- !u!4 &1279571590
 Transform:
   m_ObjectHideFlags: 0

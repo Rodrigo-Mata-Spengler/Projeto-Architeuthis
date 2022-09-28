@@ -29,4 +29,9 @@ public class BTEnemyV01 : MonoBehaviour
 
         StartCoroutine(bt.Execute());
     }
+
+    public void Sleep()
+    {
+        StopAllCoroutines();
+    }
 }
