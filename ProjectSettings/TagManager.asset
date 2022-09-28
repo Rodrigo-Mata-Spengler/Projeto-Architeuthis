@@ -10,6 +10,11 @@ TagManager:
   - AmmoRifle
   - Enemy
   - colectable
+  - PlaRifle
+  - PlaPistol
+  - PlaBat
+  - IsFull
+  - PressF
   layers:
   - Default
   - TransparentFX

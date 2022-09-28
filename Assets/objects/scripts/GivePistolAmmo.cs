@@ -21,7 +21,10 @@ public class GivePistolAmmo : MonoBehaviour
 
     void Awake()
     {
-        
+        PressText = GameObject.FindGameObjectWithTag("PressF").GetComponent<Text>();
+        IsFullText = GameObject.FindGameObjectWithTag("IsFull").GetComponent<Text>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Pistol = GameObject.FindGameObjectWithTag("PlaPistol");
         //MaxBagSee = Pistol.GetComponent<Ammo>().MaxBag;
 
     }

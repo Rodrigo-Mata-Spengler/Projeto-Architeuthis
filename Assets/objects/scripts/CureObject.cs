@@ -22,9 +22,11 @@ public class CureObject : MonoBehaviour
     private int Maxlife;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        PressText = GameObject.FindGameObjectWithTag("PressF").GetComponent<Text>();
+        IsFullText = GameObject.FindGameObjectWithTag("IsFull").GetComponent<Text>();
+        Player = GameObject.FindGameObjectWithTag("Player");
 
     }
 

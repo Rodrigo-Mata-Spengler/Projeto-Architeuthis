@@ -21,9 +21,12 @@ public class GiveAmmoRifle : MonoBehaviour
     [SerializeField] public bool ActiveText = false;
 
  
-    void Start()
+    void Awake()
     {
-        
+        PressText = GameObject.FindGameObjectWithTag("PressF").GetComponent<Text>();
+        IsFullText = GameObject.FindGameObjectWithTag("IsFull").GetComponent<Text>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Rifle = GameObject.FindGameObjectWithTag("PlaRifle");
         //MaxBagSee = Rifle.GetComponent<Ammo>().MaxBag;
 
     }
@@ -31,6 +34,8 @@ public class GiveAmmoRifle : MonoBehaviour
  
     void Update()
     {
+        
+
         if ( Rifle.GetComponent<Ammo>().MaxBag >= 90)
         {
             IsFullText.enabled = true;

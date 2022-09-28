@@ -31090,6 +31090,7 @@ GameObject:
   - component: {fileID: 1213135361}
   - component: {fileID: 1213135360}
   - component: {fileID: 1213135362}
+  - component: {fileID: 1213135363}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -31163,6 +31164,18 @@ MonoBehaviour:
   - {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c, type: 3}
   - {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d, type: 3}
   - {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c, type: 3}
+--- !u!114 &1213135363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213135358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7815b8fe9c54eaf429ecf9f1d89817a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1236026778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2746057523273833871, guid: 7350af167b4528b45883c958ab0ed472,
@@ -33401,6 +33414,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1278123143, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123143, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_TagString
+      value: PlaPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123257, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278123258, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1617469386, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: LifeIMG1
       value: 
@@ -33421,10 +33450,18 @@ PrefabInstance:
       propertyPath: painelMorto
       value: 
       objectReference: {fileID: 1367319244}
+    - target: {fileID: 1881135949, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: SelectWeapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: AmmoText
       value: 
       objectReference: {fileID: 1837148081}
+    - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
       propertyPath: AmmoBagText
       value: 
@@ -33484,6 +33521,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2247493915620265457, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247493915620265460, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247493915620265460, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlaRifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247493915620265462, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2746057523273833871, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_Name
@@ -33496,9 +33553,24 @@ PrefabInstance:
       objectReference: {fileID: 1837148081}
     - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
       propertyPath: AmmoBagText
       value: 
       objectReference: {fileID: 89754176}
+    - target: {fileID: 8971775729500201850, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971775729500201850, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlaBat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
 --- !u!4 &1472603676 stripped
@@ -33797,6 +33869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GiveAmmoPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6238755596222992652, guid: 8343269423a41ee4fa9249d0f29cf78d,
         type: 3}
@@ -39714,6 +39791,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GiveAmmoRifle
       objectReference: {fileID: 0}
+    - target: {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1237361186554294966, guid: b0ad56162d907754aa53393fb90d632c,
         type: 3}
       propertyPath: IsFull
@@ -41856,6 +41938,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cure
       objectReference: {fileID: 0}
+    - target: {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1985740567649676886, guid: 16007c17d2eba944b902e0e61847ef6c,
         type: 3}
       propertyPath: IsFull
@@ -41875,6 +41962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1951895727, guid: f66116b4d2f98c843a50610efc8f7647, type: 3}
+      propertyPath: m_TagString
+      value: IsFull
+      objectReference: {fileID: 0}
     - target: {fileID: 3397638015378546202, guid: f66116b4d2f98c843a50610efc8f7647,
         type: 3}
       propertyPath: m_Pivot.x
@@ -41984,6 +42075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397638017274847305, guid: f66116b4d2f98c843a50610efc8f7647,
+        type: 3}
+      propertyPath: m_TagString
+      value: PressF
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66116b4d2f98c843a50610efc8f7647, type: 3}

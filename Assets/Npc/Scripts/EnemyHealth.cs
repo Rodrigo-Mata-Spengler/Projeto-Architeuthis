@@ -19,7 +19,10 @@ public class EnemyHealth : MonoBehaviour
         TotalPointsToPass = GameObject.Find("GameManager").GetComponent<GameManager>().PointsNextLevel;
     }
 
-
+    private void Awake()
+    {
+        pointsGive = Random.Range(1, 5);
+    }
     void Update()
     {
         pointsGive = Random.Range(1, 5);
