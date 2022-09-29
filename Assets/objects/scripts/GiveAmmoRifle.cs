@@ -29,6 +29,7 @@ public class GiveAmmoRifle : MonoBehaviour
         Rifle = GameObject.FindGameObjectWithTag("PlaRifle");
         //MaxBagSee = Rifle.GetComponent<Ammo>().MaxBag;
 
+        AmmoGiveAmount = Random.Range(10, 50);
     }
 
  

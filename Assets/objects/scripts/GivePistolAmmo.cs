@@ -27,6 +27,8 @@ public class GivePistolAmmo : MonoBehaviour
         Pistol = GameObject.FindGameObjectWithTag("PlaPistol");
         //MaxBagSee = Pistol.GetComponent<Ammo>().MaxBag;
 
+
+        AmmoGiveAmount = Random.Range(10, 50);
     }
 
     // Update is called once per frame

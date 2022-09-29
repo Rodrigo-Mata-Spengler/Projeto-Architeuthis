@@ -28,6 +28,7 @@ public class CureObject : MonoBehaviour
         IsFullText = GameObject.FindGameObjectWithTag("IsFull").GetComponent<Text>();
         Player = GameObject.FindGameObjectWithTag("Player");
 
+        cureValue = Random.Range(10, 50);
     }
 
     // Update is called once per frame
