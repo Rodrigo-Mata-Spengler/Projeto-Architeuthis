@@ -48,6 +48,7 @@ public class Crouch : MonoBehaviour
 
         controller.height = targettHeight;
         controller.center = targetCenter;
+        yield break;
     }
 
     IEnumerator UnCrounchTimer()
@@ -66,5 +67,6 @@ public class Crouch : MonoBehaviour
 
         controller.height = curentHeight;
         controller.center = currenteCenter;
+        yield break;
     }
 }
