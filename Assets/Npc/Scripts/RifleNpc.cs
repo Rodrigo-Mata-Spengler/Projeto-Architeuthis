@@ -31,7 +31,7 @@ public class RifleNpc : MonoBehaviour
     public bool Fire()
     {
         
-        if (ammo == 0 || !(Time.time >= NextTimeToFire))
+        if (ammo <= 0 || !(Time.time >= NextTimeToFire))
         {
             return false;
         }else{

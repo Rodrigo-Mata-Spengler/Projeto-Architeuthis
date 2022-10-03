@@ -11,6 +11,9 @@ public class BTMoverParaPlayer : BTnode
 
         GameObject npc = bt.gameObject;
 
+        GameObject npcRifleVariant = bt.transform.GetChild(0).gameObject;
+
+
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
 
         while (alvo)
@@ -18,8 +21,10 @@ public class BTMoverParaPlayer : BTnode
 
             if(Vector3.Distance(npc.transform.position, alvo.transform.position) > 5)
             {
-                npc.transform.LookAt(new Vector3(alvo.transform.position.x, 1, alvo.transform.position.z));
+                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
                 npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+
+                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
             }
             else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 10 && Vector3.Distance(npc.transform.position, alvo.transform.position) > 2)
             {
@@ -28,8 +33,10 @@ public class BTMoverParaPlayer : BTnode
             }
             else if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2)
             {
-                npc.transform.LookAt(alvo.transform.position);
+                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
                 npc.transform.Translate(0, 0, -2 * Time.deltaTime);
+
+                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
             }
 
 
