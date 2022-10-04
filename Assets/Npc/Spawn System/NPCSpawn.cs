@@ -18,27 +18,24 @@ public class NPCSpawn : MonoBehaviour
 
     [SerializeField] private float timeSpawn;//tempo entre spawns de npcs
 
-    private GameObject[] npc1; // npcs que exitem no closet do tipo 1
-    private GameObject[] npc2; // npcs que exitem no closet do tipo 2
-    private GameObject[] npc3; // npcs que exitem no closet do tipo 3
+    private List<GameObject> npc1; // npcs que exitem no closet do tipo 1
+    private List<GameObject> npc2; // npcs que exitem no closet do tipo 2
+    private List<GameObject> npc3; // npcs que exitem no closet do tipo 3
 
     private int npc1InCloset;//tamanho atual do armario 1
     private int npc2InCloset;//tamanho atual do armario 2
     private int npc3InCloset;//tamanho atual do armario 3
 
-    [SerializeField] private GameObject[] drop;
-
     private void Start()
     {
-        npc1 = new GameObject[npcCount[0]];
-        npc1InCloset = npc1.Length;
+        npc1.Capacity = 100;
+        npc1InCloset = 0;
 
-        npc2 = new GameObject[npcCount[1]];
-        npc2InCloset = npc2.Length;
+        npc2.Capacity = 100;
+        npc2InCloset = 0;
 
-        npc3 = new GameObject[npcCount[2]];
-        npc3InCloset = npc3.Length;
-
+        npc3.Capacity = 100;
+        npc3InCloset = 0;
         Createcloset();
     }
 
@@ -60,9 +57,9 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
-            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
+            npc1.Add(npc);
 
-            npc1[z] = npc;
+            npc1InCloset++;
 
             placeHere += offsetX;
         }
@@ -82,9 +79,9 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
-            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
+            npc2.Add(npc);
 
-            npc2[z] = npc;
+            npc2InCloset++;
 
             placeHere += offsetX;
         }
@@ -104,9 +101,9 @@ public class NPCSpawn : MonoBehaviour
 
             npc.GetComponent<SleepAndReset>().spawnSistem = transform.gameObject;
 
-            npc.GetComponent<DropItem>().ResourceDrop = drop[Random.Range(0, 2)];
+            npc3.Add(npc);
 
-            npc3[z] = npc;
+            npc3InCloset++;
 
             placeHere += offsetX;
         }
@@ -115,136 +112,127 @@ public class NPCSpawn : MonoBehaviour
         placeHere += offsetz;
     }
 
-    public bool SpawnNpc(int spawnArea,int tipo,int quantidade)
+    public bool SpawnNpc(int spawnArea, int tipo, int quantidade)
     {
         bool quanti = false;
         switch (tipo)
         {
-            case 0: quanti = npc1.Length >= quantidade;break;
-            case 1: quanti = npc2.Length >= quantidade;break;
-            case 2: quanti = npc3.Length >= quantidade;break;
-            default: quanti = false;break;
+            case 0: quanti = npc1.Count >= quantidade; break;
+            case 1: quanti = npc2.Count >= quantidade; break;
+            case 2: quanti = npc3.Count >= quantidade; break;
+            default: quanti = false; break;
         }
 
         if (spawnAreas.Length >= spawnArea && npcPrefab.Length >= tipo && quanti)
         {
-            Coroutine criacao  = StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade, tipo));
-            
-            //StopCoroutine(criacao);
-            return true;
+            Coroutine criacao = StartCoroutine(Spawning(spawnAreas[spawnArea], quantidade, tipo));
+            quanti = true;
         }
         else
         {
-            return false;
+            quanti = false;
         }
+
+        return quanti;
     }
 
     IEnumerator Spawning(GameObject area, int quantidade, int tipo)
     {
         int aux = 0;
+        GameObject npc = null;
         switch (tipo)
         {
             case 0:
-                npc1InCloset -= quantidade;
-                foreach (GameObject  npc in npc1)
+
+                aux = npc1InCloset - quantidade - 1;
+                for (int i = npc1InCloset - 1; i >= aux; i--)
                 {
-                    if (npc.GetComponent<SleepAndReset>().awake)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        npc.transform.position = area.transform.position;//coloca no local 
-                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
+                    npc = npc1[i];
+                    npc1.RemoveAt(i);
 
-                        npc.GetComponent<SleepAndReset>().Awake();
-                        quantidade--;
-                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
-                    }
+                    npc.transform.position = area.transform.position;//coloca no local 
+                    npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-                    if (quantidade == 0)
-                    {
-                        break;
-                    }
+                    npc.GetComponent<SleepAndReset>().Awake();
+
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
+                npc1InCloset = npc1InCloset - quantidade;
                 yield break;
 
                 break;
             case 1:
-                npc2InCloset -= quantidade;
-                foreach (GameObject npc in npc2)
+                aux = npc2InCloset - quantidade - 1;
+
+                for (int i = npc2InCloset - 1; i >= aux; i--)
                 {
-                    if (npc.GetComponent<SleepAndReset>().awake)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        npc.transform.position = area.transform.position;//coloca no local 
-                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
+                    npc = npc2[i];
+                    npc2.RemoveAt(i);
 
-                        npc.GetComponent<SleepAndReset>().Awake();
-                        quantidade--;
-                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
-                    }
+                    npc.transform.position = area.transform.position;//coloca no local 
+                    npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-                    if (quantidade == 0)
-                    {
-                        break;
-                    }
+                    npc.GetComponent<SleepAndReset>().Awake();
+
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
+                npc2InCloset -= quantidade;
                 yield break;
-
                 break;
             case 2:
-                npc3InCloset -= quantidade;
-                foreach (GameObject npc in npc3)
+                aux = npc3InCloset - quantidade - 1;
+
+                for (int i = npc3InCloset - 1; i >= aux; i--)
                 {
-                    if (npc.GetComponent<SleepAndReset>().awake)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        npc.transform.position = area.transform.position;//coloca no local 
-                        npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
+                    npc = npc3[i];
+                    npc3.RemoveAt(i);
 
-                        npc.GetComponent<SleepAndReset>().Awake();
-                        quantidade--;
-                        yield return new WaitForSeconds(timeSpawn);//espera por segundos
-                    }
+                    npc.transform.position = area.transform.position;//coloca no local 
+                    npc.transform.rotation = area.transform.rotation;//coloca na rotação certa
 
-                    if (quantidade == 0)
-                    {
-                        break;
-                    }
+                    npc.GetComponent<SleepAndReset>().Awake();
+
+                    yield return new WaitForSeconds(timeSpawn);//espera por segundos
                 }
+                npc3InCloset -= quantidade;
                 yield break;
-
                 break;
         }
 
         yield break;
     }
 
-    public void ReCloset(float tipo,GameObject npcs,Vector3 ogPosition)
+    public void ReCloset(float tipo, GameObject npcs, Vector3 ogPosition)
     {
         switch (tipo)
         {
             case 0:
                 npcs.transform.position = ogPosition;
+                npc1.Add(npcs);
                 npc1InCloset++;
-
                 break;
             case 1:
                 npcs.transform.position = ogPosition;
+                npc2.Add(npcs);
                 npc2InCloset++;
                 break;
             case 2:
                 npcs.transform.position = ogPosition;
+                npc3.Add(npcs);
                 npc3InCloset++;
+                break;
+            default:
                 break;
         }
     }
 
+    public int ReturnAreasSize()
+    {
+        return spawnAreas.Length;
+    }
+
+    public int QuantidadeNpc(int a)
+    {
+        return npcCount[a];
+    }
 }
