@@ -15,6 +15,7 @@ TagManager:
   - PlaBat
   - IsFull
   - PressF
+  - Place
   layers:
   - Default
   - TransparentFX
