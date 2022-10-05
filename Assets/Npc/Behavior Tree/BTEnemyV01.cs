@@ -6,6 +6,8 @@ public class BTEnemyV01 : MonoBehaviour
 {
     public GameObject rifle;
 
+    public bool InPlace;
+
     private void Start()
     {
         BTSelector ammo = new BTSelector();

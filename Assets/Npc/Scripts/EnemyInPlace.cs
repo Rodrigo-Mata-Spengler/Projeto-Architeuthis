@@ -10,7 +10,9 @@ public class EnemyInPlace : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Enemy"))
-        {           
+        {
+            UnityEngine.Debug.Log("entrou");
+            other.GetComponent<BTEnemyV01>().InPlace = true;
             filho.SetActive(false);
         }
     }
@@ -19,6 +21,8 @@ public class EnemyInPlace : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            
+            other.GetComponent<BTEnemyV01>().InPlace = false;
             filho.SetActive(true);
         }
     }
