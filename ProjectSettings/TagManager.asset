@@ -16,6 +16,7 @@ TagManager:
   - IsFull
   - PressF
   - Place
+  - NPCshooter
   layers:
   - Default
   - TransparentFX

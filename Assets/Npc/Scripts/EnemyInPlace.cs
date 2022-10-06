@@ -9,9 +9,11 @@ public class EnemyInPlace : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        UnityEngine.Debug.LogError(" Não entrou");
+
+        if (other.gameObject.CompareTag("NPCshooter"))
         {
-            UnityEngine.Debug.Log("entrou");
+            UnityEngine.Debug.LogError("entrou");
             other.GetComponent<BTEnemyV01>().InPlace = true;
             filho.SetActive(false);
         }
@@ -19,7 +21,7 @@ public class EnemyInPlace : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("NPCshooter"))
         {
             
             other.GetComponent<BTEnemyV01>().InPlace = false;
