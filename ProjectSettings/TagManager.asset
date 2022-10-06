@@ -17,6 +17,7 @@ TagManager:
   - PressF
   - Place
   - NPCshooter
+  - WayPoint
   layers:
   - Default
   - TransparentFX

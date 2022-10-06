@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BTEnemyV01 : MonoBehaviour
 {
@@ -8,8 +9,14 @@ public class BTEnemyV01 : MonoBehaviour
 
     public bool InPlace;
 
+
+    [HideInInspector]public NavMeshAgent agent;
+
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+
+
         BTSelector ammo = new BTSelector();
 
         ammo.children.Add(new BTVerificarBalas());
@@ -35,5 +42,18 @@ public class BTEnemyV01 : MonoBehaviour
     public void Sleep()
     {
         StopAllCoroutines();
+    }
+    public void UpdateDestination(GameObject target, GameObject[] waypoints, int waypointsIndex, NavMeshAgent agent)
+    {
+        target = waypoints[waypointsIndex];
+        agent.SetDestination(target.transform.position);
+    }
+    public void IterateWaypoints(int waypointsIndex, GameObject[]waypoints)
+    {
+        waypointsIndex++;
+        if(waypointsIndex == waypoints.Length)
+        {
+            waypointsIndex = 0;
+        }
     }
 }
