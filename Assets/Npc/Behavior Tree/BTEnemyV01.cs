@@ -5,17 +5,23 @@ using UnityEngine.AI;
 
 public class BTEnemyV01 : MonoBehaviour
 {
+    [HideInInspector]
+    public float Yrotation;
+
     public GameObject rifle;
 
     public bool InPlace;
 
+    public bool SeePlayer;
 
     [HideInInspector]public NavMeshAgent agent;
+
+    public float distToPlayer;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        SeePlayer = GetComponent<FieldOfView>().SeePlayer;
 
         BTSelector ammo = new BTSelector();
 

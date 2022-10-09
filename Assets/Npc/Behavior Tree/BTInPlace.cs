@@ -12,9 +12,12 @@ public class BTInPlace : BTnode
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
+        GameObject npc = bt.gameObject;
+
 
         if(Inplace == true)
         {
+            npc.transform.rotation = Quaternion.Euler(0,bt.gameObject.GetComponent<BTEnemyV01>().Yrotation,0);
             status = Status.SUCCESS;
         }
         else

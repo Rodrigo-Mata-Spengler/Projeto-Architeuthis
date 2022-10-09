@@ -15,6 +15,8 @@ public class EnemyInPlace : MonoBehaviour
         {
             UnityEngine.Debug.LogError("entrou");
             other.GetComponent<BTEnemyV01>().InPlace = true;
+            other.GetComponent<BTEnemyV01>().Yrotation = gameObject.transform.eulerAngles.y;
+
             filho.SetActive(false);
         }
     }

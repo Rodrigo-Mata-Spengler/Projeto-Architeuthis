@@ -14,9 +14,14 @@ public class FieldOfView : MonoBehaviour
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
+    [HideInInspector]
+    public bool SeePlayer = false;
+
     private void Start()
     {
         StartCoroutine(FindTargetsWithDelay(.2f));
+
+        
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -41,9 +46,16 @@ public class FieldOfView : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                if(!Physics.Raycast (transform.position, dirToTarget,dstToTarget,AmbienteMask))
+                
+
+                if(!Physics.Raycast(transform.position, dirToTarget,dstToTarget,AmbienteMask))
                 {
                     visibleTargets.Add(target);
+                    SeePlayer = true;
+                }
+                else
+                {
+                    SeePlayer = false;
                 }
             }
         }
