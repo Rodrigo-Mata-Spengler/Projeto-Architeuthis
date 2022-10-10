@@ -4,86 +4,70 @@ using UnityEngine;
 
 public class HordeSystem : MonoBehaviour
 {
-    private List<Horde> hordas;
+    [SerializeField] private float tempoHorda;
 
-    [SerializeField] private int hordeMax;
+    private float nextHorde = 0f;
 
-    [SerializeField] private NPCSpawn spawn;
+    [SerializeField] private int minSize;
 
-    [SerializeField] private float timeHorde;
+    [SerializeField] private int maxSize;
 
-    private bool funcionando;
+    [SerializeField] private int maxSizeSpawns;
+
+    [SerializeField] GameObject[] npc;
+
+    [SerializeField] Transform[] spawnArea;
+
+    private int[] hordasize = {0,0,0};
+
+    private int[] hordaSpawn = { 0, 0, 0 };
+
+
     private void Start()
     {
-        spawn.GetComponent<NPCSpawn>();
+        HordaCreator();
+    }
 
-        hordas.Capacity = hordeMax;
+    private void HordaCreator()
+    {
+        for (int i = 0; i < hordasize.Length; i++)
+        {
+            hordasize[i] = Random.Range(minSize, maxSize);
+        }
+        for (int i = 0; i < hordaSpawn.Length; i++)
+        {
+            hordaSpawn[i] = Random.Range(minSize, maxSizeSpawns);
+        }
+    }
 
-        CreateRound();
+    private void SpawnHorda()
+    {
+        StartCoroutine(Spawning());
 
-        funcionando = false;
+        HordaCreator();
+    }
+
+    IEnumerator Spawning()
+    {
+        for (int i = 0; i < npc.Length; i++)
+        {
+            for (int z = 0; z < hordasize[i]; z++)
+            {
+                Instantiate(npc[i],spawnArea[hordaSpawn[i]].position, spawnArea[hordaSpawn[i]].rotation);
+                yield return new WaitForSeconds(.5f);
+            }
+            yield return new WaitForSeconds(.5f);
+        }
+        yield break;
     }
 
     private void Update()
     {
-        if (!funcionando)
+        if (Time.time >= nextHorde)
         {
-            HordeExec();
-        }
-    }
-
-    private Horde HordeCreator()
-    {
-        Horde horda = new Horde();
-
-        horda.spawnArea = Random.Range(0, spawn.ReturnAreasSize());
-        horda.type = Random.Range(0, 2);
-        horda.quantidade = spawn.QuantidadeNpc(horda.type);
-
-        return horda;
-    }//cria um pequeno pedido de um tipo de npc para a horda
-
-    private void CreateRound()
-    {
-        for (int i = 0; i < hordeMax; i++)
-        {
-            hordas.Add(HordeCreator());
-        }
-    }//monta a horda com varios pedidos
-
-    private void CleanRound()//limpa a lista para o proximo round
-    {
-        hordas.Clear();
-        hordas.Capacity = hordeMax;
-    }
-
-    private void HordeExec()
-    {
-        funcionando = true;
-        Coroutine exec=  StartCoroutine(Creator());
-    }
-
-    IEnumerator Creator()
-    {
-        bool exec = false;
-        foreach (Horde horda in hordas)
-        {
-            exec = false;
-            exec = spawn.SpawnNpc(horda.spawnArea, horda.type, horda.quantidade);
-            if (exec)
-            {
-                yield return new WaitForSeconds(timeHorde);
-            }
-            else
-            {
-                Debug.Log("pedido não atendido");
-            }
+            nextHorde = Time.time + tempoHorda;
+            SpawnHorda();
 
         }
-        CleanRound();
-        CreateRound();
-
-        funcionando = false;
-        yield break;
     }
 }
