@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BTMoverParaPlayer : BTnode
 {
@@ -17,13 +18,20 @@ public class BTMoverParaPlayer : BTnode
 
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
 
+
+        //navmesh
+        NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
+        BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
+
         while (alvo)
         {
 
             if(Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
             {
                 npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-                npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+                //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+
+                Controller.MoveToPlayer(alvo, agent);
 
                 npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
             }

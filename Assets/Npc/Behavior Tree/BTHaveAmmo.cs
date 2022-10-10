@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BTRecarregar : BTnode
+public class BTHaveAmmo : BTnode
 {
     public override IEnumerator Run(BehaviorTree bt)
     {
@@ -11,18 +11,17 @@ public class BTRecarregar : BTnode
 
         GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
 
-        if (rifle.GetComponent<RifleNpc>().Recharge())
-        {
-            status = Status.SUCCESS;
-            Print();
-            yield return new WaitForSeconds(1);
-        }
-        else
+        if (rifle.GetComponent<RifleNpc>().ammo ==0)
         {
             status = Status.FAILURE;
             Print();
             yield break;
         }
-        yield break;
+        else
+        {
+            status = Status.SUCCESS;
+            Print();
+            yield break;
+        }
     }
 }

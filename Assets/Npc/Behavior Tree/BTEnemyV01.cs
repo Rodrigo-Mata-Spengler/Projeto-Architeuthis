@@ -23,24 +23,44 @@ public class BTEnemyV01 : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         SeePlayer = GetComponent<FieldOfView>().SeePlayer;
 
-        BTSelector ammo = new BTSelector();
+        BTSequance SequenceA = new BTSequance();
 
-        ammo.children.Add(new BTVerificarBalas());
-        ammo.children.Add(new BTRecarregar());
+        SequenceA.children.Add(new BTPlayerCloseOrInPointOfView());
+        SequenceA.children.Add(new BTMoverParaPlayer());
 
-        BTSequance arma = new BTSequance();
+        BTSequance SequenceB = new BTSequance();
 
-        arma.children.Add(ammo);
-        arma.children.Add(new BTAtirar());
+        SequenceB.children.Add(new BTPlaceAvailable());
+        SequenceB.children.Add(new BTGoToPlace());
+        SequenceB.children.Add(new BTInPlace());
+        SequenceB.children.Add(new BTSearchPlayer());
+        SequenceB.children.Add(new BTPlayerCloseOrInPointOfView());
 
-        BTSequance Enemy = new BTSequance();
+        BTSequance SequenceC = new BTSequance();
 
-        Enemy.children.Add(new BTFindPlayer());
-        Enemy.children.Add(new BTMoverParaPlayer());
-        Enemy.children.Add(arma);
+        SequenceC.children.Add(new BTPlaceNotAvailable());
+        SequenceC.children.Add(new BTPlayerNotCloseOrInPointOfView());
+        SequenceC.children.Add(new BTPatrol());
+
+        BTSelector SelectorA = new BTSelector();
+
+        SelectorA.children.Add(SequenceA);
+        SelectorA.children.Add(SequenceB);
+        SelectorA.children.Add(SequenceC);
+
+        BTSelector SelectorB = new BTSelector();
+
+        SelectorB.children.Add(new BTHaveAmmo());
+        SelectorB.children.Add(new BTReload());
+
+        BTSequance SequenceD = new BTSequance();
+
+        SequenceD.children.Add(SelectorA);
+        SequenceD.children.Add(SelectorB);
+        SequenceD.children.Add(new BTAtirar());
 
         BehaviorTree bt = GetComponent<BehaviorTree>();
-        bt.root = Enemy;
+        bt.root = SequenceD;
 
         StartCoroutine(bt.Execute());
     }
@@ -52,6 +72,10 @@ public class BTEnemyV01 : MonoBehaviour
     public void UpdateDestination(GameObject target, GameObject[] waypoints, int waypointsIndex, NavMeshAgent agent)
     {
         target = waypoints[waypointsIndex];
+        agent.SetDestination(target.transform.position);
+    }
+    public void MoveToPlayer(GameObject target, NavMeshAgent agent)
+    {
         agent.SetDestination(target.transform.position);
     }
     public void IterateWaypoints(int waypointsIndex, GameObject[]waypoints)

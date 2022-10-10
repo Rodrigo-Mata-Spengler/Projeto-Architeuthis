@@ -9,7 +9,7 @@ public class RifleNpc : MonoBehaviour
     public int ammo;
 
     public float FireRate = 15f;
-    private float NextTimeToFire = 0f;
+    public float NextTimeToFire = 0f;
 
     [SerializeField] private GameObject pfBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
@@ -34,7 +34,9 @@ public class RifleNpc : MonoBehaviour
         if (ammo <= 0 || !(Time.time >= NextTimeToFire))
         {
             return false;
-        }else{
+        }
+        else
+        {
             NextTimeToFire = Time.time + 1f / FireRate;
             ammo--;
 

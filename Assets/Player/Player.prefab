@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272010750}
   - component: {fileID: 1881135949}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444759856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LOOK AT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952921825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pontoAondeVai_o_Tiro(sphereDebug)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 1617469386}
   - component: {fileID: 1617469387}
   - component: {fileID: 1236026780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 7520195460961719648}
   - component: {fileID: 1161774018859573307}
   - component: {fileID: 1726516152318598400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -445,7 +445,12 @@ PrefabInstance:
     - target: {fileID: 8440107743843982937, guid: c22a7ec94a952eb4b903a5980ef9f5b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440107743843982937, guid: c22a7ec94a952eb4b903a5980ef9f5b2,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlaBat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c22a7ec94a952eb4b903a5980ef9f5b2, type: 3}
@@ -496,7 +501,12 @@ PrefabInstance:
     - target: {fileID: 4116279699076913038, guid: 0484bf3c873e0df41826d6e7b3baf710,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116279699076913038, guid: 0484bf3c873e0df41826d6e7b3baf710,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlaPistol
       objectReference: {fileID: 0}
     - target: {fileID: 4116279699076913137, guid: 0484bf3c873e0df41826d6e7b3baf710,
         type: 3}
@@ -586,7 +596,12 @@ PrefabInstance:
     - target: {fileID: 2798340719839185852, guid: 26937c803f592d64ebda9f3683fa7166,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798340719839185852, guid: 26937c803f592d64ebda9f3683fa7166,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlaRifle
       objectReference: {fileID: 0}
     - target: {fileID: 2798340719839185855, guid: 26937c803f592d64ebda9f3683fa7166,
         type: 3}
