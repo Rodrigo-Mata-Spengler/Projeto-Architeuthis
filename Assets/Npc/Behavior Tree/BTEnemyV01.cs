@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BTEnemyV01 : MonoBehaviour
 {
-    [HideInInspector]
+    
     public float Yrotation;
 
     public GameObject rifle;
@@ -74,7 +74,7 @@ public class BTEnemyV01 : MonoBehaviour
         target = waypoints[waypointsIndex];
         agent.SetDestination(target.transform.position);
     }
-    public void MoveToPlayer(GameObject target, NavMeshAgent agent)
+    public void MoveToTarget(GameObject target, NavMeshAgent agent)
     {
         agent.SetDestination(target.transform.position);
     }

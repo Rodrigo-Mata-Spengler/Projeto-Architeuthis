@@ -31,7 +31,7 @@ public class BTMoverParaPlayer : BTnode
                 npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
                 //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
 
-                Controller.MoveToPlayer(alvo, agent);
+                Controller.MoveToTarget(alvo, agent);
 
                 npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
             }

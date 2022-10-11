@@ -33,6 +33,7 @@ public class BTPlayerNotCloseOrInPointOfView : BTnode
         {
             status = Status.FAILURE;
         }
+        Print();
         yield break;
     }
 }

@@ -49,6 +49,7 @@ public class BTSearchPlayer : BTnode
         {
             status = Status.FAILURE;
         }
+        Print();
         yield break;
     }
 }

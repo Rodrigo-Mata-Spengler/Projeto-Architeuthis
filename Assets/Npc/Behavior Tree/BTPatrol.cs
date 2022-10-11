@@ -21,7 +21,7 @@ public class BTPatrol : BTnode
             Controller.IterateWaypoints(WaypointsIndex,waypoints);
             Controller.UpdateDestination(target, waypoints, WaypointsIndex, agent);
         }
-
+        Print();
         yield return null;
     }
 }

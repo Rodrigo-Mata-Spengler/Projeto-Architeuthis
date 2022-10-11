@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BTGoToPlace : BTnode
 {
@@ -14,8 +15,12 @@ public class BTGoToPlace : BTnode
         float distToPlace = Mathf.Infinity;
         GameObject npc = bt.gameObject;
         GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
-        
-        foreach(GameObject place in Places)
+
+        //navmesh
+        NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
+        BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
+
+        foreach (GameObject place in Places)
         {
             float dist = Vector3.Distance(npc.transform.position, place.transform.position);
 
@@ -26,26 +31,28 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        if(alvo)
+        while(alvo)
         {
-            while(alvo)
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 0.3f) ;
             {
-                npc.transform.Translate(0,0,3* Time.deltaTime);
-
-                if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 0.3f);
-                {
-                    status = Status.SUCCESS;
-                    break;
-                }
-
-                yield return null;
+                
+                Controller.MoveToTarget(alvo, agent);
             }
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 0.3f);
+            {
+                status = Status.SUCCESS;
+                break;
+            }
+
+            yield return null;
         }
-        else if(!alvo)
+        if(!alvo)
         {
             status=Status.FAILURE;
         }
 
         if(status == Status.RUNNING) status = Status.FAILURE;
+
+        Print();
     }
 }

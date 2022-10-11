@@ -23,6 +23,7 @@ public class BTReload : BTnode
             Print();
             yield break;
         }
+        Print();
         yield break;
     }
 }
