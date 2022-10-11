@@ -73,6 +73,8 @@ public class BTEnemyV01 : MonoBehaviour
     {
         target = waypoints[waypointsIndex];
         agent.SetDestination(target.transform.position);
+
+       
     }
     public void MoveToTarget(GameObject target, NavMeshAgent agent)
     {
@@ -80,10 +82,14 @@ public class BTEnemyV01 : MonoBehaviour
     }
     public void IterateWaypoints(int waypointsIndex, GameObject[]waypoints)
     {
-        waypointsIndex++;
-        if(waypointsIndex == waypoints.Length)
+
+        if (waypointsIndex == waypoints.Length)
         {
             waypointsIndex = 0;
         }
+        waypointsIndex += 1;
+        Debug.LogWarning(waypointsIndex);
+
+
     }
 }

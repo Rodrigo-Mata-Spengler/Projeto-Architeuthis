@@ -33,7 +33,7 @@ public class BTGoToPlace : BTnode
 
         while(alvo)
         {
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 0.3f) ;
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 0.3f) ;
             {
                 
                 Controller.MoveToTarget(alvo, agent);

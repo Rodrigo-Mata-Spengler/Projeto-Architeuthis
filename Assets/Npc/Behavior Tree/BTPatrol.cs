@@ -16,12 +16,43 @@ public class BTPatrol : BTnode
         int WaypointsIndex = 0;
         GameObject target = waypoints[WaypointsIndex];
 
-        if (Vector3.Distance(bt.transform.position, target.transform.position) < 1)
+        bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+
+        while (SeePlayer == false)
         {
-            Controller.IterateWaypoints(WaypointsIndex,waypoints);
-            Controller.UpdateDestination(target, waypoints, WaypointsIndex, agent);
+            
+            if(Vector3.Distance(bt.transform.position, target.transform.position) > 2)
+            {
+                
+                Controller.UpdateDestination(target, waypoints, WaypointsIndex, agent);
+            }
+            if (Vector3.Distance(bt.transform.position, target.transform.position) <= 2)
+            {
+                // Controller.IterateWaypoints(WaypointsIndex, waypoints);
+
+                WaypointsIndex++;
+                if (WaypointsIndex == waypoints.Length)
+                {
+                    WaypointsIndex = 0;
+                }
+            }
+
+                /*
+                target = waypoints[WaypointsIndex];
+                agent.SetDestination(target.transform.position);
+
+                WaypointsIndex++;
+                if (WaypointsIndex == waypoints.Length)
+                {
+                    WaypointsIndex = 0;
+                }
+                */
+                yield return null;
+
+            
         }
+
         Print();
-        yield return null;
+        yield break;
     }
 }

@@ -15,10 +15,10 @@ public class BTInPlace : BTnode
         GameObject npc = bt.gameObject;
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
 
+        
         if (Inplace == true)
         {
-            //npc.transform.rotation = Quaternion.Euler(0,bt.gameObject.GetComponent<BTEnemyV01>().Yrotation,0);
-            npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+            npc.transform.rotation = Quaternion.Euler(0, bt.gameObject.GetComponent<BTEnemyV01>().Yrotation, 0);
             status = Status.SUCCESS;
         }
         else

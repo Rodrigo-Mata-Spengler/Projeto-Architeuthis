@@ -22,18 +22,18 @@ public class BTSearchPlayer : BTnode
 
         rotY = Mathf.Clamp(rotY, -60, 60);
 
-        while (SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
+        while(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
 
             npc.transform.localEulerAngles = new Vector3(0, rotY * Time.deltaTime * 3, 0);
 
             if(rotY == 60)
             {
-                rotY = -1;
+                rotY -= 1;
             }
             if (rotY == -60)
             {
-                rotY = 1;
+                rotY += 1;
             }
 
             if(SeePlayer == true)
