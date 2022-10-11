@@ -52,7 +52,7 @@ public class BTGoToPlace : BTnode
         }
 
         if(status == Status.RUNNING) status = Status.FAILURE;
-
+        yield break;
         Print();
     }
 }

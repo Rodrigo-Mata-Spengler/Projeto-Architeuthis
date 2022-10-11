@@ -14,19 +14,22 @@ public class BTPatrol : BTnode
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         GameObject[] waypoints = GameObject.FindGameObjectsWithTag("WayPoint");
         int WaypointsIndex = 0;
-        GameObject target = waypoints[WaypointsIndex];
+        //GameObject target = waypoints[WaypointsIndex];
 
         bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
 
-        while (SeePlayer == false)
+        while(WaypointsIndex < waypoints.Length)
         {
-            
-            if(Vector3.Distance(bt.transform.position, target.transform.position) > 2)
+            GameObject target = waypoints[WaypointsIndex];
+
+            Debug.LogWarning(WaypointsIndex);
+
+            if (Vector3.Distance(bt.transform.position, target.transform.position) > 2)
             {
-                
+
                 Controller.UpdateDestination(target, waypoints, WaypointsIndex, agent);
             }
-            if (Vector3.Distance(bt.transform.position, target.transform.position) <= 2)
+            if (Vector3.Distance(bt.transform.position, target.transform.position) <= 3)
             {
                 // Controller.IterateWaypoints(WaypointsIndex, waypoints);
 
@@ -35,21 +38,10 @@ public class BTPatrol : BTnode
                 {
                     WaypointsIndex = 0;
                 }
+
+                
             }
-
-                /*
-                target = waypoints[WaypointsIndex];
-                agent.SetDestination(target.transform.position);
-
-                WaypointsIndex++;
-                if (WaypointsIndex == waypoints.Length)
-                {
-                    WaypointsIndex = 0;
-                }
-                */
-                yield return null;
-
-            
+            yield return null;
         }
 
         Print();
