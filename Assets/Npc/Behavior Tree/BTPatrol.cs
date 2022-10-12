@@ -17,12 +17,21 @@ public class BTPatrol : BTnode
         //GameObject target = waypoints[WaypointsIndex];
 
         bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+        bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        while(WaypointsIndex < waypoints.Length)
+        
+        while (WaypointsIndex < waypoints.Length && Inplace == false)
         {
             GameObject target = waypoints[WaypointsIndex];
 
-            Debug.LogWarning(WaypointsIndex);
+            //Debug.LogWarning(WaypointsIndex);
+
+            Debug.LogWarning(SeePlayer);
+            if (SeePlayer == true)
+            {
+                status = Status.FAILURE;
+                break;
+            }
 
             if (Vector3.Distance(bt.transform.position, target.transform.position) > 2)
             {

@@ -21,7 +21,7 @@ public class BTEnemyV01 : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        SeePlayer = GetComponent<FieldOfView>().SeePlayer;
+        
 
         BTSequance SequenceA = new BTSequance();
 
@@ -63,6 +63,10 @@ public class BTEnemyV01 : MonoBehaviour
         bt.root = SequenceD;
 
         StartCoroutine(bt.Execute());
+    }
+    private void Update()
+    {
+        SeePlayer = GetComponent<FieldOfView>().SeePlayer;
     }
 
     public void Sleep()

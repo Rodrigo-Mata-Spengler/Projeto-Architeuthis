@@ -16,6 +16,8 @@ public class BTGoToPlace : BTnode
         GameObject npc = bt.gameObject;
         GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
 
+        bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+
         //navmesh
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
@@ -31,9 +33,14 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        while(alvo)
+        while(alvo && SeePlayer == false)
         {
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 0.3f) ;
+            if (SeePlayer == true)
+            {
+                status = Status.FAILURE;
+                break;
+            }
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 0.3f);
             {
                 
                 Controller.MoveToTarget(alvo, agent);
@@ -43,6 +50,7 @@ public class BTGoToPlace : BTnode
                 status = Status.SUCCESS;
                 break;
             }
+
 
             yield return null;
         }

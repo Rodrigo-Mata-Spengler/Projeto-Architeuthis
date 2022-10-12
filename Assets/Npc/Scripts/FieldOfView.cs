@@ -14,8 +14,8 @@ public class FieldOfView : MonoBehaviour
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
-    [HideInInspector]
-    public bool SeePlayer = false;
+    //[HideInInspector]
+    public bool SeePlayer;
 
     private void Start()
     {
@@ -46,16 +46,18 @@ public class FieldOfView : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                
-
                 if(!Physics.Raycast(transform.position, dirToTarget,dstToTarget,AmbienteMask))
                 {
+                   
                     visibleTargets.Add(target);
                     SeePlayer = true;
+                    //Debug.LogWarning("vi");
                 }
                 else
                 {
+                    
                     SeePlayer = false;
+                    //Debug.LogWarning("vi não");
                 }
             }
         }
