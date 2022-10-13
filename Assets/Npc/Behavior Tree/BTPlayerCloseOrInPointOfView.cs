@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BTPlayerCloseOrInPointOfView : BTnode
@@ -19,18 +20,16 @@ public class BTPlayerCloseOrInPointOfView : BTnode
 
         GameObject npcRifleVariant = bt.transform.GetChild(0).gameObject;
 
-        if(SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer || SeePlayer == true)
+        if(Vector3.Distance(npc.transform.position, alvo.transform.position) < 10)
         {
             status = Status.SUCCESS;
-            // npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-            //npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
 
-            
         }
-        if( status == Status.RUNNING);
+        else if(status == Status.RUNNING);
         {
             status = Status.FAILURE;
         }
+
         Print();
         yield break;
     }

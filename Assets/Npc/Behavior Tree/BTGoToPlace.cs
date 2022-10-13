@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,6 +18,9 @@ public class BTGoToPlace : BTnode
         GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
 
         bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+        bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
         //navmesh
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
@@ -33,34 +37,33 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        while(alvo && SeePlayer == false)
+        while(alvo && !SeePlayer)
         {
-            if (SeePlayer == true)
+            if (Vector3.Distance(npc.transform.position, Player.transform.position) < 1f)
             {
+                Debug.LogError("é");
                 status = Status.FAILURE;
-                break;
+
             }
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 0.3f);
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f);
             {
                 
                 Controller.MoveToTarget(alvo, agent);
             }
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 0.3f);
-            {
-                status = Status.SUCCESS;
-                break;
-            }
-
 
             yield return null;
         }
-        if(!alvo)
+
+        //checar se player esta perto
+        if (SeePlayer || !alvo)
         {
-            status=Status.FAILURE;
+           
+            status = Status.FAILURE;
+            
         }
 
-        if(status == Status.RUNNING) status = Status.FAILURE;
-        yield break;
         Print();
+        yield break;
+        
     }
 }

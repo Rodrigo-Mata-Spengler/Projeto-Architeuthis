@@ -21,7 +21,6 @@ public class FieldOfView : MonoBehaviour
     {
         StartCoroutine(FindTargetsWithDelay(.2f));
 
-        
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -51,14 +50,13 @@ public class FieldOfView : MonoBehaviour
                    
                     visibleTargets.Add(target);
                     SeePlayer = true;
-                    //Debug.LogWarning("vi");
+                    Debug.LogWarning("vi");
                 }
                 else
                 {
-                    
                     SeePlayer = false;
-                    //Debug.LogWarning("vi não");
                 }
+
             }
         }
     }

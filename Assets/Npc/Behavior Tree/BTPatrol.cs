@@ -25,7 +25,7 @@ public class BTPatrol : BTnode
             GameObject target = waypoints[WaypointsIndex];
 
             //Debug.LogWarning(WaypointsIndex);
-
+            
             Debug.LogWarning(SeePlayer);
             if (SeePlayer == true)
             {

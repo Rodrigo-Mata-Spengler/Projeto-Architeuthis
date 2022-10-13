@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(FieldOfView))]
+[CustomEditor(typeof(BTEnemyV01))]
 public class FieldOfViewEditor : Editor
 {
     private void OnSceneGUI()
     {
-        FieldOfView fow = (FieldOfView)target;
+        BTEnemyV01 fow = (BTEnemyV01)target;
         Handles.color = Color.white;
         Handles.DrawWireArc(fow.transform.position, Vector3.up, Vector3.forward, 360, fow.viewRadius);
         Vector3 viewAngleA = fow.DirFromAngle(-fow.viewAngle / 2, false);

@@ -12,16 +12,29 @@ public class BTEnemyV01 : MonoBehaviour
 
     public bool InPlace;
 
-    public bool SeePlayer;
-
     [HideInInspector]public NavMeshAgent agent;
 
     public float distToPlayer;
 
+
+    //Field of view
+    public float viewRadius;
+    [Range(0, 360)]
+    public float viewAngle;
+
+    public LayerMask PlayerMask;
+    public LayerMask AmbienteMask;
+
+    [HideInInspector]
+    public List<Transform> visibleTargets = new List<Transform>();
+
+    //[HideInInspector]
+    public bool SeePlayer;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
+        StartCoroutine(FindTargetsWithDelay(.2f));
 
         BTSequance SequenceA = new BTSequance();
 
@@ -64,11 +77,6 @@ public class BTEnemyV01 : MonoBehaviour
 
         StartCoroutine(bt.Execute());
     }
-    private void Update()
-    {
-        SeePlayer = GetComponent<FieldOfView>().SeePlayer;
-    }
-
     public void Sleep()
     {
         StopAllCoroutines();
@@ -96,4 +104,53 @@ public class BTEnemyV01 : MonoBehaviour
 
 
     }
+    IEnumerator FindTargetsWithDelay(float delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delay);
+            FindVisibleTrgets();
+        }
+    }
+    void FindVisibleTrgets()
+    {
+        visibleTargets.Clear();
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, PlayerMask);
+
+        for (int i = 0; i < targetsInViewRadius.Length; i++)
+        {
+            Transform target = targetsInViewRadius[i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
+
+            if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+            {
+                float dstToTarget = Vector3.Distance(transform.position, target.position);
+
+                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, AmbienteMask))
+                {
+
+                    visibleTargets.Add(target);
+                    SeePlayer = true;
+                    Debug.LogWarning("vi");
+                }
+                else
+                {
+                    SeePlayer = false;
+                }
+
+            }
+        }
+    }
+
+    public Vector3 DirFromAngle(float AngleInDegrees, bool AngleIsGlobal)
+    {
+        if (!AngleIsGlobal)
+        {
+            AngleInDegrees += transform.eulerAngles.y;
+        }
+
+        return new Vector3(Mathf.Sin(AngleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(AngleInDegrees * Mathf.Deg2Rad));
+    }
 }
+
+

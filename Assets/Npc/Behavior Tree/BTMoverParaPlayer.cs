@@ -11,53 +11,48 @@ public class BTMoverParaPlayer : BTnode
         Print();
 
         GameObject npc = bt.gameObject;
-        GameObject alvo = null;
         GameObject npcRifleVariant = bt.transform.GetChild(0).gameObject;
 
         float distToPlayer = bt.gameObject.GetComponent<BTEnemyV01>().distToPlayer;
 
-        GameObject[] oponente = GameObject.FindGameObjectsWithTag("Player");
+        GameObject alvo = GameObject.FindGameObjectWithTag("Player");
 
-        float distanciaAlvo = Mathf.Infinity;
-
-       
 
         //navmesh
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
-        foreach (GameObject obj in oponente)
+        while(alvo)
         {
-            if (obj == npc) continue;
-            float distancia = Vector3.Distance(npc.transform.position, obj.transform.position);
 
-            if(distancia < distanciaAlvo)
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 6 && (Vector3.Distance(npc.transform.position, alvo.transform.position) > 2))
             {
-                alvo = obj;
-                distanciaAlvo = distancia;
-            }
-        }
+                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+                npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+                //Controller.MoveToTarget(alvo, agent);
+                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
 
-        while (alvo)
-        {
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 10 && Vector3.Distance(npc.transform.position, alvo.transform.position) < 2)
-            {
-                status = Status.SUCCESS;
-                break;
             }
 
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2)
+
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 6)
             {
                 npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
                 npc.transform.Translate(0, 0, -2 * Time.deltaTime);
 
                 npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+
+                break;
             }
 
-            npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-            //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
-            Controller.MoveToTarget(alvo, agent);
-            npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2 )
+            {
+                status = Status.SUCCESS;
+                break;
+            }
+
+
 
 
 
@@ -69,6 +64,6 @@ public class BTMoverParaPlayer : BTnode
             status = Status.FAILURE;
         }
         Print();
-        
+        yield break;
     }
 }

@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 1236026780}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Enemy
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimColliderLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   debugTransform: {fileID: 952921825}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8429315336687542358
@@ -454,9 +454,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c22a7ec94a952eb4b903a5980ef9f5b2, type: 3}
---- !u!95 &8971775729500201848 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8440107743843982939, guid: c22a7ec94a952eb4b903a5980ef9f5b2,
+--- !u!1 &5095270372181272100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5698573410324667143, guid: c22a7ec94a952eb4b903a5980ef9f5b2,
     type: 3}
   m_PrefabInstance: {fileID: 694521068090342691}
   m_PrefabAsset: {fileID: 0}
@@ -478,8 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63aad1f3aeba6e4fa38c19c61fc8908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pupet: {fileID: 8971775729500201848}
+  pupet: {fileID: 0}
   dano: 0
+  escudo: {fileID: 5095270372181272100}
 --- !u!4 &8971775729500201851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8440107743843982936, guid: c22a7ec94a952eb4b903a5980ef9f5b2,
