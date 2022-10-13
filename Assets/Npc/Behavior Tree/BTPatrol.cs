@@ -16,12 +16,12 @@ public class BTPatrol : BTnode
         int WaypointsIndex = 0;
         //GameObject target = waypoints[WaypointsIndex];
 
-        bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
         
         while (WaypointsIndex < waypoints.Length && Inplace == false)
         {
+            bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
             GameObject target = waypoints[WaypointsIndex];
 
             //Debug.LogWarning(WaypointsIndex);

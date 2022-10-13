@@ -8,6 +8,8 @@ public class BTEnemyV01 : MonoBehaviour
     
     public float Yrotation;
 
+
+
     public GameObject rifle;
 
     public bool InPlace;
@@ -34,7 +36,7 @@ public class BTEnemyV01 : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        StartCoroutine(FindTargetsWithDelay(.2f));
+        StartCoroutine(FindTargetsWithDelay(0.01f));
 
         BTSequance SequenceA = new BTSequance();
 
@@ -104,6 +106,8 @@ public class BTEnemyV01 : MonoBehaviour
 
 
     }
+
+    //fild of view
     IEnumerator FindTargetsWithDelay(float delay)
     {
         while (true)
@@ -131,10 +135,11 @@ public class BTEnemyV01 : MonoBehaviour
 
                     visibleTargets.Add(target);
                     SeePlayer = true;
-                    Debug.LogWarning("vi");
+                    
                 }
                 else
                 {
+                    Debug.LogWarning("vi não");
                     SeePlayer = false;
                 }
 

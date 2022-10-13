@@ -21,13 +21,11 @@ public class BTPlayerNotCloseOrInPointOfView : BTnode
 
         if(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
+            Debug.LogError(SeePlayer);
             status = Status.SUCCESS;
-            //npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-            //npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
 
         }
-
-        if(status == Status.RUNNING)
+        else
         {
             status = Status.FAILURE;
         }

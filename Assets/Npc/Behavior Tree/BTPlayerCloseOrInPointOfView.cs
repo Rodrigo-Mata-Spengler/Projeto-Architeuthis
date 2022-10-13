@@ -20,12 +20,12 @@ public class BTPlayerCloseOrInPointOfView : BTnode
 
         GameObject npcRifleVariant = bt.transform.GetChild(0).gameObject;
 
-        if(Vector3.Distance(npc.transform.position, alvo.transform.position) < 10)
+        if(SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
         {
             status = Status.SUCCESS;
 
         }
-        else if(status == Status.RUNNING);
+        else
         {
             status = Status.FAILURE;
         }

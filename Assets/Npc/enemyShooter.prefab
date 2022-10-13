@@ -171,7 +171,6 @@ GameObject:
   - component: {fileID: 1655122375389045974}
   - component: {fileID: 8990584358609907364}
   - component: {fileID: 8990584358893742090}
-  - component: {fileID: 7655228560055561920}
   m_Layer: 0
   m_Name: enemyShooter
   m_TagString: NPCshooter
@@ -286,9 +285,18 @@ MonoBehaviour:
   Yrotation: 0
   rifle: {fileID: 1152035212874739254}
   InPlace: 0
-  SeePlayer: 0
   agent: {fileID: 0}
   distToPlayer: 10
+  viewRadius: 6.66
+  viewAngle: 101
+  PlayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  AmbienteMask:
+    serializedVersion: 2
+    m_Bits: 129
+  visibleTargets: []
+  SeePlayer: 0
 --- !u!114 &5784400692214474465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +355,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 2
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!195 &8990584358893742090
 NavMeshAgent:
@@ -371,28 +379,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7655228560055561920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092913270447287621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c374f513eee7b124c9be3dc0f422d113, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 10.61
-  viewAngle: 69
-  PlayerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  AmbienteMask:
-    serializedVersion: 2
-    m_Bits: 128
-  visibleTargets: []
-  SeePlayer: 0
 --- !u!1 &4702758474182615902
 GameObject:
   m_ObjectHideFlags: 0

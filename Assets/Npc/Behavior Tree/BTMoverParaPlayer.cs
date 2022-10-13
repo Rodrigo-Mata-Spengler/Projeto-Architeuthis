@@ -25,44 +25,39 @@ public class BTMoverParaPlayer : BTnode
         while(alvo)
         {
 
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 6 && (Vector3.Distance(npc.transform.position, alvo.transform.position) > 2))
+
+            if(Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
             {
-                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-                npc.transform.Translate(0, 0, 3 * Time.deltaTime);
-                //Controller.MoveToTarget(alvo, agent);
-                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-
-            }
-
-
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 6)
-            {
-                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-                npc.transform.Translate(0, 0, -2 * Time.deltaTime);
-
-                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
-
+                status = Status.FAILURE;
                 break;
             }
 
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 4f)
+            {
+                npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+                npc.transform.Translate(0, 0, -8 * Time.deltaTime);
 
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 2 )
+                npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
+                yield return null;
+            }
+
+
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 5f )
             {
                 status = Status.SUCCESS;
                 break;
             }
 
 
-
+            npc.transform.LookAt(new Vector3(alvo.transform.position.x, alvo.transform.position.y, alvo.transform.position.z));
+            //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+            Controller.MoveToTarget(alvo, agent);
+            npcRifleVariant.transform.LookAt(new Vector3(alvo.transform.position.x, alvo.transform.position.y, alvo.transform.position.z));
 
 
             yield return null;
         }
 
-        if (status == Status.RUNNING)
-        {
-            status = Status.FAILURE;
-        }
         Print();
         yield break;
     }
