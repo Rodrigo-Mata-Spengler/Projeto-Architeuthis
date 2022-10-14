@@ -17,7 +17,7 @@ public class BTGoToPlace : BTnode
         GameObject npc = bt.gameObject;
         GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
 
-        bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+        
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
@@ -37,15 +37,17 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        while(alvo && !SeePlayer)
+        while(alvo)
         {
-            if (Vector3.Distance(npc.transform.position, Player.transform.position) < 1f)
-            {
-                Debug.LogError("é");
-                status = Status.FAILURE;
+            bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
 
+          
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, Player.transform.position) < 3f)
+            {
+                status = Status.FAILURE;
+                break;
             }
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f);
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f)
             {
                 
                 Controller.MoveToTarget(alvo, agent);
@@ -53,14 +55,7 @@ public class BTGoToPlace : BTnode
 
             yield return null;
         }
-
-        //checar se player esta perto
-        if (SeePlayer || !alvo)
-        {
-           
-            status = Status.FAILURE;
-            
-        }
+        if(status == Status.RUNNING) status = Status.FAILURE;
 
         Print();
         yield break;

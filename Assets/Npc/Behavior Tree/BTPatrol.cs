@@ -18,7 +18,9 @@ public class BTPatrol : BTnode
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        
+        GameObject alvo = GameObject.FindGameObjectWithTag("Player");
+        GameObject npc = bt.gameObject;
+
         while (WaypointsIndex < waypoints.Length && Inplace == false)
         {
             bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
@@ -26,8 +28,8 @@ public class BTPatrol : BTnode
 
             //Debug.LogWarning(WaypointsIndex);
             
-            Debug.LogWarning(SeePlayer);
-            if (SeePlayer == true)
+           
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < 3f)
             {
                 status = Status.FAILURE;
                 break;
