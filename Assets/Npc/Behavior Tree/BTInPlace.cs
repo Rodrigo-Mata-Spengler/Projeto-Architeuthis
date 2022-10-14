@@ -19,7 +19,6 @@ public class BTInPlace : BTnode
         if (Inplace == true)
         {
             
-            npc.transform.localEulerAngles = new Vector3(0, bt.gameObject.GetComponent<BTEnemyV01>().Yrotation, 0);
             status = Status.SUCCESS;
         }
         else

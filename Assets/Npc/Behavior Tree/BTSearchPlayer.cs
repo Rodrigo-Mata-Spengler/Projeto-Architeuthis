@@ -20,21 +20,23 @@ public class BTSearchPlayer : BTnode
         GameObject npc = bt.gameObject;
 
 
-        rotY = Mathf.Clamp(rotY, -60, 60);
+        
 
+        
         while(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
             SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
-            //npc.transform.localEulerAngles = new Vector3(0, rotY * Time.deltaTime * 3, 0);
+            npc.transform.localEulerAngles = new Vector3(0, bt.gameObject.GetComponent<BTEnemyV01>().Yrotation, 0);
+            //npc.transform.rotation = Quaternion.Euler(0f, rotY * Time.deltaTime * 5000, 0f);
 
-            if(rotY == 60)
+            /*if (rotY >= 60.0f)
             {
-                rotY -= 1;
+                rotY -= 1f;
             }
-            if (rotY == -60)
+            if (rotY <= -60.0f)
             {
-                rotY += 1;
-            }
+                rotY += 1f;
+            }*/
 
             if(SeePlayer == true)
             {

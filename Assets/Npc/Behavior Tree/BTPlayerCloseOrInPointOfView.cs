@@ -22,7 +22,7 @@ public class BTPlayerCloseOrInPointOfView : BTnode
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        if (SeePlayer == true && Inplace == false || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
+        if (SeePlayer == true  || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
         {
             status = Status.SUCCESS;
 
