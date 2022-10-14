@@ -21,7 +21,7 @@ public class BTPlayerNotCloseOrInPointOfView : BTnode
 
         if(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
-            Debug.LogError(SeePlayer);
+            //Debug.LogError(SeePlayer);
             status = Status.SUCCESS;
 
         }

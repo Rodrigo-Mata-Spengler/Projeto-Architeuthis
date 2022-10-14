@@ -131,17 +131,13 @@ public class BTEnemyV01 : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, AmbienteMask))
-                {
+                SeePlayer = false;
 
+                if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, AmbienteMask))
+                {
                     visibleTargets.Add(target);
                     SeePlayer = true;
                     
-                }
-                else
-                {
-                    Debug.LogWarning("vi não");
-                    SeePlayer = false;
                 }
 
             }
