@@ -287,8 +287,8 @@ MonoBehaviour:
   InPlace: 0
   agent: {fileID: 0}
   distToPlayer: 10
-  viewRadius: 6.66
-  viewAngle: 101
+  viewRadius: 12.77
+  viewAngle: 71
   PlayerMask:
     serializedVersion: 2
     m_Bits: 8

@@ -24,8 +24,8 @@ public class BTSearchPlayer : BTnode
 
         while(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
-
-            npc.transform.localEulerAngles = new Vector3(0, rotY * Time.deltaTime * 3, 0);
+            SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+            //npc.transform.localEulerAngles = new Vector3(0, rotY * Time.deltaTime * 3, 0);
 
             if(rotY == 60)
             {

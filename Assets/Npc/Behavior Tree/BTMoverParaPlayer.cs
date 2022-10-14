@@ -26,11 +26,11 @@ public class BTMoverParaPlayer : BTnode
         {
 
 
-            if(Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
+            /*if(Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
             {
                 status = Status.FAILURE;
                 break;
-            }
+            }*/
 
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 4f)
             {
