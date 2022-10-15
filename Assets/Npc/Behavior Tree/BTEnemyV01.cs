@@ -8,7 +8,7 @@ public class BTEnemyV01 : MonoBehaviour
     
     public float Yrotation;
 
-
+    public Transform area;
 
     public GameObject rifle;
 
@@ -80,10 +80,20 @@ public class BTEnemyV01 : MonoBehaviour
         StartCoroutine(bt.Execute());
     }
 
+
+
     public void Sleep()
     {
         StopAllCoroutines();
     }
+    public void MoveToTarget(GameObject target, NavMeshAgent agent)
+    {
+        agent.SetDestination(target.transform.position);
+    }
+
+    
+    //Not Random Patrol
+    /*
     public void UpdateDestination(GameObject target, GameObject[] waypoints, int waypointsIndex, NavMeshAgent agent)
     {
         target = waypoints[waypointsIndex];
@@ -91,10 +101,8 @@ public class BTEnemyV01 : MonoBehaviour
 
        
     }
-    public void MoveToTarget(GameObject target, NavMeshAgent agent)
-    {
-        agent.SetDestination(target.transform.position);
-    }
+
+    
     public void IterateWaypoints(int waypointsIndex, GameObject[]waypoints)
     {
 
@@ -106,7 +114,26 @@ public class BTEnemyV01 : MonoBehaviour
         Debug.LogWarning(waypointsIndex);
 
 
+    }*/
+
+    //Random Patrol
+
+    public bool RandomPoint(Vector3 center,float range, out Vector3 result)
+    {
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+        NavMeshHit hit;
+
+        if(NavMesh.SamplePosition(randomPoint, out hit,  1.0f, NavMesh.AllAreas))
+        {
+            result = hit.position;
+            return true;
+        }
+
+        result = Vector3.zero;
+        return false;
     }
+
+
 
     //fild of view
     IEnumerator FindTargetsWithDelay(float delay)

@@ -13,7 +13,7 @@ public class BTPatrol : BTnode
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         GameObject[] waypoints = GameObject.FindGameObjectsWithTag("WayPoint");
-        int WaypointsIndex = 0;
+        //int WaypointsIndex = 0;
         //GameObject target = waypoints[WaypointsIndex];
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
@@ -21,6 +21,36 @@ public class BTPatrol : BTnode
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
         GameObject npc = bt.gameObject;
 
+        Transform area = bt.gameObject.GetComponent<BTEnemyV01>().area;
+
+
+        //Random Patrol
+        while (status == Status.RUNNING)
+        {
+            bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < 3f)
+            {
+                status = Status.FAILURE;
+                break;
+            }
+
+            if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+            {
+                Vector3 point;
+                if (Controller.RandomPoint(area.position, 20f, out point)) //pass in our centre point and radius of area
+                {
+                    Debug.DrawRay(point, Vector3.up, Color.blue, 10f); //so you can see with gizmos
+                    agent.SetDestination(point);
+                }
+            }
+
+            yield return null;
+        }
+        Print();
+        yield break;
+
+        //Not Random Patrol
+        /*
         while (WaypointsIndex < waypoints.Length && Inplace == false)
         {
             bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
@@ -53,9 +83,7 @@ public class BTPatrol : BTnode
                 
             }
             yield return null;
-        }
+        }*/
 
-        Print();
-        yield break;
     }
 }
