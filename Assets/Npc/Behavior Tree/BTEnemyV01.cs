@@ -40,6 +40,7 @@ public class BTEnemyV01 : MonoBehaviour
 
         BTSequance SequenceA = new BTSequance();
 
+        SequenceA.children.Add(new BTInPlace());
         SequenceA.children.Add(new BTPlayerCloseOrInPointOfView());
         SequenceA.children.Add(new BTMoverParaPlayer());
 
@@ -72,6 +73,7 @@ public class BTEnemyV01 : MonoBehaviour
 
         SequenceD.children.Add(SelectorA);
         SequenceD.children.Add(SelectorB);
+        SequenceD.children.Add(new BTAim());
         SequenceD.children.Add(new BTAtirar());
 
         BehaviorTree bt = GetComponent<BehaviorTree>();

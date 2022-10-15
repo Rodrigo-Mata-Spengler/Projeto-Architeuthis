@@ -16,13 +16,13 @@ public class BTMoverParaPlayer : BTnode
         float distToPlayer = bt.gameObject.GetComponent<BTEnemyV01>().distToPlayer;
 
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
-
+        bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
         //navmesh
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
-        while(alvo)
+        while(alvo && Inplace == false)
         {
 
 
