@@ -27,7 +27,7 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] private float gastoStamina = 6;//gasto de estamina
 
-    [SerializeField] private GameObject maincamera;//pega o look at
+    [SerializeField] private GameObject Head;//pega o look at
 
     [SerializeField] private float maxAngulo;//angulo maximo do eixo x da camera
     [SerializeField] private float minAgulo;//angulo minimo do eixo x da camera
@@ -90,7 +90,7 @@ public class MovePlayer : MonoBehaviour
         rotation += Input.GetAxis("Mouse Y") * sensicamera;
 
         rotation = Mathf.Clamp(rotation,minAgulo,maxAngulo);
-        maincamera.transform.localEulerAngles = new Vector3(rotation * -1,0,0);
+        Head.transform.localEulerAngles = new Vector3(rotation * -1,0,0);
     }
 
     
