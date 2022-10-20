@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Yrotation: 0
+  area: {fileID: 0}
   rifle: {fileID: 1152035212874739254}
   InPlace: 0
   agent: {fileID: 0}
