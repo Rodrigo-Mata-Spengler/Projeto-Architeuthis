@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 
-public class BTAim: BTnode
+public class BTNotInPlace : BTnode
 {
     public override IEnumerator Run(BehaviorTree bt)
     {
         status = Status.RUNNING;
         Print();
 
-        GameObject alvo = GameObject.FindGameObjectWithTag("Player");
-        GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
+        bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        if (rifle.GetComponent<RifleNpc>().Aim(alvo))
+        GameObject npc = bt.gameObject;
+        GameObject alvo = GameObject.FindGameObjectWithTag("Player");
+
+        
+        if (Inplace == true)
         {
-            status = Status.SUCCESS;
-            Print();
             
+            status = Status.FAILURE;
         }
         else
         {
-            status = Status.FAILURE;
-            Print();
-            yield break;
+            status = Status.SUCCESS;
         }
         Print();
         yield break;

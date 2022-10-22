@@ -40,7 +40,7 @@ public class BTEnemyV01 : MonoBehaviour
 
         BTSequance SequenceA = new BTSequance();
 
-        SequenceA.children.Add(new BTInPlace());
+       SequenceA.children.Add(new BTNotInPlace());
         SequenceA.children.Add(new BTPlayerCloseOrInPointOfView());
         SequenceA.children.Add(new BTMoverParaPlayer());
 

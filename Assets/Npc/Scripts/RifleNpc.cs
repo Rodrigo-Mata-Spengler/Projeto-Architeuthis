@@ -5,11 +5,11 @@ using UnityEngine;
 public class RifleNpc : MonoBehaviour
 {
     public int Maxammo;
-    [HideInInspector]
+    
     public int ammo;
 
     public float FireRate = 15f;
-    public float NextTimeToFire = 0f;
+    [HideInInspector]public float NextTimeToFire = 0f;
 
     [SerializeField] private GameObject pfBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
@@ -17,9 +17,13 @@ public class RifleNpc : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
+    [SerializeField] private Transform Npc;
+
     private void Start()
     {
         ammo = Maxammo;
+
+        pfBulletProjectile.GetComponent<NpcRifleBullet>().speed = bulletvelocity;
     }
     
     public bool Recharge()
@@ -30,17 +34,15 @@ public class RifleNpc : MonoBehaviour
 
     public bool Aim(GameObject Player)
     {
+        Npc.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
         gameObject.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
         return true;
     }
     public bool Fire()
     {
         
-        if (ammo <= 0 || !(Time.time >= NextTimeToFire))
-        {
-            return false;
-        }
-        else
+
+        if(ammo > 0 && Time.time >= NextTimeToFire)
         {
             NextTimeToFire = Time.time + 1f / FireRate;
             ammo--;
@@ -50,6 +52,10 @@ public class RifleNpc : MonoBehaviour
             
 
             return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

@@ -37,21 +37,19 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        while(alvo)
+        while(Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f)
         {
             bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
             bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-            if (SeePlayer == true || Vector3.Distance(npc.transform.position, Player.transform.position) < 3f)
+            Controller.MoveToTarget(alvo, agent);
+
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, Player.transform.position) < 4f)
             {
                 status = Status.FAILURE;
                 break;
             }
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f)
-            {
-                
-                Controller.MoveToTarget(alvo, agent);
-            }
+            
             if(Inplace == true)
             {
                 status = Status.SUCCESS;
@@ -59,7 +57,6 @@ public class BTGoToPlace : BTnode
             }
             yield return null;
         }
-        if(status == Status.RUNNING) status = Status.FAILURE;
 
         Print();
         yield break;

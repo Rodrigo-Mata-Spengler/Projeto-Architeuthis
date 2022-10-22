@@ -21,7 +21,7 @@ public class NpcRifleBullet : MonoBehaviour
     }
     void Update()
     {
-
+        Destroy(gameObject, tempoDeVida);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -30,7 +30,7 @@ public class NpcRifleBullet : MonoBehaviour
             other.GetComponent<Health>().DamageHealth(Damage);
             Destroy(gameObject);
         }
-        Destroy(gameObject);
+        
 
     }
 }

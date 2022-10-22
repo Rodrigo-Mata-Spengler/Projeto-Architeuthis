@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour
 {
+    [SerializeField] private float tempoDeVida = 4f;
     private Rigidbody bulletRb;
     public float speed;
 
@@ -18,6 +19,10 @@ public class BulletProjectile : MonoBehaviour
         
         bulletRb.velocity = transform.forward * speed;
     }
+    private void Update()
+    {
+        Destroy(gameObject, tempoDeVida);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,7 +31,7 @@ public class BulletProjectile : MonoBehaviour
             other.GetComponent<EnemyHealth>().DamageHealth(Damage);
             Destroy(gameObject);
         }
-        Destroy(gameObject);
+        
 
     }
 }

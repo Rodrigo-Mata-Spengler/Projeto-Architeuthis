@@ -19,11 +19,11 @@ public class BTSearchPlayer : BTnode
 
         GameObject npc = bt.gameObject;
 
+        bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        
 
-        
-        while(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
+
+        while (SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
             SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
             npc.transform.localEulerAngles = new Vector3(0, bt.gameObject.GetComponent<BTEnemyV01>().Yrotation, 0);
@@ -38,9 +38,18 @@ public class BTSearchPlayer : BTnode
                 rotY += 1f;
             }*/
 
-            if(SeePlayer == true)
+            if(SeePlayer == true )
             {
                 status = Status.SUCCESS;
+                break;
+            }
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
+            {
+                Inplace = false;
+
+
+                status = Status.FAILURE;
+                
                 break;
             }
 

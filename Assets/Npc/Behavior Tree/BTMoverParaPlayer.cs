@@ -32,7 +32,7 @@ public class BTMoverParaPlayer : BTnode
                 break;
             }*/
 
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 4f)
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 4f)
             {
                 npc.transform.LookAt(new Vector3(alvo.transform.position.x, -0.5f, alvo.transform.position.z));
                 npc.transform.Translate(0, 0, -8 * Time.deltaTime);
