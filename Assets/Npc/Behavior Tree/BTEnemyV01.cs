@@ -40,7 +40,7 @@ public class BTEnemyV01 : MonoBehaviour
 
         BTSequance SequenceA = new BTSequance();
 
-       SequenceA.children.Add(new BTNotInPlace());
+        //SequenceA.children.Add(new BTNotInPlace());
         SequenceA.children.Add(new BTPlayerCloseOrInPointOfView());
         SequenceA.children.Add(new BTMoverParaPlayer());
 
@@ -88,12 +88,18 @@ public class BTEnemyV01 : MonoBehaviour
     {
         StopAllCoroutines();
     }
-    public void MoveToTarget(GameObject target, NavMeshAgent agent)
+    public void MoveToTarget(GameObject target, NavMeshAgent agent, float StopDistance)
     {
+        agent.stoppingDistance = StopDistance;
         agent.SetDestination(target.transform.position);
     }
+    public void MoveAwayFromTarget(GameObject target, NavMeshAgent agent )
+    {
+        
+        agent.SetDestination(-target.transform.position);
+    }
 
-    
+
     //Not Random Patrol
     /*
     public void UpdateDestination(GameObject target, GameObject[] waypoints, int waypointsIndex, NavMeshAgent agent)
@@ -160,7 +166,7 @@ public class BTEnemyV01 : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                SeePlayer = false;
+                
 
                 if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, AmbienteMask))
                 {

@@ -86876,7 +86876,7 @@ PrefabInstance:
     - target: {fileID: 2092913270447287616, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
       propertyPath: distToPlayer
-      value: 4
+      value: 7.05
       objectReference: {fileID: 0}
     - target: {fileID: 2092913270447287617, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
@@ -86886,17 +86886,17 @@ PrefabInstance:
     - target: {fileID: 2092913270447287617, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.15
+      value: -8.4
       objectReference: {fileID: 0}
     - target: {fileID: 2092913270447287617, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.84
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 2092913270447287617, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.73
+      value: -8.44
       objectReference: {fileID: 0}
     - target: {fileID: 2092913270447287617, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
         type: 3}
@@ -86937,6 +86937,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemyShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_Drag
+      value: 21.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358609907364, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990584358893742090, guid: 2bb93ed0da1d0a74daae22bd3022cc96,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bb93ed0da1d0a74daae22bd3022cc96, type: 3}

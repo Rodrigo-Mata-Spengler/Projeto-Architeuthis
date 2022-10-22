@@ -9,7 +9,7 @@ public class BTSearchPlayer : BTnode
         status = Status.RUNNING;
         Print();
 
-        float rotY = 1;
+        
 
         float distToPlayer = bt.gameObject.GetComponent<BTEnemyV01>().distToPlayer;
 

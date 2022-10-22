@@ -9,9 +9,11 @@ public class BTPlaceAvailable : BTnode
         status = Status.RUNNING;
         Print();
 
+        bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+
         GameObject Place = GameObject.FindGameObjectWithTag("Place");
 
-        if(Place)
+        if(Place && SeePlayer == false)
         {
             status = Status.SUCCESS;
         }
