@@ -32,7 +32,7 @@ public class AmmoRifle : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         pfBulletProjectile.GetComponent<BulletProjectile>().speed = bulletvelocity;
-        
+
     }
     // Update is called once per frame
     void Update()
@@ -65,17 +65,14 @@ public class AmmoRifle : MonoBehaviour
 
         }
 
-        if (Input.GetButton("Fire1")&& Time.time>= NextTimeToFire && ammo > 0) //atira
+        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo > 0) //atira
         {
             NextTimeToFire = Time.time + 1f / FireRate;
 
             ammo--;
 
+            Shoot();
 
-            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir,Vector3.up));
-
-           
         }
     }
 
@@ -90,6 +87,13 @@ public class AmmoRifle : MonoBehaviour
         {
             MaxBag += Ammoamount;
         }
+
+    }
+    public void Shoot()
+    {
+        Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+        Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
 
     }
 }

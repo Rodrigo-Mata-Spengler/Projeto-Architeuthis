@@ -24,9 +24,13 @@ public class Ammo : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
+    public Transform NormalPosition;
+    public Transform AimPosition;
+    public Transform Torso;
+
     private int MaxPistolBag;
 
-    
+    public float AimSpeed;
 
     private void Start()
     {
@@ -45,26 +49,7 @@ public class Ammo : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R)  && MaxBag > 0)
         {
-
-            if(MaxBag <= 30)
-            {
-                int subB = (ammo - MaxBag) * -1;
-                ammo += subB;
-                MaxBag -= subB;
-            }
-            if((MaxBag + ammo) < 30)
-            {
-                ammo = MaxBag + ammo;
-
-                MaxBag -= MaxBag;
-            }
-            else
-            {
-                int sub = ammo - Maxammo;
-                sub = sub * -1;
-                ammo += sub;
-                MaxBag -= sub;
-            }
+            Reload();
 
         }
 
@@ -73,12 +58,11 @@ public class Ammo : MonoBehaviour
             NextTimeToFire = Time.time + 1f / FireRate;
 
             ammo--;
+            Shoot();
 
-            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-
-           
         }
+
+        Aim(Input.GetMouseButton(1));
 
     }
 
@@ -92,6 +76,51 @@ public class Ammo : MonoBehaviour
         else
         {
             MaxBag +=Ammoamount; 
+        }
+
+    }
+
+    public void Shoot()
+    {
+        Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+        Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+
+    }
+
+    public void Aim(bool IsAiming)
+    {
+
+        if(IsAiming)
+        {
+            Torso.position = Vector3.Lerp(Torso.position, AimPosition.position, Time.deltaTime * AimSpeed);
+        }
+        else
+        {
+            Torso.position = Vector3.Lerp(Torso.position, NormalPosition.position, Time.deltaTime * AimSpeed);
+        }
+    }
+
+    public void Reload()
+    {
+        if (MaxBag <= 30)
+        {
+            int subB = (ammo - MaxBag) * -1;
+            ammo += subB;
+            MaxBag -= subB;
+        }
+        if ((MaxBag + ammo) < 30)
+        {
+            ammo = MaxBag + ammo;
+
+            MaxBag -= MaxBag;
+        }
+        else
+        {
+            int sub = ammo - Maxammo;
+            sub = sub * -1;
+            ammo += sub;
+            MaxBag -= sub;
         }
 
     }
