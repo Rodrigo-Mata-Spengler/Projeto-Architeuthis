@@ -1,66 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2960641446251168841
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3639353733477082201}
-  - component: {fileID: 8361040179109127132}
-  - component: {fileID: 9111922179738981300}
-  m_Layer: 0
-  m_Name: atack area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3639353733477082201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960641446251168841}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.049000014, z: 0.823}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8440107743843982936}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8361040179109127132
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960641446251168841}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9111922179738981300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960641446251168841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63aad1f3aeba6e4fa38c19c61fc8908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pupet: {fileID: 2075313405736810298}
-  dano: 2
-  escudo: {fileID: 5698573410324667143}
 --- !u!1 &5698573410324667143
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8440107743843982936}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &883406833357370425
 BoxCollider:
@@ -116,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403502054779926589}
   - component: {fileID: 2075313405736810298}
+  - component: {fileID: 8497106753593739137}
   m_Layer: 0
   m_Name: eixo
   m_TagString: Untagged
@@ -159,6 +99,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8497106753593739137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156119847121744528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63aad1f3aeba6e4fa38c19c61fc8908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pupet: {fileID: 2075313405736810298}
+  dano: 2
+  escudo: {fileID: 5698573410324667143}
 --- !u!1 &8440107743843982937
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +143,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 403502054779926589}
-  - {fileID: 3639353733477082201}
   - {fileID: 8244321081549240696}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -287,7 +241,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.75
+  m_Height: 3.75
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0.76, z: -0.00000008940697}
