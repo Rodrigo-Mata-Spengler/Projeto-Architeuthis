@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 2092913270447287619}
   - component: {fileID: 2092913270447287616}
   - component: {fileID: 5784400692214474465}
-  - component: {fileID: 2495673250222464907}
   - component: {fileID: 1655122375389045974}
   - component: {fileID: 8990584358609907364}
   - component: {fileID: 8990584358893742090}
@@ -413,22 +412,6 @@ MonoBehaviour:
   Life: 100
   maxLife: 100
   pointsGive: 0
---- !u!114 &2495673250222464907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092913270447287621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741f6a0176a63a3478eeb1cd18901467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tipo: 0
-  spawnSistem: {fileID: 0}
-  awake: 0
-  restPlace: {x: 0, y: 0, z: 0}
 --- !u!114 &1655122375389045974
 MonoBehaviour:
   m_ObjectHideFlags: 0

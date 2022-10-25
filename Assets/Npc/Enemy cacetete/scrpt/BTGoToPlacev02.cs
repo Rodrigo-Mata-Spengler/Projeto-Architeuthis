@@ -1,0 +1,65 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class BTGoToPlacev02 : BTnode
+{
+    public override IEnumerator Run(BehaviorTree bt)
+    {
+        status = Status.RUNNING;
+        Print();
+
+        GameObject alvo = null;
+
+        float distToPlace = Mathf.Infinity;
+        GameObject npc = bt.gameObject;
+        GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
+
+
+
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+
+        //navmesh
+        NavMeshAgent agent = bt.GetComponent<BTEnemyCAceteteV01>().agent;
+        BTEnemyCAceteteV01 Controller = bt.GetComponent<BTEnemyCAceteteV01>();
+
+        foreach (GameObject place in Places)
+        {
+            float dist = Vector3.Distance(npc.transform.position, place.transform.position);
+
+            if (dist < distToPlace)
+            {
+                alvo = place;
+                distToPlace = dist;
+            }
+        }
+
+        while (Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f)
+        {
+            bool SeePlayer = bt.gameObject.GetComponent<BTEnemyCAceteteV01>().SeePlayer;
+            bool Inplace = bt.gameObject.GetComponent<BTEnemyCAceteteV01>().InPlace;
+
+            Controller.MoveToTarget(alvo, agent);
+
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, Player.transform.position) < 4f)
+            {
+                status = Status.FAILURE;
+                break;
+            }
+
+            if (Inplace == true)
+            {
+                status = Status.SUCCESS;
+                break;
+            }
+            yield return null;
+        }
+
+        Print();
+        yield break;
+
+    }
+}
