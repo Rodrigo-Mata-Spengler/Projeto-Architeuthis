@@ -121,7 +121,7 @@ MonoBehaviour:
   spawnBulletPosition: {fileID: 4702758474182615903}
   SphereDebug: {fileID: 2092913269629907339}
   bulletvelocity: 70
-  Npc: {fileID: 0}
+  Npc: {fileID: 2092913270447287617}
 --- !u!1 &1481846276886034376
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,12 +24,12 @@ public class BTMoverParaPlayerv02 : BTnode
         while (alvo)
         {
 
-            npc.transform.LookAt(new Vector3(0, alvo.transform.position.y, 0));
+            //npc.transform.LookAt(new Vector3(0, alvo.transform.position.y, 0));
 
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 1.5f)
             {
                 
-                Controller.MoveAwayFromTarget(alvo, agent);
+                //Controller.MoveAwayFromTarget(alvo, agent);
                 //npc.transform.Translate(0, 0, -8 * Time.deltaTime);
                 status = Status.SUCCESS;
 
