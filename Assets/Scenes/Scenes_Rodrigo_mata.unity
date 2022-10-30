@@ -122,14 +122,14 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 4c6bd90dac03383498661e1189b5116e, type: 2}
 --- !u!43 &289862888
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-337846
+  m_Name: pb_Mesh-4600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -304,7 +304,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &539676393
 MeshCollider:
@@ -385,6 +385,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742274025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 921572718166215866, guid: 6fc2075f865b512458a9e464afb0e6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1957181207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &769582466
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +496,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-337834
+  m_Name: pb_Mesh-4588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -648,7 +660,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-337864
+  m_Name: pb_Mesh-4618
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -816,8 +828,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1279571590}
   - component: {fileID: 1279571591}
+  - component: {fileID: 1279571592}
   m_Layer: 0
-  m_Name: Npc controler
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,20 +868,42 @@ MonoBehaviour:
   maxSize: 10
   maxSizeSpawns: 3
   npc:
-  - {fileID: 3485281325334878601, guid: f61991689f0ce0a489c896a1977de414, type: 3}
-  - {fileID: 3247076198126723315, guid: 292deebd87b518949b69fcc1ebee91cc, type: 3}
-  - {fileID: 5588827336370215412, guid: ef017eb5e9cd3d447b49a10938cdb90b, type: 3}
+  - {fileID: 2092913270447287621, guid: 2bb93ed0da1d0a74daae22bd3022cc96, type: 3}
+  - {fileID: 2092913270447287621, guid: 2bb93ed0da1d0a74daae22bd3022cc96, type: 3}
+  - {fileID: 2092913270447287621, guid: 2bb93ed0da1d0a74daae22bd3022cc96, type: 3}
   spawnArea:
   - {fileID: 913778908}
   - {fileID: 769582467}
   - {fileID: 827502737}
+  plane: {fileID: 539676396}
+  itemDrop:
+  - {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c, type: 3}
+  - {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d, type: 3}
+  - {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c, type: 3}
+--- !u!114 &1279571592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279571588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ce8ae51cfd68b498b7d4aa56d04c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointsNextLevel: 900
+  pointsToPass: 0
+  PressText: {fileID: 0}
+  IsFullText: {fileID: 0}
+  ActiveText: 0
 --- !u!43 &1340038200
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-337806
+  m_Name: pb_Mesh-4560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1033,6 +1068,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 2136461805}
+    - target: {fileID: 2034852167, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: AmmoBagText
+      value: 
+      objectReference: {fileID: 742274025}
     - target: {fileID: 828515376660908316, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_Mesh
@@ -1168,6 +1211,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1340038200}
+    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 2136461805}
+    - target: {fileID: 8605416721844293219, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: AmmoBagText
+      value: 
+      objectReference: {fileID: 742274025}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
 --- !u!43 &1951867516
@@ -1176,7 +1229,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-337818
+  m_Name: pb_Mesh-4572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1568,3 +1621,15 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &2136461805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 921572718823088459, guid: 6fc2075f865b512458a9e464afb0e6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1957181207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -25,7 +25,6 @@ public class EnemyHealth : MonoBehaviour
     }
     void Update()
     {
-        pointsGive = Random.Range(1, 5);
 
         if (Life <= 0)
         {
@@ -51,9 +50,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void NPCReset()
     {
-        
-        transform.gameObject.GetComponent<SleepAndReset>().BackToCloset();
-        Life = maxLife;
+
+        Destroy(gameObject);
     }
 
 }

@@ -22,6 +22,10 @@ public class HordeSystem : MonoBehaviour
 
     private int[] hordaSpawn = { 0, 0, 0 };
 
+    [SerializeField] Transform plane;
+
+    [SerializeField] GameObject[] itemDrop;
+
 
     private void Start()
     {
@@ -53,7 +57,11 @@ public class HordeSystem : MonoBehaviour
         {
             for (int z = 0; z < hordasize[i]; z++)
             {
-                Instantiate(npc[i],spawnArea[hordaSpawn[i]].position, spawnArea[hordaSpawn[i]].rotation);
+                GameObject aux = Instantiate(npc[i],spawnArea[hordaSpawn[i]].position, spawnArea[hordaSpawn[i]].rotation);
+
+                aux.GetComponent<BTEnemyV01>().area = plane;
+
+                aux.GetComponent<DropItem>().ResourceDrop = Drop();
                 yield return new WaitForSeconds(.5f);
             }
             yield return new WaitForSeconds(.5f);
@@ -69,5 +77,12 @@ public class HordeSystem : MonoBehaviour
             SpawnHorda();
 
         }
+    }
+
+    private GameObject Drop()
+    {
+        int a = Random.Range(0,itemDrop.Length);
+        return itemDrop[a];
+        
     }
 }
