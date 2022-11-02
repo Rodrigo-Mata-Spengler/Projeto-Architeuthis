@@ -26,12 +26,36 @@ public class Ammo : MonoBehaviour
 
     public Transform NormalPosition;
     public Transform AimPosition;
+    public Transform Head;
     public Transform Torso;
 
     private int MaxPistolBag;
 
     public float AimSpeed;
 
+    [Header("RecoilSettings")]
+    public float rotationSpeed = 6;
+    public float returnSpeed = 25;
+
+    [Header("HipFire")]
+    public Vector3 RecoilRotation = new Vector3(2.0f, 2.0f, 2.0f);
+
+    [Header("Aiming")]
+    public Vector3 RecoilRotationAiming = new Vector3(0.5f, 0.5f, 1.5f);
+
+    [Header("State")]
+    public bool aiming;
+
+    private Vector3 currentRotation;
+    private Vector3 rot;
+
+
+    private void FixedUpdate()
+    {
+        currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
+        rot = Vector3.Slerp(rot, currentRotation, rotationSpeed * Time.deltaTime);
+        Head.transform.localRotation = Quaternion.Euler(rot);
+    }
     private void Start()
     {
         
@@ -62,6 +86,16 @@ public class Ammo : MonoBehaviour
 
         }
 
+        if (Input.GetButton("Fire2"))
+        {
+            aiming = true;
+        }
+        else
+        {
+            aiming = false;
+        }
+        
+
         Aim(Input.GetMouseButton(1));
 
     }
@@ -82,24 +116,41 @@ public class Ammo : MonoBehaviour
 
     public void Shoot()
     {
-        Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-        Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+        if (aiming)
+        {
+            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+            currentRotation += new Vector3(-RecoilRotationAiming.x, Random.Range(-RecoilRotationAiming.y, RecoilRotationAiming.y), Random.Range(-RecoilRotationAiming.z, RecoilRotationAiming.z));
+
+        }
+        else
+        {
+            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+
+            currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
+        }
+       
 
 
     }
 
+    
     public void Aim(bool IsAiming)
     {
 
         if(IsAiming)
         {
             Torso.position = Vector3.Lerp(Torso.position, AimPosition.position, Time.deltaTime * AimSpeed);
+            
         }
         else
         {
             Torso.position = Vector3.Lerp(Torso.position, NormalPosition.position, Time.deltaTime * AimSpeed);
         }
     }
+    
 
     public void Reload()
     {
