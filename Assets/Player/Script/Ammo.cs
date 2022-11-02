@@ -26,7 +26,7 @@ public class Ammo : MonoBehaviour
 
     public Transform NormalPosition;
     public Transform AimPosition;
-    public Transform Head;
+    public Transform MainCamera;
     public Transform Torso;
 
     private int MaxPistolBag;
@@ -54,7 +54,7 @@ public class Ammo : MonoBehaviour
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
         rot = Vector3.Slerp(rot, currentRotation, rotationSpeed * Time.deltaTime);
-        Head.transform.localRotation = Quaternion.Euler(rot);
+        MainCamera.transform.localRotation = Quaternion.Euler(rot);
     }
     private void Start()
     {

@@ -2416,6 +2416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4116279699934964302, guid: 0484bf3c873e0df41826d6e7b3baf710,
         type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 166519573}
+    - target: {fileID: 4116279699934964302, guid: 0484bf3c873e0df41826d6e7b3baf710,
+        type: 3}
       propertyPath: AimPosition
       value: 
       objectReference: {fileID: 1829584546483495588}
@@ -2554,6 +2559,11 @@ PrefabInstance:
       propertyPath: AimSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5659216216646944811, guid: 26937c803f592d64ebda9f3683fa7166,
+        type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 166519573}
     - target: {fileID: 5659216216646944811, guid: 26937c803f592d64ebda9f3683fa7166,
         type: 3}
       propertyPath: AimPosition
