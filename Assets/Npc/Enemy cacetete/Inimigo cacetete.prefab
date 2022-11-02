@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Yrotation: 0
   area: {fileID: 0}
-  Cacetete: {fileID: 1634942333845935615}
+  Cacetete: {fileID: 8350127069330751829}
   InPlace: 0
   agent: {fileID: 0}
   distToPlayer: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
     m_Bits: 129
   visibleTargets: []
   SeePlayer: 0
-  porcentagemdefender: 0
+  porcentagemdefender: 10
 --- !u!195 &8522213474263135634
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

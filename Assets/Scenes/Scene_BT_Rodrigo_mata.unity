@@ -559,26 +559,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8522213474263135634, guid: 79ac9793838bed6498bc037a1d97a735,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
         type: 3}
       propertyPath: area
       value: 
       objectReference: {fileID: 584327654}
-    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
-        type: 3}
-      propertyPath: Cacetete
-      value: 
-      objectReference: {fileID: 9177716643591552157}
-    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
-        type: 3}
-      propertyPath: porcentagemdefender
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8522213474263135642, guid: 79ac9793838bed6498bc037a1d97a735,
         type: 3}
       propertyPath: m_Name
@@ -641,15 +626,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79ac9793838bed6498bc037a1d97a735, type: 3}
---- !u!114 &9177716643591552157 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8350127069330751829, guid: 79ac9793838bed6498bc037a1d97a735,
-    type: 3}
-  m_PrefabInstance: {fileID: 8522213475776280104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a1331d6fa0f4640969dd56d225d4bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

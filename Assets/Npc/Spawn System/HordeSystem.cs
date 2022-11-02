@@ -59,7 +59,14 @@ public class HordeSystem : MonoBehaviour
             {
                 GameObject aux = Instantiate(npc[i],spawnArea[hordaSpawn[i]].position, spawnArea[hordaSpawn[i]].rotation);
 
-                aux.GetComponent<BTEnemyV01>().area = plane;
+                if (aux.GetComponent<BTEnemyV01>())
+                {
+                    aux.GetComponent<BTEnemyV01>().area = plane;
+
+                }else if (aux.GetComponent<BTEnemyCAceteteV01>())
+                {
+                    aux.GetComponent<BTEnemyCAceteteV01>().area = plane;
+                }
 
                 aux.GetComponent<DropItem>().ResourceDrop = Drop();
                 yield return new WaitForSeconds(.5f);
