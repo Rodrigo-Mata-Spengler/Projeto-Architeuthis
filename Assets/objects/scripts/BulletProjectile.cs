@@ -29,7 +29,10 @@ public class BulletProjectile : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealth>().DamageHealth(Damage);
-            Destroy(gameObject);
+            other.GetComponent<BTEnemyV01>().SeePlayer = true;
+
+
+            Destroy(gameObject, 0.2f);
         }
         
 
