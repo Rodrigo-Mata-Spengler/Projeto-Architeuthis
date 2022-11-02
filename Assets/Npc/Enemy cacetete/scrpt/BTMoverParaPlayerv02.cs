@@ -26,20 +26,16 @@ public class BTMoverParaPlayerv02 : BTnode
 
             //npc.transform.LookAt(new Vector3(0, alvo.transform.position.y, 0));
 
-            if (Vector3.Distance(npc.transform.position, alvo.transform.position) < 1.5f)
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 2f)
             {
-                
-                //Controller.MoveAwayFromTarget(alvo, agent);
-                //npc.transform.Translate(0, 0, -8 * Time.deltaTime);
                 status = Status.SUCCESS;
 
-                yield return null;
+                yield break;
             }
             else
             {
                 //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
                 Controller.MoveToTarget(alvo, agent);
-
             }
 
             yield return null;

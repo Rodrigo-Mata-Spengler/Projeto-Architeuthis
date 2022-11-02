@@ -9,7 +9,7 @@ public class BTEnemyCAceteteV01 : MonoBehaviour
 
     public Transform area;
 
-    public GameObject Cacetete;
+    public Cacetete2 Cacetete;
 
     public bool InPlace;
 
@@ -31,6 +31,8 @@ public class BTEnemyCAceteteV01 : MonoBehaviour
 
     //[HideInInspector]
     public bool SeePlayer;
+
+    [Range(0,100)]public float porcentagemdefender = 0;
 
     private void Start()
     {
@@ -57,9 +59,17 @@ public class BTEnemyCAceteteV01 : MonoBehaviour
         SelectorA.children.Add(SequenceB);
         SelectorA.children.Add(SequenceC);
 
+        BTSelector SelectorB = new BTSelector();
+
+        SelectorB.children.Add(new BTBaterDefender());
+        SelectorB.children.Add(new BTDefender());
+
         BTSequance SequenceD = new BTSequance();
 
         SequenceD.children.Add(SelectorA);
+        SequenceD.children.Add(SelectorB);
+        SequenceD.children.Add(new BTMira());
+        SequenceD.children.Add(new BTBater());
 
         BehaviorTree bt = GetComponent<BehaviorTree>();
         bt.root = SequenceD;
