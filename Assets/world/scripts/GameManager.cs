@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         if(PointsNextLevel > pointsToPass)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Scena final");
             //open door or send massage in the UI
         }
 
@@ -42,13 +42,13 @@ public class GameManager : MonoBehaviour
             IsFullText.enabled = false;
         }
 
-        if(Input.GetKey(KeyCodeCheat))
+        /*if(Input.GetKey(KeyCodeCheat))
         {
             Player.GetComponent<Health>().Life = 10000;
             PointsNextLevel = pointsToPass;
             Rifle.GetComponent<Ammo>().MaxBag = 1000;
             Pistol.GetComponent<Ammo>().MaxBag = 1000;
-        }
+        }*/
     }
     public void GivePointsToPass(int amount)
     {
