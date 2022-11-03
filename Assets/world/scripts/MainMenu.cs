@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject PausePanel;
-    public GameObject OptionsPanel;
+    public GameObject mainMenu;
+    public GameObject optionsPanel;
+    public GameObject comoJogar;
+
 
     public string CreditsSceneName;
 
@@ -15,6 +17,10 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+
+        mainMenu.SetActive(true);
+        optionsPanel.SetActive(false);
+        comoJogar.SetActive(false);
     }
     public void PlayGame()
     {
@@ -22,11 +28,27 @@ public class MainMenu : MonoBehaviour
     }
     public void Options()
     {
-        OptionsPanel.SetActive(true);
+        mainMenu.SetActive(false);
+        optionsPanel.SetActive(true);
+        comoJogar.SetActive(false);
+
+    }
+    public void ComoJogar()
+    {
+        mainMenu.SetActive(false);
+        optionsPanel.SetActive(false);
+        comoJogar.SetActive(true);
+    }
+
+    public void VoltarMenu()
+    {
+        mainMenu.SetActive(true);
+        optionsPanel.SetActive(false);
+        comoJogar.SetActive(false);
     }
     public void Creditos()
     {
-        SceneManager.GetSceneByName(CreditsSceneName);
+        SceneManager.LoadScene(CreditsSceneName);
     }
     public void Quit()
     {
