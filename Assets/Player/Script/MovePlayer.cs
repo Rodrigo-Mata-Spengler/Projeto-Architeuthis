@@ -32,6 +32,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float maxAngulo;//angulo maximo do eixo x da camera
     [SerializeField] private float minAgulo;//angulo minimo do eixo x da camera
 
+    public bool camMovimente;
+
     private float rotation = 0;
     private void Start()
     {
@@ -41,7 +43,7 @@ public class MovePlayer : MonoBehaviour
 
         agacha = transform.GetComponent<Crouch>();
 
-
+        camMovimente = true;
     }
 
     private void Update()
@@ -84,13 +86,16 @@ public class MovePlayer : MonoBehaviour
         mov.y = ySpeed;
 
         controller.Move(mov * Time.deltaTime);
+        if (camMovimente)
+        {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * sensicamera, 0);
 
-        transform.Rotate(0, Input.GetAxis("Mouse X") * sensicamera, 0);
+            rotation += Input.GetAxis("Mouse Y") * sensicamera;
 
-        rotation += Input.GetAxis("Mouse Y") * sensicamera;
-
-        rotation = Mathf.Clamp(rotation,minAgulo,maxAngulo);
-        Head.transform.localEulerAngles = new Vector3(rotation * -1,0,0);
+            rotation = Mathf.Clamp(rotation, minAgulo, maxAngulo);
+            Head.transform.localEulerAngles = new Vector3(rotation * -1, 0, 0);
+        }
+        
     }
 
     

@@ -29,8 +29,17 @@ public class BulletProjectile : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<EnemyHealth>().DamageHealth(Damage);
-            other.GetComponent<BTEnemyV01>().SeePlayer = true;
 
+            if (other.GetComponent<BTEnemyV01>())
+            {
+                other.GetComponent<BTEnemyV01>().SeePlayer = true;
+            }
+            else if (other.GetComponent<BTEnemyCAceteteV01>())
+            {
+                other.GetComponent<BTEnemyCAceteteV01>().SeePlayer = true;
+            }
+            
+            
 
             Destroy(gameObject, 0.2f);
         }

@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject PausePanel;
     public GameObject OptionsPanel;
 
+    public MovePlayer player;
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0; 
         Cursor.lockState = CursorLockMode.None;
+        player.camMovimente = false;
 
     }
     public void Resume()
@@ -42,6 +45,7 @@ public class PauseMenu : MonoBehaviour
         GameisPaused = false;
         PausePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        player.camMovimente = true;
     }
     public void Options()
     {
@@ -56,6 +60,11 @@ public class PauseMenu : MonoBehaviour
         Pause();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
