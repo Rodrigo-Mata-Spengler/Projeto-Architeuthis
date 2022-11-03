@@ -8,11 +8,16 @@ public class PauseMenu : MonoBehaviour
 {
    
     private bool GameisPaused = false;
+    private bool gameCheat = false;
 
     public GameObject PausePanel;
     public GameObject OptionsPanel;
+    public GameObject cheatPanel;
 
-    public MovePlayer player;
+    public GameObject player;
+
+    public Ammo pistola;
+    public Ammo rifle;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +33,18 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (gameCheat)
+            {
+                CheatResume();
+            }
+            else
+            {
+                CheatPause();
+            }
+        }
     }
 
     public void Pause()
@@ -36,7 +53,7 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0; 
         Cursor.lockState = CursorLockMode.None;
-        player.camMovimente = false;
+        player.GetComponent<MovePlayer>().camMovimente = false;
 
     }
     public void Resume()
@@ -45,7 +62,24 @@ public class PauseMenu : MonoBehaviour
         GameisPaused = false;
         PausePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        player.camMovimente = true;
+        player.GetComponent<MovePlayer>().camMovimente = true;
+    }
+
+    public void CheatPause()
+    {
+        gameCheat = true;
+        cheatPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        player.GetComponent<MovePlayer>().camMovimente = false;
+    }
+    public void CheatResume()
+    {
+        Time.timeScale = 1;
+        gameCheat = false;
+        cheatPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        player.GetComponent<MovePlayer>().camMovimente = true;
     }
     public void Options()
     {
@@ -61,10 +95,20 @@ public class PauseMenu : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
-
+    public void imortal()
+    {
+        player.GetComponent<Health>().SerImortal();
+    }
+    public void PistlaBalasInfinitas()
+    {
+        pistola.BalasInfinitas();
+    }
+    public void RifleBalasInfinitas()
+    {
+        rifle.BalasInfinitas();
+    }
 }

@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
 
     public GameObject painelMorto;
 
+    private bool imortal = false;
+
     void Update()
     {
         UI();
@@ -22,8 +24,10 @@ public class Health : MonoBehaviour
 
     public void DamageHealth(float damage)
     {
-        Life -= damage;
-  
+        if (!imortal)
+        {
+            Life -= damage;
+        }
     }
     public void GiveHealth(float cure)
     {
@@ -38,8 +42,6 @@ public class Health : MonoBehaviour
         }
         
     }
-
-
     private void UI()
     {
         if (Life < 70)
@@ -52,11 +54,8 @@ public class Health : MonoBehaviour
             LifeIMG1.enabled = false;
         }
 
-
         if (Life <= 50)
         {
-
-
             LifeIMG2.enabled = true;
         }
         else
@@ -64,10 +63,8 @@ public class Health : MonoBehaviour
             LifeIMG2.enabled = false;
         }
 
-
         if (Life <= 10)
         {
-
             LifeIMG3.enabled = true;
         }
         else
@@ -78,14 +75,10 @@ public class Health : MonoBehaviour
 
         if (Life < 0)
         {
-
-
             //chamar pause aqui
-
             //chamar painel de morte
             painelMorto.SetActive(true);
             //DeathPanel.SetActive(true);
-
             LifeIMG4.enabled = true;
         }
         else
@@ -93,5 +86,10 @@ public class Health : MonoBehaviour
             LifeIMG4.enabled = false;
         }
 
+    }
+
+    public void SerImortal()
+    {
+        imortal = !imortal;
     }
 }

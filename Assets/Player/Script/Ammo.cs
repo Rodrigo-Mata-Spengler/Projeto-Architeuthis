@@ -50,6 +50,9 @@ public class Ammo : MonoBehaviour
     private Vector3 rot;
 
 
+    [Header("Cheat")]
+    public bool balasInfinitas = false;
+
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -81,7 +84,11 @@ public class Ammo : MonoBehaviour
         {
             NextTimeToFire = Time.time + 1f / FireRate;
 
-            ammo--;
+            if (!balasInfinitas)
+            {
+                ammo--;
+            }
+            
             Shoot();
 
         }
@@ -113,7 +120,6 @@ public class Ammo : MonoBehaviour
         }
 
     }
-
     public void Shoot()
     {
         if (aiming)
@@ -135,8 +141,6 @@ public class Ammo : MonoBehaviour
 
 
     }
-
-    
     public void Aim(bool IsAiming)
     {
 
@@ -150,8 +154,6 @@ public class Ammo : MonoBehaviour
             Torso.position = Vector3.Lerp(Torso.position, NormalPosition.position, Time.deltaTime * AimSpeed);
         }
     }
-    
-
     public void Reload()
     {
         if (MaxBag <= 30)
@@ -174,5 +176,10 @@ public class Ammo : MonoBehaviour
             MaxBag -= sub;
         }
 
+    }
+
+    public void BalasInfinitas()
+    {
+        balasInfinitas = !balasInfinitas;
     }
 }
