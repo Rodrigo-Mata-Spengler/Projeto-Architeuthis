@@ -80,6 +80,8 @@ public class Health : MonoBehaviour
             painelMorto.SetActive(true);
             //DeathPanel.SetActive(true);
             LifeIMG4.enabled = true;
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {

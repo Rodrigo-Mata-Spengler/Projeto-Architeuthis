@@ -91,9 +91,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResetScene()
     {
-        Pause();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Scene aux = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(aux.name);
     }
     public void BackToMenu()
     {
