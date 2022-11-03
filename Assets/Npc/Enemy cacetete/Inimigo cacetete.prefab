@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pupet: {fileID: 9177716643591552156}
-  dano: 2
+  dano: 30
   escudo: {fileID: 3207781702056923297}
 --- !u!1 &8522213474263135642
 GameObject:
