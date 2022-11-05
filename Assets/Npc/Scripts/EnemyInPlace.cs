@@ -11,7 +11,7 @@ public class EnemyInPlace : MonoBehaviour
     {
         UnityEngine.Debug.LogError(" Não entrou");
 
-        if (other.gameObject.CompareTag("NPCshooter"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             UnityEngine.Debug.LogError("entrou");
             other.GetComponent<BTEnemyV01>().InPlace = true;
@@ -23,7 +23,7 @@ public class EnemyInPlace : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("NPCshooter"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             
             other.GetComponent<BTEnemyV01>().InPlace = false;

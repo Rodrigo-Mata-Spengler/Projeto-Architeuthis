@@ -53,6 +53,9 @@ public class Ammo : MonoBehaviour
     [Header("Cheat")]
     public bool balasInfinitas = false;
 
+    [HideInInspector]
+    public Animator GunAnimator;
+
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -61,6 +64,8 @@ public class Ammo : MonoBehaviour
     }
     private void Start()
     {
+
+        GunAnimator = GetComponent<Animator>();
         
         ammo = Maxammo;
 
@@ -91,6 +96,7 @@ public class Ammo : MonoBehaviour
             
             Shoot();
 
+
         }
 
         if (Input.GetButton("Fire2"))
@@ -101,7 +107,8 @@ public class Ammo : MonoBehaviour
         {
             aiming = false;
         }
-        
+
+
 
         Aim(Input.GetMouseButton(1));
 
@@ -128,6 +135,8 @@ public class Ammo : MonoBehaviour
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
 
             currentRotation += new Vector3(-RecoilRotationAiming.x, Random.Range(-RecoilRotationAiming.y, RecoilRotationAiming.y), Random.Range(-RecoilRotationAiming.z, RecoilRotationAiming.z));
+
+            GunAnimator.SetInteger("shoot", 2);
 
         }
         else
