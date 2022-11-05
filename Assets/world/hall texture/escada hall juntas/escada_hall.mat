@@ -23,6 +23,7 @@ Material:
   m_Name: escada_hall
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
+  - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _OCCLUSIONMAP
   - _PARALLAXMAP
@@ -39,11 +40,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: b6b8e7eae67e1954691fee8d1c2a1ee1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b8503f73c4fba640a9a952780fe1753, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5ed4613d7c4c22d4086cec09617deb81, type: 3}
+        m_Texture: {fileID: 2800000, guid: eac02a7fb9739794baeab54f674588df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -63,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b6b8e7eae67e1954691fee8d1c2a1ee1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1b8503f73c4fba640a9a952780fe1753, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,15 +72,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: c3f5820d3aed5fe45ba8ad29a011af1f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 90184660d21b4214fa1484d7a12d8147, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: b37a5026b3781a44186a27771c7536f4, type: 3}
+        m_Texture: {fileID: 2800000, guid: e45a20ce926e5e044854ebb61d4fd88c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1b8503f73c4fba640a9a952780fe1753, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
