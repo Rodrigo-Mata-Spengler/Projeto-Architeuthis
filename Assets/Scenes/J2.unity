@@ -9259,7 +9259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempoHorda: 20
-  minSize: 2
+  minSize: 1
   maxSize: 5
   maxSizeSpawns: 1
   npc:
@@ -9268,10 +9268,8 @@ MonoBehaviour:
   spawnArea:
   - {fileID: 1063217954}
   plane: {fileID: 1275027010381484557}
-  itemDrop:
-  - {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c, type: 3}
-  - {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d, type: 3}
-  - {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c, type: 3}
+  itemDrop: {fileID: 7385379173419839064, guid: 63df9ff6ca3833d42a844564eb48e511,
+    type: 3}
 --- !u!1001 &1558050322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58567,6 +58565,11 @@ PrefabInstance:
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726516152318598400, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2746057523273833871, guid: 7350af167b4528b45883c958ab0ed472,

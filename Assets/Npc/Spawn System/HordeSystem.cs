@@ -24,7 +24,7 @@ public class HordeSystem : MonoBehaviour
 
     [SerializeField] Transform plane;
 
-    [SerializeField] GameObject[] itemDrop;
+    [SerializeField] GameObject itemDrop;
 
 
     private void Start()
@@ -40,7 +40,7 @@ public class HordeSystem : MonoBehaviour
         }
         for (int i = 0; i < hordaSpawn.Length; i++)
         {
-            hordaSpawn[i] = Random.Range(minSize, maxSizeSpawns);
+            hordaSpawn[i] = Random.Range(0, maxSizeSpawns-1);
         }
     }
 
@@ -88,8 +88,9 @@ public class HordeSystem : MonoBehaviour
 
     private GameObject Drop()
     {
-        int a = Random.Range(0,itemDrop.Length);
-        return itemDrop[a];
+        GameObject item = itemDrop;
+        item.GetComponent<Drops>().Rand();
+        return item;
         
     }
 }

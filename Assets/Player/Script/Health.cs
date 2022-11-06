@@ -29,16 +29,22 @@ public class Health : MonoBehaviour
             Life -= damage;
         }
     }
-    public void GiveHealth(float cure)
+    public bool GiveHealth(float cure)
     {
        float sub = Life + cure;
         if(sub > MaxLife)
         {
             Life = MaxLife;
+            return true;
+        }
+        else if(sub< MaxLife)
+        {
+            return true;
+            Life += cure;
         }
         else
         {
-            Life += cure;
+            return false;
         }
         
     }

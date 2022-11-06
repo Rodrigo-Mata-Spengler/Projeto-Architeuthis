@@ -120,16 +120,22 @@ public class Ammo : MonoBehaviour
 
     }
 
-    public void GiveAmmo(int Ammoamount)
+    public bool GiveAmmo(int Ammoamount)
     {
-
-        if (MaxBag + Ammoamount > MaxPistolBag)
+        int aux = MaxBag + Ammoamount;
+        if ( aux > MaxPistolBag)
         {
             MaxBag = MaxPistolBag;
+            return true;
+        }
+        else if(aux < MaxPistolBag)
+        {
+            MaxBag +=Ammoamount;
+            return true;
         }
         else
         {
-            MaxBag +=Ammoamount; 
+            return false;
         }
 
     }
