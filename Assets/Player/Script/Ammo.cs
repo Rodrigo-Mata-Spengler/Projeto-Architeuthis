@@ -95,13 +95,15 @@ public class Ammo : MonoBehaviour
             }
             
             Shoot();
-            GunAnimator.SetTrigger("shoot");
+            GunAnimator.SetBool("shoot", true);
+           
 
         }
-        if(Input.GetButtonUp("Fire1"))
+        else
         {
-            GunAnimator.ResetTrigger("shoot");
+            GunAnimator.SetBool("shoot", false);
         }
+  
 
         if (Input.GetButton("Fire2"))
         {

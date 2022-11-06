@@ -150,7 +150,6 @@ Transform:
   m_Children:
   - {fileID: 747064619534710459}
   - {fileID: 8971775729500201851}
-  - {fileID: 4144930228087212822}
   - {fileID: 8143665017896183918}
   - {fileID: 8246633399353607288}
   m_Father: {fileID: 5272622643357798204}
@@ -794,7 +793,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 55
+  m_VersionIndex: 85
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1140,7 +1139,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 55
+  m_VersionIndex: 85
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1344,39 +1343,6 @@ Transform:
   - {fileID: 1488313528271843106}
   m_Father: {fileID: 5272622643357798204}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4141716000199882934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5cfc5dc462677542be5b6637769effd,
-    type: 3}
-  m_PrefabInstance: {fileID: 4471926449453378813}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4144930228087212822}
-  m_Layer: 0
-  m_Name: 'Metralhadora_animada(bracos) (Missing Prefab with guid: d5cfc5dc462677542be5b6637769effd)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4144930228087212822
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-    type: 3}
-  m_PrefabInstance: {fileID: 4471926449453378813}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4141716000199882934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 272010750}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4154772183885250899
 GameObject:
@@ -1886,7 +1852,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 55
+  m_VersionIndex: 85
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2232,7 +2198,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 61
+  m_VersionIndex: 85
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2292,7 +2258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7997470088359804956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.27899942, y: 0.092, z: 0.024000626}
+  m_LocalPosition: {x: -0.001, y: 0.092, z: 0.024000626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2575,6 +2541,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -269774097181373238, guid: a309a19e9bfa58a499afc8a703e6dd03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 7715489475505996633, guid: cba01124b53c27042a032f53b44cad44,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: a309a19e9bfa58a499afc8a703e6dd03,
         type: 3}
       propertyPath: m_Name
@@ -2585,6 +2557,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2444641569601448994, guid: a309a19e9bfa58a499afc8a703e6dd03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 7715489475505996633, guid: cba01124b53c27042a032f53b44cad44,
+        type: 3}
+    - target: {fileID: 4669728072432465196, guid: a309a19e9bfa58a499afc8a703e6dd03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2285463419811284929, guid: ca999541791416349a5d6f55aaf368fe,
+        type: 3}
+    - target: {fileID: 4709897248462387829, guid: a309a19e9bfa58a499afc8a703e6dd03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 7715489475505996633, guid: cba01124b53c27042a032f53b44cad44,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a309a19e9bfa58a499afc8a703e6dd03, type: 3}
 --- !u!1 &78192854644599809 stripped
@@ -2667,75 +2657,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 996599732939624784}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4471926449453378813
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 272010750}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.22799994
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.52
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.7350013
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d5cfc5dc462677542be5b6637769effd,
-        type: 3}
-      propertyPath: m_Name
-      value: Metralhadora_animada(bracos)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d5cfc5dc462677542be5b6637769effd, type: 3}
 --- !u!1001 &8501481214382007187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2752,7 +2673,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c387eafc81d9d0142bf8c39aa5d5fd52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c387eafc81d9d0142bf8c39aa5d5fd52,
         type: 3}
@@ -2946,7 +2867,7 @@ MonoBehaviour:
   FireRate: 10
   pfBulletProjectile: {fileID: 2714439911104572195, guid: 06b6fb42659dcb945a72eed8a982d9b2,
     type: 3}
-  spawnBulletPosition: {fileID: 6912213382287058655}
+  spawnBulletPosition: {fileID: 4391197707821027645}
   SphereDebug: {fileID: 952921825}
   bulletvelocity: 300
   NormalPosition: {fileID: 1029512538383671950}
@@ -2956,7 +2877,7 @@ MonoBehaviour:
   AimSpeed: 10
   rotationSpeed: 5
   returnSpeed: 10
-  RecoilRotation: {x: 25.27, y: 2, z: 0}
+  RecoilRotation: {x: 5, y: 2, z: 0}
   RecoilRotationAiming: {x: 1.5, y: 0.5, z: 0.5}
   aiming: 0
   balasInfinitas: 0
@@ -2971,7 +2892,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 86ec3af0824afdc458ebbcd8d1b98dfb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86ec3af0824afdc458ebbcd8d1b98dfb,
         type: 3}
@@ -3162,7 +3083,7 @@ MonoBehaviour:
   AimSpeed: 10
   rotationSpeed: 5
   returnSpeed: 10
-  RecoilRotation: {x: 5, y: 2, z: 0}
+  RecoilRotation: {x: 25.27, y: 2, z: 0}
   RecoilRotationAiming: {x: 1.5, y: 0.5, z: 0.5}
   aiming: 0
   balasInfinitas: 0
