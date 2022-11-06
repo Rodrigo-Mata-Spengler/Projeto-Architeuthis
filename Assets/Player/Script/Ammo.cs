@@ -95,8 +95,12 @@ public class Ammo : MonoBehaviour
             }
             
             Shoot();
+            GunAnimator.SetTrigger("shoot");
 
-
+        }
+        if(Input.GetButtonUp("Fire1"))
+        {
+            GunAnimator.ResetTrigger("shoot");
         }
 
         if (Input.GetButton("Fire2"))
@@ -136,7 +140,7 @@ public class Ammo : MonoBehaviour
 
             currentRotation += new Vector3(-RecoilRotationAiming.x, Random.Range(-RecoilRotationAiming.y, RecoilRotationAiming.y), Random.Range(-RecoilRotationAiming.z, RecoilRotationAiming.z));
 
-            GunAnimator.SetInteger("shoot", 2);
+            
 
         }
         else
