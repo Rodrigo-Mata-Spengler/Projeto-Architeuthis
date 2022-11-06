@@ -10,6 +10,7 @@ Material:
   m_Name: hall parte superior
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
+  - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _OCCLUSIONMAP
   - _PARALLAXMAP
@@ -26,11 +27,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 31221e7a344aeb84894a01bc7402861c, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae8ebc7e77e629940923a835f2ca5b4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 1b459154df2ccd240afa8eea9214dbea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 812ecefda40e0c441ac3e0236a5e1046, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -50,23 +51,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 31221e7a344aeb84894a01bc7402861c, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae8ebc7e77e629940923a835f2ca5b4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 2f658e54727e54e4f982b4f7b325c922, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1826d33cd28612429b7b32ce4b0c424, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 16b8499241619614eb681fbbdec7e043, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1826d33cd28612429b7b32ce4b0c424, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 28d9ee613088c504b89d03984e503bdd, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1826d33cd28612429b7b32ce4b0c424, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d1826d33cd28612429b7b32ce4b0c424, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -83,6 +84,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Boolean_8A2B8817: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 0.3
@@ -99,7 +101,9 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _OpacityThreshold: 0
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
@@ -107,6 +111,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _UseColorMap: 0
+    - _UseEmissiveMap: 0
+    - _UseMetallicMap: 0
+    - _UseNormalMap: 0
+    - _UseRoughnessMap: 0
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
@@ -114,6 +123,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7203852382215182071
 MonoBehaviour:

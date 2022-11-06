@@ -10,10 +10,10 @@ Material:
   m_Name: "ch\xE3o"
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
+  - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _OCCLUSIONMAP
   - _PARALLAXMAP
-  - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -26,11 +26,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 79e09fccf96180045b9eeac0834979b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: be350fedcb39b7d489af11fcf372a350, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e85c3091e54b7f649b1334473b663a0a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2a2f874c37ef47d42843cc9958326720, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -50,19 +50,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 79e09fccf96180045b9eeac0834979b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: be350fedcb39b7d489af11fcf372a350, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b76df28247a39884492fa92719d83f37, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9dbb35bb690aaf44c91833bd20ce8621, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: a342c462353093f4c9eb675faacb9738, type: 3}
+        m_Texture: {fileID: 2800000, guid: 275c5b946ce7c9e44963ef49b99f0e22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: fe5210d1590e3204fb1a2abe05b4c71f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 59ede075b49bad94986482f57af02977, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -109,7 +109,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WorkflowMode: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
