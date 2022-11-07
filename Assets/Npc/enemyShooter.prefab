@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1152035212874739251}
   - component: {fileID: 1152035212874739252}
   - component: {fileID: 1152035212874739245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rifle Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6500460170786165292}
   - component: {fileID: 7310994433921618406}
   - component: {fileID: 2643437632761896846}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092913269629907339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: onde atirar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1655122375389045974}
   - component: {fileID: 8990584358609907364}
   - component: {fileID: 8990584358893742090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemyShooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 4542594999164176806}
   - component: {fileID: 5182938993705197623}
   - component: {fileID: 531641953199555705}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Arm (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4702758474182615903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
