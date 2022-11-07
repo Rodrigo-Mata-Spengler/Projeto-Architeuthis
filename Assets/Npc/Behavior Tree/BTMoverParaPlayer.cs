@@ -36,8 +36,10 @@ public class BTMoverParaPlayer : BTnode
             }
             else
             {
-                //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+                npc.transform.LookAt(alvo.transform.position);
                 Controller.MoveToTarget(alvo, agent, 10f);
+                status = Status.SUCCESS;
+                break;
 
             }
 
