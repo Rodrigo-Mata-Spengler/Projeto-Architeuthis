@@ -58645,21 +58645,15 @@ PrefabInstance:
       propertyPath: painelMorto
       value: 
       objectReference: {fileID: 1504195121}
-    - target: {fileID: 74954386447007657, guid: 7350af167b4528b45883c958ab0ed472,
-        type: 3}
-      propertyPath: m_IsTrigger
+    - target: {fileID: 1997766072, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 275613575533199904, guid: 7350af167b4528b45883c958ab0ed472,
+    - target: {fileID: 74954386447007657, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
-      propertyPath: AmmoText
-      value: 
-      objectReference: {fileID: 358033973}
-    - target: {fileID: 275613575533199904, guid: 7350af167b4528b45883c958ab0ed472,
-        type: 3}
-      propertyPath: AmmoBagText
-      value: 
-      objectReference: {fileID: 358033969}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 541498531147864211, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: AmmoText
@@ -58723,11 +58717,6 @@ PrefabInstance:
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1726516152318598400, guid: 7350af167b4528b45883c958ab0ed472,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2746057523273833871, guid: 7350af167b4528b45883c958ab0ed472,
