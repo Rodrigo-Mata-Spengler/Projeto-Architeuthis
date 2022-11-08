@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyInPlace : MonoBehaviour
 {
-    [SerializeField]GameObject filho;
+    [SerializeField]GameObject ExitTrigger;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,17 +17,9 @@ public class EnemyInPlace : MonoBehaviour
             other.GetComponent<BTEnemyV01>().InPlace = true;
             other.GetComponent<BTEnemyV01>().Yrotation = gameObject.transform.eulerAngles.y;
 
-            filho.SetActive(false);
+            ExitTrigger.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            
-            other.GetComponent<BTEnemyV01>().InPlace = false;
-            filho.SetActive(true);
-        }
-    }
 }

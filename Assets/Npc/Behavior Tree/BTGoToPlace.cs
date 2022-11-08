@@ -37,12 +37,12 @@ public class BTGoToPlace : BTnode
             }
         }
 
-        while(Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f)
+        while(Vector3.Distance(npc.transform.position, alvo.transform.position) > 1f && alvo)
         {
             bool SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
             bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-            Controller.MoveToTarget(alvo, agent, 1f);
+            Controller.MoveToTarget(alvo, agent, 0.5f);
 
             if (SeePlayer == true || Vector3.Distance(npc.transform.position, Player.transform.position) < 4f)
             {
