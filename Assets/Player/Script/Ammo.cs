@@ -18,7 +18,9 @@ public class Ammo : MonoBehaviour
     public float FireRate = 15f;
     private float NextTimeToFire = 0f;
 
-    [SerializeField] private Transform pfBulletProjectile;
+    [SerializeField] private GameObject pfBulletProjectile;
+    [SerializeField] private float bulletForce;
+
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform SphereDebug;
 
@@ -70,8 +72,6 @@ public class Ammo : MonoBehaviour
         ammo = Maxammo;
 
         MaxPistolBag = MaxBag;
-
-        pfBulletProjectile.GetComponent<BulletProjectile>().speed = bulletvelocity;
     }
     // Update is called once per frame
     void Update()
@@ -114,8 +114,6 @@ public class Ammo : MonoBehaviour
             aiming = false;
         }
 
-
-
         Aim(Input.GetMouseButton(1));
 
     }
@@ -123,12 +121,12 @@ public class Ammo : MonoBehaviour
     public bool GiveAmmo(int Ammoamount)
     {
         int aux = MaxBag + Ammoamount;
-        if ( aux > MaxPistolBag)
+        if ( aux >= MaxPistolBag)
         {
             MaxBag = MaxPistolBag;
             return true;
         }
-        else if(aux < MaxPistolBag)
+        else if(aux <= MaxPistolBag)
         {
             MaxBag +=Ammoamount;
             return true;
@@ -144,22 +142,20 @@ public class Ammo : MonoBehaviour
         if (aiming)
         {
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce, ForceMode.Impulse);
 
             currentRotation += new Vector3(-RecoilRotationAiming.x, Random.Range(-RecoilRotationAiming.y, RecoilRotationAiming.y), Random.Range(-RecoilRotationAiming.z, RecoilRotationAiming.z));
-
-            
 
         }
         else
         {
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce, ForceMode.Impulse);
 
             currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
         }
-       
-
 
     }
     public void Aim(bool IsAiming)

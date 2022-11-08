@@ -740,7 +740,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31740
+  m_Name: pb_Mesh33720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9138,10 +9138,6 @@ MonoBehaviour:
   PressText: {fileID: 358033970}
   IsFullText: {fileID: 358033971}
   ActiveText: 0
-  KeyCodeCheat: 0
-  Player: {fileID: 8455393704529122331}
-  Rifle: {fileID: 0}
-  Pistol: {fileID: 0}
 --- !u!4 &1557533283
 Transform:
   m_ObjectHideFlags: 0
@@ -58649,6 +58645,11 @@ PrefabInstance:
       propertyPath: painelMorto
       value: 
       objectReference: {fileID: 1504195121}
+    - target: {fileID: 74954386447007657, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 275613575533199904, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: AmmoText

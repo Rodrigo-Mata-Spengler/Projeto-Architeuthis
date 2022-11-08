@@ -18,6 +18,8 @@ TagManager:
   - Place
   - NPCshooter
   - WayPoint
+  - BulletNpc
+  - BulletPlayer
   layers:
   - Default
   - TransparentFX
@@ -28,8 +30,8 @@ TagManager:
   - Camera
   - Ambiente
   - Enemy
-  - 
-  - 
+  - Bullet
+  - ColiderBullet
   - 
   - 
   - 

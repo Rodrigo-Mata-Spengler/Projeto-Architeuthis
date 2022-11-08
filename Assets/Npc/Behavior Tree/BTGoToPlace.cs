@@ -17,9 +17,6 @@ public class BTGoToPlace : BTnode
         GameObject npc = bt.gameObject;
         GameObject[] Places = GameObject.FindGameObjectsWithTag("Place");
 
-        
-        
-
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
 
         //navmesh

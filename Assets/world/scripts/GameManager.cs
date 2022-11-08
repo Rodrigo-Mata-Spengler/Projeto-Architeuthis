@@ -12,13 +12,7 @@ public class GameManager : MonoBehaviour
     public Text PressText;
     public Text IsFullText;
 
-    [SerializeField] public bool ActiveText = false;
-
-    [Header("Cheat")]
-    public KeyCode KeyCodeCheat;
-    public GameObject Player;
-    public GameObject Rifle ;
-    public GameObject Pistol;
+    [SerializeField]public bool ActiveText = false;
 
     
 
@@ -42,14 +36,6 @@ public class GameManager : MonoBehaviour
             PressText.enabled = false;
             IsFullText.enabled = false;
         }
-
-        /*if(Input.GetKey(KeyCodeCheat))
-        {
-            Player.GetComponent<Health>().Life = 10000;
-            PointsNextLevel = pointsToPass;
-            Rifle.GetComponent<Ammo>().MaxBag = 1000;
-            Pistol.GetComponent<Ammo>().MaxBag = 1000;
-        }*/
     }
     public void GivePointsToPass(int amount)
     {

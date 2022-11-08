@@ -24,9 +24,6 @@ public class BTMoverParaPlayer : BTnode
 
         while(alvo)
         {
-            
-
-            Debug.LogWarning("ainda rodando");
 
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 10f)
             {
