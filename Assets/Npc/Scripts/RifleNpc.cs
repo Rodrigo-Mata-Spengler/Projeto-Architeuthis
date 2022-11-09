@@ -19,11 +19,11 @@ public class RifleNpc : MonoBehaviour
 
     [SerializeField] private Transform Npc;
 
+    [SerializeField] private float bulletForce;
+
     private void Start()
     {
         ammo = Maxammo;
-
-        pfBulletProjectile.GetComponent<NpcRifleBullet>().speed = bulletvelocity;
     }
     
     public bool Recharge()
@@ -34,8 +34,8 @@ public class RifleNpc : MonoBehaviour
 
     public bool Aim(GameObject Player)
     {
-        Npc.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
-        gameObject.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
+        Npc.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+        //gameObject.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
         return true;
     }
     public bool Fire()
@@ -49,7 +49,7 @@ public class RifleNpc : MonoBehaviour
 
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
             GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            
+            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce,ForceMode.Impulse);
 
             return true;
         }

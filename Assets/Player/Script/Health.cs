@@ -32,15 +32,15 @@ public class Health : MonoBehaviour
     public bool GiveHealth(float cure)
     {
        float sub = Life + cure;
-        if(sub > MaxLife)
+        if(sub >= MaxLife)
         {
             Life = MaxLife;
             return true;
         }
-        else if(sub< MaxLife)
+        else if(sub<= MaxLife)
         {
-            return true;
             Life += cure;
+            return true;
         }
         else
         {

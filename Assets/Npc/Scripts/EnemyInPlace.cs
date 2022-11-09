@@ -9,11 +9,9 @@ public class EnemyInPlace : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UnityEngine.Debug.LogError(" Não entrou");
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            UnityEngine.Debug.LogError("entrou");
             other.GetComponent<BTEnemyV01>().InPlace = true;
             other.GetComponent<BTEnemyV01>().Yrotation = gameObject.transform.eulerAngles.y;
 

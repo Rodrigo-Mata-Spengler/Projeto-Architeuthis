@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 2001612343596226564}
   - component: {fileID: 2148108113113404566}
   - component: {fileID: 4546675588629848452}
-  - component: {fileID: 8940573524764402754}
   - component: {fileID: -3605411951907727370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NpcBullet
-  m_TagString: Untagged
+  m_TagString: BulletNpc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,21 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99999917, y: 1, z: 0.4882544}
   m_Center: {x: 0, y: 0, z: 0.35913554}
---- !u!114 &8940573524764402754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8566028098003865991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8a381efbae29e4a8bea272fe0ef8c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tempoDeVida: 4
-  speed: 10
-  Damage: 3
 --- !u!54 &-3605411951907727370
 Rigidbody:
   m_ObjectHideFlags: 0
