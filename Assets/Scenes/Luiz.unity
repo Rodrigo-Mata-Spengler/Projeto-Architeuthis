@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52132,10 +52132,6 @@ MonoBehaviour:
   PressText: {fileID: 452962407}
   IsFullText: {fileID: 3397638015708797087}
   ActiveText: 0
-  KeyCodeCheat: 0
-  Player: {fileID: 0}
-  Rifle: {fileID: 0}
-  Pistol: {fileID: 0}
 --- !u!224 &1213135361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52181,10 +52177,7 @@ MonoBehaviour:
   - {fileID: 1255605863}
   - {fileID: 1212277366}
   plane: {fileID: 1006529693}
-  itemDrop:
-  - {fileID: 1985740567649676885, guid: 16007c17d2eba944b902e0e61847ef6c, type: 3}
-  - {fileID: 6238755596222992649, guid: 8343269423a41ee4fa9249d0f29cf78d, type: 3}
-  - {fileID: 1237361185196696228, guid: b0ad56162d907754aa53393fb90d632c, type: 3}
+  itemDrop: {fileID: 0}
 --- !u!1 &1236026778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2746057523273833871, guid: 7350af167b4528b45883c958ab0ed472,
