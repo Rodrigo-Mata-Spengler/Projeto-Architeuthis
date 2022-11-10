@@ -13,14 +13,17 @@ public class RifleNpc : MonoBehaviour
 
     [SerializeField] private GameObject pfBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
-    [SerializeField] private Transform SphereDebug;
+    [SerializeField] private Transform ondeAtirar;
 
     [SerializeField] private float bulletvelocity;
 
-    [SerializeField] private Transform Npc;
+    [SerializeField] private GameObject Hands;
 
     [SerializeField] private float bulletForce;
 
+    
+
+    float speed = 1.5f;
     private void Start()
     {
         ammo = Maxammo;
@@ -34,8 +37,11 @@ public class RifleNpc : MonoBehaviour
 
     public bool Aim(GameObject Player)
     {
-        Npc.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
-        //gameObject.transform.LookAt(new Vector3(Player.transform.position.x, -0.5f, Player.transform.position.z));
+        Hands.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+
+        gameObject.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+
+
         return true;
     }
     public bool Fire()
@@ -47,7 +53,7 @@ public class RifleNpc : MonoBehaviour
             NextTimeToFire = Time.time + 1f / FireRate;
             ammo--;
 
-            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
+            Vector3 aimDir = (ondeAtirar.position - spawnBulletPosition.position).normalized;
             GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce,ForceMode.Impulse);
 

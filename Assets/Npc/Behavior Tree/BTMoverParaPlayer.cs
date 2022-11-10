@@ -22,7 +22,7 @@ public class BTMoverParaPlayer : BTnode
         NavMeshAgent agent = bt.GetComponent<BTEnemyV01>().agent;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
-        while(alvo)
+        while(alvo && Inplace == false)
         {
 
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 10f)
