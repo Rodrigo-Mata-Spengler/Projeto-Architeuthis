@@ -2874,7 +2874,7 @@ MonoBehaviour:
   FireRate: 10
   pfBulletProjectile: {fileID: 7691336868957659262, guid: 06b6fb42659dcb945a72eed8a982d9b2,
     type: 3}
-  bulletForce: 100
+  bulletForce: 300
   spawnBulletPosition: {fileID: 4391197707821027645}
   SphereDebug: {fileID: 952921825}
   bulletvelocity: 300

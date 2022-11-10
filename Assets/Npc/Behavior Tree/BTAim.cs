@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BTAim: BTnode
@@ -12,13 +13,18 @@ public class BTAim: BTnode
         GameObject alvo = GameObject.FindGameObjectWithTag("Player");
         GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
 
-        if (rifle.GetComponent<RifleNpc>().Aim(alvo))
+        GameObject npc = bt.gameObject;
+
+        float speed = 1.5f;
+
+        while (rifle.GetComponent<RifleNpc>().Aim(alvo))
         {
+
             status = Status.SUCCESS;
             Print();
-            
+            yield break;
         }
-        else
+        if(status == Status.RUNNING)
         {
             status = Status.FAILURE;
             Print();
