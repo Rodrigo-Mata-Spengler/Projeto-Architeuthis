@@ -5786,7 +5786,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rifle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 523340326}
     - target: {fileID: 921572718110082786, guid: 6fc2075f865b512458a9e464afb0e6dc,
         type: 3}
       propertyPath: player
@@ -5796,7 +5796,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pistola
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1763666859}
     - target: {fileID: 921572718793248974, guid: 6fc2075f865b512458a9e464afb0e6dc,
         type: 3}
       propertyPath: m_Name
@@ -7142,6 +7142,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &523340326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 541498531147864211, guid: 7350af167b4528b45883c958ab0ed472,
+    type: 3}
+  m_PrefabInstance: {fileID: 8455393704529122330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa00808b232949945f04c9a13b603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526975992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8513424388201257645, guid: 65d3c4ec577b12c4f9f162a507734356,
@@ -18082,6 +18094,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1757631998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763666859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6117662229741361855, guid: 7350af167b4528b45883c958ab0ed472,
+    type: 3}
+  m_PrefabInstance: {fileID: 8455393704529122330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa00808b232949945f04c9a13b603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1764534283
 GameObject:
   m_ObjectHideFlags: 0

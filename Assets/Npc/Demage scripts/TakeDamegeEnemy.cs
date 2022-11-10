@@ -22,6 +22,7 @@ public class TakeDamegeEnemy : MonoBehaviour
             vida.DamageHealth(damage);
             if (atirador)
             {
+                Debug.Log("dano");
                 atirador.SeePlayer = true;
             }
             

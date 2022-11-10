@@ -99,31 +99,6 @@ public class BTEnemyV01 : MonoBehaviour
         agent.SetDestination(-target.transform.position);
     }
 
-
-    //Not Random Patrol
-    /*
-    public void UpdateDestination(GameObject target, GameObject[] waypoints, int waypointsIndex, NavMeshAgent agent)
-    {
-        target = waypoints[waypointsIndex];
-        agent.SetDestination(target.transform.position);
-
-       
-    }
-
-    
-    public void IterateWaypoints(int waypointsIndex, GameObject[]waypoints)
-    {
-
-        if (waypointsIndex == waypoints.Length)
-        {
-            waypointsIndex = 0;
-        }
-        waypointsIndex += 1;
-        Debug.LogWarning(waypointsIndex);
-
-
-    }*/
-
     //Random Patrol
 
     public bool RandomPoint(Vector3 center,float range, out Vector3 result)
