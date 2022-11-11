@@ -20,7 +20,7 @@ public class BTMoverParaPlayer : BTnode
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
         bool seguir = false;
-        while(alvo)
+        while(alvo && Inplace == false)
         {
 
             /*if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 5f)
