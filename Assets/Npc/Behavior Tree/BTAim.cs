@@ -15,7 +15,7 @@ public class BTAim: BTnode
 
         GameObject npc = bt.gameObject;
 
-        float speed = 1.5f;
+        
 
         while (rifle.GetComponent<RifleNpc>().Aim(alvo))
         {
