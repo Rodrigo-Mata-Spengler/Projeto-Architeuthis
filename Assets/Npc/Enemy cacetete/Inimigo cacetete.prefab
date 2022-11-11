@@ -439,8 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b963cb73f9167f4a9ee9314429e3125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 100
-  maxLife: 100
+  Life: 20
+  maxLife: 20
   pointsGive: 0
 --- !u!54 &8522213474263135647
 Rigidbody:

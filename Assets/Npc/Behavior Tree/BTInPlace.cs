@@ -12,13 +12,8 @@ public class BTInPlace : BTnode
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-        GameObject npc = bt.gameObject;
-        GameObject alvo = GameObject.FindGameObjectWithTag("Player");
-
-        
         if (Inplace == true)
-        {
-            
+        {     
             status = Status.SUCCESS;
         }
         else

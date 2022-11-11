@@ -17,13 +17,9 @@ public class BTPlayerNotCloseOrInPointOfView : BTnode
 
         GameObject npc = bt.gameObject;
 
-        GameObject npcRifleVariant = bt.transform.GetChild(0).gameObject;
-
         if(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
-            //Debug.LogError(SeePlayer);
             status = Status.SUCCESS;
-
         }
         else
         {
