@@ -44,6 +44,11 @@ public class BTEnemyV01 : MonoBehaviour
         SequenceA.children.Add(new BTPlayerCloseOrInPointOfView());
         SequenceA.children.Add(new BTMoverParaPlayer());
 
+
+        BTSelector SelectorC = new BTSelector();
+        SelectorC.children.Add(new BTPlayerInPointOfView());
+        SelectorC.children.Add(new BTPlayerClose());
+
         BTSequance SequenceB = new BTSequance();
 
         SequenceB.children.Add(new BTPlaceAvailable());
@@ -51,16 +56,20 @@ public class BTEnemyV01 : MonoBehaviour
         SequenceB.children.Add(new BTInPlace());
         SequenceB.children.Add(new BTSearchPlayer());
         SequenceB.children.Add(new BTPlayerCloseOrInPointOfView());
+        SequenceB.children.Add(SelectorC);
+
 
         BTSequance SequenceC = new BTSequance();
 
         SequenceC.children.Add(new BTPlaceNotAvailable());
+        SequenceC.children.Add(new BTNotInPlace());
         SequenceC.children.Add(new BTPlayerNotCloseOrInPointOfView());
         SequenceC.children.Add(new BTPatrol());
 
         BTSelector SelectorA = new BTSelector();
 
         SelectorA.children.Add(SequenceA);
+        SelectorA.children.Add(new BTInPlace());
         SelectorA.children.Add(SequenceB);
         SelectorA.children.Add(SequenceC);
 

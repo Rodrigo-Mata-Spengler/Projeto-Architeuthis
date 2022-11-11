@@ -29,7 +29,7 @@ public class BTPatrol : BTnode
                 break;
             }
 
-            if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+            if (agent.remainingDistance <= agent.stoppingDistance + 1) //done with path
             {
                 Vector3 point;
                 if (Controller.RandomPoint(area.position, 20f, out point)) //pass in our centre point and radius of area
