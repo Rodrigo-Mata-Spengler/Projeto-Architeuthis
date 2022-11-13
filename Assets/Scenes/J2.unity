@@ -12195,6 +12195,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5562096120339480843, guid: 2eb2b15f0bf217b4a808b931b3c36bf6, type: 3}
+--- !u!95 &1048068203 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6491714180580453790, guid: 7350af167b4528b45883c958ab0ed472,
+    type: 3}
+  m_PrefabInstance: {fileID: 8455393704529122330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1051937071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98840,6 +98846,10 @@ PrefabInstance:
       propertyPath: painelMorto
       value: 
       objectReference: {fileID: 1504195121}
+    - target: {fileID: 1997766071, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
+      propertyPath: FpsController
+      value: 
+      objectReference: {fileID: 1048068203}
     - target: {fileID: 1084060631327213844, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: m_RootOrder

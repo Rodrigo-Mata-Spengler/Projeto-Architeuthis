@@ -6,6 +6,6 @@ public class BulletLife : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
@@ -32,7 +33,12 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float maxAngulo;//angulo maximo do eixo x da camera
     [SerializeField] private float minAgulo;//angulo minimo do eixo x da camera
 
+
     public bool camMovimente;
+
+    [Header("Animation")]
+    public Animator FpsController;
+    private float WalkAnimation;
 
     private float rotation = 0;
     private void Start()
@@ -53,12 +59,25 @@ public class MovePlayer : MonoBehaviour
 
         mov += Input.GetAxis("Horizontal") * transform.right;
 
+
+        WalkAnimation = (Input.GetAxis("Vertical")*-1) + (Input.GetAxis("Horizontal") * 2);
+        FpsController.SetFloat("Walk", WalkAnimation);
+
+        
+
+
         if (Input.GetKey(correr) && GetComponent<Stamina>().stamina > 0)
         {
             sensi *= aumentoVelocidade;
             GetComponent<Stamina>().stamina -= Time.deltaTime * gastoStamina;
+            FpsController.SetBool("Run",true);
+
         }
-        
+        if (Input.GetKeyUp(correr))
+        {
+            FpsController.SetBool("Run", false);
+        }
+
         if (Input.GetKey(agacha.key))
         {
             sensi *= diminuiVelocidade;
