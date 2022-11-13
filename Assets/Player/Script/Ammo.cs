@@ -56,7 +56,7 @@ public class Ammo : MonoBehaviour
     public bool balasInfinitas = false;
 
     [HideInInspector]
-    public Animator GunAnimator;
+    public Animator HandGunAnimator;
 
     private void FixedUpdate()
     {
@@ -67,7 +67,7 @@ public class Ammo : MonoBehaviour
     private void Start()
     {
 
-        GunAnimator = GetComponent<Animator>();
+        HandGunAnimator = GetComponent<Animator>();
         
         ammo = Maxammo;
 
@@ -95,13 +95,13 @@ public class Ammo : MonoBehaviour
             }
             
             Shoot();
-            GunAnimator.SetBool("shoot", true);
+            HandGunAnimator.SetBool("shoot", true);
            
 
         }
         else
         {
-            GunAnimator.SetBool("shoot", false);
+            HandGunAnimator.SetBool("shoot", false);
         }
   
 
