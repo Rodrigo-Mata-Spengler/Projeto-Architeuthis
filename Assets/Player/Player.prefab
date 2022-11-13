@@ -1259,6 +1259,8 @@ MonoBehaviour:
   maxAngulo: 45
   minAgulo: -45
   camMovimente: 0
+  IsRunning: 0
+  FpsController: {fileID: 0}
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2675,13 +2677,14 @@ MonoBehaviour:
   MainCamera: {fileID: 166519573}
   Torso: {fileID: 5272622643357798204}
   AimSpeed: 5
+  PlayerMoveScript: {fileID: 1997766071}
   rotationSpeed: 6
   returnSpeed: 25
   RecoilRotation: {x: 2, y: 2, z: 2}
   RecoilRotationAiming: {x: 0.5, y: 0.5, z: 1.5}
   aiming: 0
   balasInfinitas: 0
-  GunAnimator: {fileID: 0}
+  HandGunAnimator: {fileID: 0}
 --- !u!1001 &1702534149888929640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2882,10 +2885,11 @@ MonoBehaviour:
   MainCamera: {fileID: 166519573}
   Torso: {fileID: 5272622643357798204}
   AimSpeed: 5
+  PlayerMoveScript: {fileID: 1997766071}
   rotationSpeed: 6
   returnSpeed: 25
   RecoilRotation: {x: 2, y: 2, z: 2}
   RecoilRotationAiming: {x: 0.5, y: 0.5, z: 1.5}
   aiming: 0
   balasInfinitas: 0
-  GunAnimator: {fileID: 0}
+  HandGunAnimator: {fileID: 0}

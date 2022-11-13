@@ -36,6 +36,8 @@ public class MovePlayer : MonoBehaviour
 
     public bool camMovimente;
 
+     public bool IsRunning = false;
+
     [Header("Animation")]
     public Animator FpsController;
     private float WalkAnimation;
@@ -72,10 +74,13 @@ public class MovePlayer : MonoBehaviour
             GetComponent<Stamina>().stamina -= Time.deltaTime * gastoStamina;
             FpsController.SetBool("Run",true);
 
+            IsRunning = true;
+
         }
         if (Input.GetKeyUp(correr))
         {
             FpsController.SetBool("Run", false);
+            IsRunning = false;
         }
 
         if (Input.GetKey(agacha.key))
