@@ -109,8 +109,8 @@ ModelImporter:
       name: Correndo
       takeName: Take 001
       internalID: 0
-      firstFrame: 220
-      lastFrame: 310
+      firstFrame: 227
+      lastFrame: 295
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -35,6 +35,11 @@ public class Ammo : MonoBehaviour
 
     public float AimSpeed;
 
+    [Space]
+    public MovePlayer PlayerMoveScript;
+
+    [Space]
+
     [Header("RecoilSettings")]
     public float rotationSpeed = 6;
     public float returnSpeed = 25;
@@ -51,12 +56,14 @@ public class Ammo : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 rot;
 
-
     [Header("Cheat")]
     public bool balasInfinitas = false;
 
     [HideInInspector]
     public Animator HandGunAnimator;
+
+    private bool Reloading = false;
+    private bool Isfiring;
 
     private void FixedUpdate()
     {
@@ -79,14 +86,16 @@ public class Ammo : MonoBehaviour
         AmmoText.text = ammo.ToString(); //manda o valor da variavél para o texto na tela
         AmmoBagText.text = MaxBag.ToString();
 
-        if (Input.GetKeyDown(KeyCode.R)  && MaxBag > 0)
+        if (Input.GetKeyDown(KeyCode.R)  && MaxBag > 0 && ammo < Maxammo && Isfiring == false )
         {
-            Reload();
+            StartCoroutine(Reload(2.3f));
+           
 
         }
 
-        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo > 0) //atira
+        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo > 0 && PlayerMoveScript.IsRunning == false && Reloading == false) //atira
         {
+            Isfiring = true;
             NextTimeToFire = Time.time + 1f / FireRate;
 
             if (!balasInfinitas)
@@ -102,6 +111,7 @@ public class Ammo : MonoBehaviour
         else
         {
             HandGunAnimator.SetBool("shoot", false);
+            Isfiring = false;
         }
   
 
@@ -171,8 +181,17 @@ public class Ammo : MonoBehaviour
             Torso.position = Vector3.Lerp(Torso.position, NormalPosition.position, Time.deltaTime * AimSpeed);
         }
     }
-    public void Reload()
+    public IEnumerator Reload(float seconds)
     {
+        Reloading = true;
+        HandGunAnimator.SetBool("Reloading", true);
+
+
+        yield return new WaitForSeconds(seconds);
+
+        Reloading = false;
+        HandGunAnimator.SetBool("Reloading", false);
+
         if (MaxBag <= 30)
         {
             int subB = (ammo - MaxBag) * -1;
@@ -192,7 +211,6 @@ public class Ammo : MonoBehaviour
             ammo += sub;
             MaxBag -= sub;
         }
-
     }
 
     public void BalasInfinitas()
