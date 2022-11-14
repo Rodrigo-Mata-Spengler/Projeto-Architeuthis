@@ -18,7 +18,38 @@ ModelImporter:
   - first:
       74: 3330459683747981235
     second: Atirando
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Laterais
+    second: {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Mecanismo_circular
+    second: {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Mecanismo_frente
+    second: {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Mecanismo_meio
+    second: {fileID: 7170930376420925734, guid: ca999541791416349a5d6f55aaf368fe,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Mecanismo_redondo
+    second: {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistola_LowPoly_texturizada_Mecanismo_tras
+    second: {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -138,8 +169,8 @@ ModelImporter:
       name: Correndo
       takeName: Correndo
       internalID: 0
-      firstFrame: 180
-      lastFrame: 265
+      firstFrame: 193
+      lastFrame: 253
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
