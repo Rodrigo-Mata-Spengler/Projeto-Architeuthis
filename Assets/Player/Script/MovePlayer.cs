@@ -40,7 +40,8 @@ public class MovePlayer : MonoBehaviour
 
     [Header("Animation")]
     public Animator FpsController;
-    public Animator FpsControllerPistol; 
+    public Animator FpsControllerPistol;
+    public Animator FpsControllerBat;
     private float WalkAnimation;
 
     private float rotation = 0;
@@ -66,6 +67,7 @@ public class MovePlayer : MonoBehaviour
         WalkAnimation = (Input.GetAxis("Vertical")*-1) + (Input.GetAxis("Horizontal") * 2);
         FpsController.SetFloat("Walk", WalkAnimation);
         FpsControllerPistol.SetFloat("Walk", WalkAnimation);
+        FpsControllerBat.SetFloat("Walk", WalkAnimation);
 
 
 
@@ -76,6 +78,7 @@ public class MovePlayer : MonoBehaviour
             GetComponent<Stamina>().stamina -= Time.deltaTime * gastoStamina;
             FpsController.SetBool("Run",true);
             FpsControllerPistol.SetBool("Run", true);
+            FpsControllerBat.SetBool("Run", true);
 
             IsRunning = true;
 
@@ -84,6 +87,7 @@ public class MovePlayer : MonoBehaviour
         {
             FpsController.SetBool("Run", false);
             FpsControllerPistol.SetBool("Run", false);
+            FpsControllerBat.SetBool("Run", false);
             IsRunning = false;
         }
 

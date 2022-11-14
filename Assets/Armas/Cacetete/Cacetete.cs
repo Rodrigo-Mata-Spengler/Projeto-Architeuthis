@@ -9,35 +9,41 @@ public class Cacetete : MonoBehaviour
     [SerializeField] private float dano;
 
     [SerializeField] private GameObject escudo;
+
+    private bool batendo = false;
+    private bool defendendo = false;
     private void Start()
     {
         escudo.SetActive(false);
-        pupet.ResetTrigger("Marretar");
-        pupet.ResetTrigger("Fire2");
-        pupet.ResetTrigger("soltar");
     }
 
     private void Update()
     {
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
-            pupet.SetTrigger("Marretar");
+            batendo = true;
+            pupet.SetBool("Marretar", true);
         }
-        else
+        if(Input.GetButtonUp("Fire1"))
         {
-            if (Input.GetButtonDown("Fire2"))
-            {
-                pupet.SetTrigger("Defender");
-                escudo.SetActive(true);
-            }
-            else if (Input.GetButtonUp("Fire2"))
-            {
-                pupet.SetTrigger("soltar");
-                escudo.SetActive(false);
-            }
+            batendo = false;
+            pupet.SetBool("Marretar", false);
         }
 
-        
+        if (Input.GetButtonDown("Fire2"))
+        {
+
+            escudo.SetActive(true);
+            defendendo = true;
+            pupet.SetBool("Defender", true);
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+
+            escudo.SetActive(false);
+            defendendo = false;
+            pupet.SetBool("Defender", false);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
