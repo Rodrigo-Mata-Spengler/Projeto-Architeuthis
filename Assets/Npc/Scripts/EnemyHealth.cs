@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     {
         Life = maxLife;
         
-        TotalPointsToPass = GameObject.Find("GameManager").GetComponent<GameManager>().PointsNextLevel;
+        TotalPointsToPass = GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints;
     }
 
     private void Awake()
@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         if (Life <= 0)
         {
 
-            GameObject.Find("GameManager").GetComponent<GameManager>().PointsNextLevel += pointsGive;
+            GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
 
             this.gameObject.GetComponent<DropItem>().DropResources();
             NPCReset();

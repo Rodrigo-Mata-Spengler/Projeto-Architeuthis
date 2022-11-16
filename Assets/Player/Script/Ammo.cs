@@ -65,6 +65,7 @@ public class Ammo : MonoBehaviour
     private bool Reloading = false;
     private bool Isfiring;
 
+    public AudioSource ShootSound;
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -73,6 +74,7 @@ public class Ammo : MonoBehaviour
     }
     private void Start()
     {
+       
 
         HandGunAnimator = GetComponent<Animator>();
         
@@ -102,16 +104,27 @@ public class Ammo : MonoBehaviour
             {
                 ammo--;
             }
+
+            if(ammo == 0)
+            {
+                ShootSound.enabled = false;
+            }
             
             Shoot();
             HandGunAnimator.SetBool("shoot", true);
-           
+            ShootSound.enabled = true;
 
+
+        }
+        else if(Input.GetButtonUp("Fire1"))
+        {
+            ShootSound.enabled = false;
         }
         else
         {
             HandGunAnimator.SetBool("shoot", false);
             Isfiring = false;
+           //ShootSound.enabled = false;
         }
   
 
@@ -166,7 +179,7 @@ public class Ammo : MonoBehaviour
 
             currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
         }
-
+        
     }
     public void Aim(bool IsAiming)
     {

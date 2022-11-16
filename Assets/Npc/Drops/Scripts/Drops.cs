@@ -26,7 +26,7 @@ public class Drops : MonoBehaviour
                     }
                     break;
                 case tipoDrop.AmmoPistola:
-                    if (other.GetComponent<DropReference>().pistola.GetComponent<Ammo>().GiveAmmo(pistolaAmmo))
+                    if (other.GetComponent<DropReference>().pistola.GetComponent<AmmoPistol>().GiveAmmo(pistolaAmmo))
                     {
                         Destroy(gameObject);
                     }

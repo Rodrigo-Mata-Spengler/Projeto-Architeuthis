@@ -5,5 +5,5 @@ using UnityEngine;
 public class DropReference : MonoBehaviour
 {
     public Ammo rifle;
-    public Ammo pistola;
+    public AmmoPistol pistola;
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [HideInInspector]public int PointsNextLevel;
+    public int CurrentPoints;
     public int pointsToPass;
 
     public Text PressText;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PointsNextLevel > pointsToPass)
+        if(CurrentPoints > pointsToPass)
         {
             SceneManager.LoadScene("Scena final");
             //open door or send massage in the UI
@@ -39,6 +39,6 @@ public class GameManager : MonoBehaviour
     }
     public void GivePointsToPass(int amount)
     {
-        PointsNextLevel += amount;
+        CurrentPoints += amount;
     }
 }

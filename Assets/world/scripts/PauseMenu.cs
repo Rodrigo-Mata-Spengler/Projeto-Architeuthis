@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject player;
 
-    public Ammo pistola;
+    public AmmoPistol pistola;
     public Ammo rifle;
 
     // Update is called once per frame
