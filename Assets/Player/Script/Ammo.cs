@@ -65,7 +65,9 @@ public class Ammo : MonoBehaviour
     private bool Reloading = false;
     private bool Isfiring;
 
-    public AudioSource ShootSound;
+
+    [Header("Sounds")]
+    public AudioSource reloadSound;
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -104,22 +106,13 @@ public class Ammo : MonoBehaviour
             {
                 ammo--;
             }
-
-            if(ammo == 0)
-            {
-                ShootSound.enabled = false;
-            }
             
             Shoot();
             HandGunAnimator.SetBool("shoot", true);
-            ShootSound.enabled = true;
-
+            
 
         }
-        else if(Input.GetButtonUp("Fire1"))
-        {
-            ShootSound.enabled = false;
-        }
+
         else
         {
             HandGunAnimator.SetBool("shoot", false);
@@ -199,6 +192,7 @@ public class Ammo : MonoBehaviour
         Reloading = true;
         HandGunAnimator.SetBool("Reloading", true);
 
+        reloadSound.enabled = true;
 
         yield return new WaitForSeconds(seconds);
 
@@ -224,6 +218,8 @@ public class Ammo : MonoBehaviour
             ammo += sub;
             MaxBag -= sub;
         }
+
+        reloadSound.enabled = false;
     }
 
     public void BalasInfinitas()
