@@ -65,6 +65,10 @@ public class AmmoPistol : MonoBehaviour
     private bool Reloading = false;
     private bool Isfiring;
 
+
+    [Header("Sounds")]
+    public AudioSource reloadSound;
+    public AudioSource OutOfAmmoSound;
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -107,6 +111,10 @@ public class AmmoPistol : MonoBehaviour
             HandGunAnimator.SetBool("shoot", true);
            
 
+        }
+        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo <= 0 && PlayerMoveScript.IsRunning == false && Reloading == false)
+        {
+            StartCoroutine(OutSound(0.4f));
         }
         else
         {
@@ -186,6 +194,7 @@ public class AmmoPistol : MonoBehaviour
         Reloading = true;
         HandGunAnimator.SetBool("Reloading", true);
 
+        reloadSound.enabled = true;
 
         yield return new WaitForSeconds(seconds);
 
@@ -211,8 +220,17 @@ public class AmmoPistol : MonoBehaviour
             ammo += sub;
             MaxBag -= sub;
         }
+        reloadSound.enabled = false;
     }
 
+    public IEnumerator OutSound(float seconds)
+    {
+        OutOfAmmoSound.enabled = true;
+
+        yield return new WaitForSeconds(seconds);
+
+        OutOfAmmoSound.enabled = false;
+    }
     public void BalasInfinitas()
     {
         balasInfinitas = !balasInfinitas;

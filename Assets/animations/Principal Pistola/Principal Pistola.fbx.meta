@@ -82,7 +82,7 @@ ModelImporter:
       name: Recarregar
       takeName: Recarregar
       internalID: 0
-      firstFrame: 271
+      firstFrame: 300
       lastFrame: 372
       wrapMode: 0
       orientationOffsetY: 0
@@ -106,7 +106,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 271
     - serializedVersion: 16
       name: Idle
       takeName: Idle
