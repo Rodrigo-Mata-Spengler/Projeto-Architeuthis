@@ -112,16 +112,15 @@ public class AmmoPistol : MonoBehaviour
            
 
         }
-        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo <= 0 && PlayerMoveScript.IsRunning == false && Reloading == false)
-        {
-            StartCoroutine(OutSound(0.4f));
-        }
         else
         {
             HandGunAnimator.SetBool("shoot", false);
             Isfiring = false;
         }
-  
+        if (Input.GetButton("Fire1") && Time.time >= NextTimeToFire && ammo <= 0 && PlayerMoveScript.IsRunning == false && Reloading == false)
+        {
+            StartCoroutine(OutSound(0.4f));
+        }
 
         if (Input.GetButton("Fire2"))
         {
