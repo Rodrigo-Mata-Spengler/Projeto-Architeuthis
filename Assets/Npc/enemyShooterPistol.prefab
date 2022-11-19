@@ -811,6 +811,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8794543683152052695, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0325
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794543683152052695, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1834
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794543683152052695, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0142
+      objectReference: {fileID: 0}
     - target: {fileID: 8982317826281321713, guid: 18106479a624531438a21643a5bc31cf,
         type: 3}
       propertyPath: m_Name
@@ -972,6 +987,23 @@ MonoBehaviour:
   visibleTargets: []
   SeePlayer: 0
   animatorController: {fileID: 7584708592866489304}
+--- !u!114 &7584708592866489304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120590237562261648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d11e659e57bbeb4eb415bfcf4095d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shoot: 0
+  Walk: 0
+  Run: 0
+  Death: 0
+  Animator: {fileID: 0}
 --- !u!114 &8259025399393869398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,22 +1033,7 @@ MonoBehaviour:
   Life: 20
   maxLife: 1
   pointsGive: 0
---- !u!114 &7584708592866489304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3120590237562261648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d11e659e57bbeb4eb415bfcf4095d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SeePlayer: 0
-  Walk: 0
-  Run: 0
-  Death: 0
+  animatorController: {fileID: 0}
 --- !u!4 &3307177951156790710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8794543683152052695, guid: 18106479a624531438a21643a5bc31cf,
