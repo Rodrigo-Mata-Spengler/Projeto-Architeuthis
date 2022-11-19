@@ -33,6 +33,9 @@ public class BTEnemyV01 : MonoBehaviour
     //[HideInInspector]
     public bool SeePlayer;
 
+    [Space]
+    public NpcAnimationController animatorController;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -101,6 +104,17 @@ public class BTEnemyV01 : MonoBehaviour
     {
         agent.stoppingDistance = StopDistance;
         agent.SetDestination(target.transform.position);
+
+        
+
+        if(SeePlayer == true)
+        {
+            animatorController.Run = true;
+        }
+        else
+        {
+            animatorController.Walk = true;
+        }
     }
     public void MoveAwayFromTarget(GameObject target, NavMeshAgent agent )
     {
@@ -156,6 +170,7 @@ public class BTEnemyV01 : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                     SeePlayer = true;
+                  
                     
                 }
 

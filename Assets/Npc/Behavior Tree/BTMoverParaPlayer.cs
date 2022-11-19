@@ -20,21 +20,26 @@ public class BTMoverParaPlayer : BTnode
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
         bool seguir = false;
-        while(alvo && Inplace == false)
+        while(alvo && Inplace == false )
         {
-
-            /*if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 5f)
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) > 10f)
             {
-                seguir = true;
-                
-            }*/
+                Controller.animatorController.Run = false;
+            }
+            if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 10f)
+            {
+                status = Status.SUCCESS;
+                break;
+
+            }
 
             npc.transform.LookAt(alvo.transform.position);
             Controller.MoveToTarget(alvo, agent, 10f);
-            status = Status.SUCCESS;
-            break;
+           
+           
+            Controller.animatorController.Run = true;
 
-
+            yield return null;
         }
 
         Print();

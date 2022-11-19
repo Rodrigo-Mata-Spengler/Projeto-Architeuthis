@@ -36,6 +36,7 @@ public class BTPatrol : BTnode
                 {
                     Debug.DrawRay(point, Vector3.up, Color.blue, 10f); //so you can see with gizmos
                     agent.SetDestination(point);
+                    Controller.animatorController.Walk = true;
                 }
             }
 

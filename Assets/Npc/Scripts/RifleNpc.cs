@@ -17,11 +17,10 @@ public class RifleNpc : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
-    [SerializeField] private GameObject Hands;
 
     [SerializeField] private float bulletForce;
 
-    
+    public NpcAnimationController animatorController;
 
     float speed = 1.5f;
     private void Start()
@@ -37,7 +36,7 @@ public class RifleNpc : MonoBehaviour
 
     public bool Aim(GameObject Player)
     {
-        Hands.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+        
 
         gameObject.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
 
@@ -46,9 +45,9 @@ public class RifleNpc : MonoBehaviour
     }
     public bool Fire()
     {
-        
+        animatorController.Shoot = false;
 
-        if(ammo > 0 && Time.time >= NextTimeToFire)
+        if (ammo > 0 && Time.time >= NextTimeToFire)
         {
             NextTimeToFire = Time.time + 1f / FireRate;
             ammo--;
@@ -57,10 +56,15 @@ public class RifleNpc : MonoBehaviour
             GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce,ForceMode.Impulse);
 
+
+            animatorController.Shoot = true;
             return true;
         }
         else
         {
+            animatorController.Shoot = false;
+            animatorController.Run = false;
+            animatorController.Walk = false;
             return false;
         }
     }
