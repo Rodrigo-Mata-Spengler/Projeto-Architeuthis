@@ -11,11 +11,13 @@ public class BTReload : BTnode
 
         GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
 
+        float seconds = rifle.GetComponent<RifleNpc>().reloadTime;
+
         if (rifle.GetComponent<RifleNpc>().Recharge())
         {
             status = Status.SUCCESS;
             Print();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(seconds);
         }
         else
         {

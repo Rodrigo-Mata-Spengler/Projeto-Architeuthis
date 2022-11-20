@@ -742,6 +742,7 @@ MonoBehaviour:
   spawnBulletPosition: {fileID: 4702758474182615903}
   ondeAtirar: {fileID: 1780713130164957482}
   bulletvelocity: 70
+  Npc: {fileID: 0}
   bulletForce: 100
   animatorController: {fileID: 0}
 --- !u!1 &1195090184595301266
@@ -6675,6 +6676,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_base_Rifle
       objectReference: {fileID: 0}
+    - target: {fileID: 8982317826281321713, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6087954651a597842b31a2d8e37a9636, type: 3}
 --- !u!4 &71069611046784858 stripped
@@ -6722,6 +6728,7 @@ MonoBehaviour:
   spawnBulletPosition: {fileID: 4977915559009839571}
   ondeAtirar: {fileID: 9146070545614230987}
   bulletvelocity: 70
+  Npc: {fileID: 1088730630258073995}
   bulletForce: 100
   animatorController: {fileID: 6541365169165139964}
 --- !u!1 &1088730630258073995 stripped

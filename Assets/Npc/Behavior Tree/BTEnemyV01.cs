@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class BTEnemyV01 : MonoBehaviour
 {
     
-    public float Yrotation;
+    [HideInInspector]public float Yrotation;
+
+    
 
     [HideInInspector]
     public Transform area;
@@ -139,8 +141,6 @@ public class BTEnemyV01 : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
-
-
 
     //fild of view
     IEnumerator FindTargetsWithDelay(float delay)

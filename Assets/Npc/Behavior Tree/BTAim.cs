@@ -14,12 +14,13 @@ public class BTAim: BTnode
         GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
 
         GameObject npc = bt.gameObject;
+        BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
         
 
         while (rifle.GetComponent<RifleNpc>().Aim(alvo))
         {
-
+           
             status = Status.SUCCESS;
             Print();
             yield break;

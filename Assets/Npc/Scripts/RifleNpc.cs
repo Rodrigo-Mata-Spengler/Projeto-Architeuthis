@@ -17,12 +17,14 @@ public class RifleNpc : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
+    [SerializeField] private GameObject Npc;
 
     [SerializeField] private float bulletForce;
 
     public NpcAnimationController animatorController;
 
     float speed = 1.5f;
+    public float reloadTime;
     private void Start()
     {
         ammo = Maxammo;
@@ -30,16 +32,16 @@ public class RifleNpc : MonoBehaviour
     
     public bool Recharge()
     {
+        
         ammo = Maxammo;
         return true;
     }
 
     public bool Aim(GameObject Player)
     {
-        
 
+        Npc.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
         gameObject.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
-
 
         return true;
     }
