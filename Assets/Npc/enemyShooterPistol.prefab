@@ -831,6 +831,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_base_Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 8982317826281321713, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18106479a624531438a21643a5bc31cf, type: 3}
 --- !u!4 &2307321736619821610 stripped
@@ -942,8 +947,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.19
-  m_BaseOffset: 0.21
+  m_Height: 1.91
+  m_BaseOffset: 0.06
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &5144053608102887764
@@ -1003,7 +1008,7 @@ MonoBehaviour:
   Walk: 0
   Run: 0
   Death: 0
-  Animator: {fileID: 0}
+  Animator: {fileID: 4470739243005585763}
 --- !u!114 &8259025399393869398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,9 +1036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 20
-  maxLife: 1
+  maxLife: 20
   pointsGive: 0
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 7584708592866489304}
 --- !u!4 &3307177951156790710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8794543683152052695, guid: 18106479a624531438a21643a5bc31cf,

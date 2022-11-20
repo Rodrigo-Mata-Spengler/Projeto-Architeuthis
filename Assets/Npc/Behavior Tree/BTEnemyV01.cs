@@ -8,6 +8,7 @@ public class BTEnemyV01 : MonoBehaviour
     
     public float Yrotation;
 
+    [HideInInspector]
     public Transform area;
 
     public GameObject rifle;
