@@ -5,32 +5,55 @@ using UnityEngine.AI;
 
 public class BossCtrl : MonoBehaviour
 {
-    private enum Behavior {Follow,Atack,Dash,Defend};
+    private enum Behavior {Follow,Atack,Dash,Defend,Special,Idle};
 
     [SerializeField] private Behavior bossMode;
 
-    public NavMeshAgent boss;
+    private NavMeshAgent boss;
 
     public Transform alvo;
 
-    public bool teste;
+    [SerializeField] private int probabilidade = 0;
+
+    [SerializeField] private CharacterController controller;
 
     [SerializeField] private float distanciaDeAtaque;
 
     [Header("Dash")]
     [SerializeField] private float dashForce;
     [SerializeField] private float dashTime;
+    [SerializeField] private float dashProvabilidade;
+
+    [Header("Atacar")]
+    [SerializeField] private Cacetete2 cacetete;
+    [SerializeField] private float ataqueProvabilidade;
+
+    [Header("Defender")]
+    [SerializeField] private float defenderTimer = 0;
+    [SerializeField] private float defesaProvabilidade;
+
+    [Header("Especial")]
+    [SerializeField] private float forçaPraTraz;
+    [SerializeField] private float trazTime;
+    [SerializeField] private float tempoEsperaAtaque;
+    [SerializeField] private float ataqueTime;
+    [SerializeField] private float forcaAtaque;
+    [SerializeField] private float specialProvabilidade;
+
 
     private void Start()
     {
         boss = gameObject.GetComponent<NavMeshAgent>();
+
+        controller = gameObject.GetComponent<CharacterController>();
+        controller.enabled = false;
 
         //bossMode = Behavior.Follow;
     }
 
     private void Update()
     {
-        //DesisionMaker();
+        DesisionMaker();
 
         switch (bossMode)
         {
@@ -38,11 +61,19 @@ public class BossCtrl : MonoBehaviour
                 FollowPlayer();
                 break;
             case Behavior.Atack:
+                Atacar();
                 break;
             case Behavior.Dash:
                 Dash();
                 break;
             case Behavior.Defend:
+                Defender();
+                break;
+            case Behavior.Special:
+                Special();
+                break;
+            case Behavior.Idle:
+
                 break;
             default:
                 break;
@@ -51,13 +82,34 @@ public class BossCtrl : MonoBehaviour
 
     private void DesisionMaker()
     {
-        if (Vector3.Distance(transform.position,alvo.position) > distanciaDeAtaque)
+        probabilidade =  Random.Range(0, 100);
+
+        if (Vector3.Distance(transform.position,alvo.position) >= distanciaDeAtaque)
         {
             bossMode = Behavior.Follow;
         }
         else
         {
-            bossMode = Behavior.Dash;
+            if (probabilidade <= ataqueProvabilidade)
+            {
+                bossMode = Behavior.Atack;
+
+            }else if (probabilidade <= defesaProvabilidade)
+            {
+                bossMode = Behavior.Defend;
+            }
+            else if (probabilidade <= specialProvabilidade)
+            {
+                bossMode = Behavior.Special;
+            }
+            else if (probabilidade <= dashProvabilidade)
+            {
+                bossMode = Behavior.Dash;
+            }
+            else
+            {
+                bossMode = Behavior.Idle;
+            }
         }
     }
 
@@ -68,29 +120,99 @@ public class BossCtrl : MonoBehaviour
 
     private void Dash()
     {
+        boss.enabled = false;
+        controller.enabled = true;
 
-        boss.ResetPath();
-        /*float direc = Random.Range(-2, 2);
+        int a = 0;
 
-        gameObject.GetComponent<Rigidbody>().AddForce(dashForce * Time.deltaTime * (2 * transform.right));
-        */
+        if(Random.Range(0,100) >= 50)
+        {
+            a = -1;
+        }
+        else
+        {
+            a = 1;
+        }
 
-        StartCoroutine(DashTimer());
-        
-        
+        StartCoroutine(DashTimer(a));     
     }
 
-    IEnumerator DashTimer()
+    IEnumerator DashTimer(int a)
     {
         float starttime = Time.time;
 
         while (Time.time < starttime + dashTime)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(dashForce * Time.deltaTime * (1 * transform.right));
+            controller.Move(dashForce * Time.deltaTime * (a * transform.right));
+
             yield return null;
         }
 
-        bossMode = Behavior.Follow;
+        boss.enabled = true;
+        controller.enabled = false;
+        bossMode = Behavior.Idle;
+        yield break;
+    }
+
+    private void Atacar()
+    {
+        cacetete.Atacar();
+
+        bossMode = Behavior.Idle;
+    }
+
+    private void Defender()
+    {
+        StartCoroutine(DefenderTimer());
+    }
+
+    IEnumerator DefenderTimer()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        cacetete.Defender();
+
+        yield return new WaitForSeconds(defenderTimer);
+
+        cacetete.Soltar();
+
+        bossMode = Behavior.Idle;
+        yield break;
+    }
+
+    private void Special()
+    {
+        boss.enabled = false;
+        controller.enabled = true;
+
+        StartCoroutine(SpecialMove());
+    }
+
+    IEnumerator SpecialMove()
+    {
+        float starttime = Time.time;
+
+        while (Time.time < starttime + trazTime)
+        {
+            controller.Move(forçaPraTraz * Time.deltaTime * (-1 * transform.forward));
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(tempoEsperaAtaque);
+
+        starttime = Time.time;
+
+        while (Time.time < starttime + ataqueTime)
+        {
+            controller.Move(forcaAtaque * Time.deltaTime * (1 * transform.forward));
+
+            yield return null;
+        }
+
+        boss.enabled = true;
+        controller.enabled = false;
+        bossMode = Behavior.Idle;
         yield break;
     }
 }

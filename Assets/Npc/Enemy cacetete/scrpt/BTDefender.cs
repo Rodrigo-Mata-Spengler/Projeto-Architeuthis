@@ -17,7 +17,7 @@ public class BTDefender : BTnode
 
         yield return new WaitForSeconds(Random.Range(1,3));
 
-        arma.soltar();
+        arma.Soltar();
 
         status = Status.SUCCESS;
         Print();
