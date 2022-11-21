@@ -24,13 +24,14 @@ public class TakeDamegeEnemy : MonoBehaviour
             {
                 Debug.Log("dano");
                 atirador.SeePlayer = true;
+                Destroy(other);
             }
             
             if (atacante)
             {
                 atacante.SeePlayer = true;
             }
-            Destroy(other);
+            
         }
     }
 }

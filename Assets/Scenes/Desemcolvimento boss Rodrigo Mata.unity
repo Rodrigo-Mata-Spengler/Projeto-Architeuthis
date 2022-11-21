@@ -220,6 +220,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &220556055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 661643937}
+    m_Modifications:
+    - target: {fileID: 2317781903066723913, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_Name
+      value: Colider damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06fed553c74625047a229fe8d7bfd99c, type: 3}
+--- !u!4 &220556056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
+    type: 3}
+  m_PrefabInstance: {fileID: 220556055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &661643931
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +311,7 @@ GameObject:
   - component: {fileID: 661643932}
   - component: {fileID: 661643938}
   - component: {fileID: 661643939}
+  - component: {fileID: 661643940}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -256,20 +332,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossMode: 0
-  boss: {fileID: 0}
   alvo: {fileID: 41901228}
-  teste: 0
+  probabilidade: 0
   controller: {fileID: 0}
   distanciaDeAtaque: 2
   dashForce: 10
   dashTime: 0.02
+  dashProvabilidade: 90
   cacetete: {fileID: 8837002541172567257}
+  ataqueProvabilidade: 40
   defenderTimer: 3
+  defesaProvabilidade: 50
   "for\xE7aPraTraz": 1
   trazTime: 0.02
   tempoEsperaAtaque: 1
   ataqueTime: 0.2
   forcaAtaque: 2
+  specialProvabilidade: 65
 --- !u!195 &661643933
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -369,6 +448,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6551877473475543056}
+  - {fileID: 220556056}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -406,6 +486,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &661643940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661643931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b963cb73f9167f4a9ee9314429e3125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Life: 100
+  maxLife: 100
+  pointsGive: 0
+  animatorController: {fileID: 0}
 --- !u!1 &987489228
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +910,7 @@ GameObject:
   - component: {fileID: 6551877474184514964}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: BulletPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

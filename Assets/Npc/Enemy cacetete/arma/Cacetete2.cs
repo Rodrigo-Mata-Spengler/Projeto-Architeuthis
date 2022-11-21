@@ -33,13 +33,4 @@ public class Cacetete2 : MonoBehaviour
         pupet.SetTrigger("Defender 2");
         escudo.SetActive(false);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Health vida = collision.transform.GetComponent<Health>();
-            vida.DamageHealth(dano);
-        }
-    }
 }

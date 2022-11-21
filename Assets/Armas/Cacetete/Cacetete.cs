@@ -45,13 +45,4 @@ public class Cacetete : MonoBehaviour
             pupet.SetBool("Defender", false);
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") && Input.GetButton("Fire1"))
-        {
-            Health vida = collision.transform.GetComponent<Health>();
-            vida.DamageHealth(dano);
-        }
-    }
 }
