@@ -28,7 +28,7 @@ public class Cacetete2 : MonoBehaviour
         escudo.SetActive(true);
     }
 
-    public void soltar()
+    public void Soltar()
     {
         pupet.SetTrigger("Defender 2");
         escudo.SetActive(false);
