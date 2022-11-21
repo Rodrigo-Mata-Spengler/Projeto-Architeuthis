@@ -40,6 +40,8 @@ public class BossCtrl : MonoBehaviour
     [SerializeField] private float forcaAtaque;
     [SerializeField] private float specialProvabilidade;
 
+    private bool inUse = false;
+
 
     private void Start()
     {
@@ -82,35 +84,39 @@ public class BossCtrl : MonoBehaviour
 
     private void DesisionMaker()
     {
-        probabilidade =  Random.Range(0, 100);
-
-        if (Vector3.Distance(transform.position,alvo.position) >= distanciaDeAtaque)
+        if (!inUse)
         {
-            bossMode = Behavior.Follow;
-        }
-        else
-        {
-            if (probabilidade <= ataqueProvabilidade)
+            probabilidade = Random.Range(0, 100);
+            if (Vector3.Distance(transform.position, alvo.position) >= distanciaDeAtaque)
             {
-                bossMode = Behavior.Atack;
-
-            }else if (probabilidade <= defesaProvabilidade)
-            {
-                bossMode = Behavior.Defend;
-            }
-            else if (probabilidade <= specialProvabilidade)
-            {
-                bossMode = Behavior.Special;
-            }
-            else if (probabilidade <= dashProvabilidade)
-            {
-                bossMode = Behavior.Dash;
+                bossMode = Behavior.Follow;
             }
             else
             {
-                bossMode = Behavior.Idle;
+                if (probabilidade <= ataqueProvabilidade)
+                {
+                    bossMode = Behavior.Atack;
+
+                }
+                else if (probabilidade <= defesaProvabilidade)
+                {
+                    bossMode = Behavior.Defend;
+                }
+                else if (probabilidade <= specialProvabilidade)
+                {
+                    bossMode = Behavior.Special;
+                }
+                else if (probabilidade <= dashProvabilidade)
+                {
+                    bossMode = Behavior.Dash;
+                }
+                else
+                {
+                    bossMode = Behavior.Idle;
+                }
             }
         }
+        
     }
 
     private void FollowPlayer()
@@ -120,6 +126,7 @@ public class BossCtrl : MonoBehaviour
 
     private void Dash()
     {
+        inUse = true;
         boss.enabled = false;
         controller.enabled = true;
 
@@ -151,18 +158,22 @@ public class BossCtrl : MonoBehaviour
         boss.enabled = true;
         controller.enabled = false;
         bossMode = Behavior.Idle;
+        inUse = false;
         yield break;
     }
 
     private void Atacar()
     {
+        inUse = true;
         cacetete.Atacar();
 
         bossMode = Behavior.Idle;
+        inUse = false;
     }
 
     private void Defender()
     {
+        inUse = true;
         StartCoroutine(DefenderTimer());
     }
 
@@ -177,11 +188,13 @@ public class BossCtrl : MonoBehaviour
         cacetete.Soltar();
 
         bossMode = Behavior.Idle;
+        inUse = false;
         yield break;
     }
 
     private void Special()
     {
+        inUse = true;
         boss.enabled = false;
         controller.enabled = true;
 
@@ -213,6 +226,7 @@ public class BossCtrl : MonoBehaviour
         boss.enabled = true;
         controller.enabled = false;
         bossMode = Behavior.Idle;
+        inUse = false;
         yield break;
     }
 }
