@@ -158,6 +158,7 @@ MonoBehaviour:
   Npc: {fileID: 0}
   bulletForce: 100
   animatorController: {fileID: 0}
+  reloadTime: 0
 --- !u!1 &1481846276886034376
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +758,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2092913270447287617}
     m_Modifications:
+    - target: {fileID: 128166206366903030, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eaa510645bc4024cad24ce3da02890f, type: 2}
+    - target: {fileID: 3113933085396117863, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84cb30a662cf3de47ba00cabf57cc916, type: 2}
+    - target: {fileID: 4384866703782370377, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17af81f51dbc43249824773d15f87fa5, type: 2}
+    - target: {fileID: 4416047096299508496, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 592da7a7ec8b5b5409d6f954d78f2ea1, type: 2}
+    - target: {fileID: 4647451339467555994, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3abe3d1356ca064abdedfa1ac285ba6, type: 2}
+    - target: {fileID: 5027838836135378963, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 868c7229797656f46a50f0c772107d7d, type: 2}
+    - target: {fileID: 6659657341038561822, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b57f258d348f0c40a24c0c018811985, type: 2}
+    - target: {fileID: 6717392868115497806, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f613c7a6ea35ab44af58ce399ac35b2, type: 2}
+    - target: {fileID: 6894116839357096803, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b29a37dec0f7bc64bbb4ef0b98d40b37, type: 2}
+    - target: {fileID: 7422609939567762604, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 370eec12f65b3594f9df7edbcd0fae85, type: 2}
+    - target: {fileID: 8029150303673019993, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64d6c14bb8b38a34196162026fb4c0bd, type: 2}
+    - target: {fileID: 8627481118257216946, guid: 18106479a624531438a21643a5bc31cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0add427ff6d82b24fb0a2922ebdd5a3c, type: 2}
     - target: {fileID: 8641364061115149899, guid: 18106479a624531438a21643a5bc31cf,
         type: 3}
       propertyPath: m_RootOrder
@@ -875,6 +936,7 @@ MonoBehaviour:
   Npc: {fileID: 3120590237562261648}
   bulletForce: 100
   animatorController: {fileID: 7584708592866489304}
+  reloadTime: 0
 --- !u!1 &3120590237562261648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8982317826281321713, guid: 18106479a624531438a21643a5bc31cf,

@@ -745,6 +745,7 @@ MonoBehaviour:
   Npc: {fileID: 0}
   bulletForce: 100
   animatorController: {fileID: 0}
+  reloadTime: 0
 --- !u!1 &1195090184595301266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,6 +6617,71 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7185928c06dfba847a2864e127874a0f, type: 2}
+    - target: {fileID: 724603358763298218, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe655443d6bd53143bceab851d7a9672, type: 2}
+    - target: {fileID: 962796020265797467, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea3a6cec2f93cb140b856529c41b1cf7, type: 2}
+    - target: {fileID: 2201720937537720374, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f882974f4744ba845969512dea199a90, type: 2}
+    - target: {fileID: 2517689070446609583, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ec2fa7319beeb1438ab7baee7fc2f99, type: 2}
+    - target: {fileID: 2528657000417028154, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 581ab6bd8ec3e3245bf0cd3286673ea5, type: 2}
+    - target: {fileID: 2977869700501731053, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19d26589836df64468e975bdf35ce26c, type: 2}
+    - target: {fileID: 5228522650711005443, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2edda26c48c0bf149b96269fb0c10078, type: 2}
+    - target: {fileID: 6450567540957886348, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 982a45067da74ca419317de9d7d3b3fe, type: 2}
+    - target: {fileID: 6901931474234809787, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffb7603596fe7f44fbbdc201b824193b, type: 2}
+    - target: {fileID: 7077445739158937092, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b5a53f3fb0476646b18d889ce05e737, type: 2}
+    - target: {fileID: 7105844712147853406, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18a06b6b709dfcb4cb130d7f769fab1f, type: 2}
+    - target: {fileID: 7642151467099944545, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31de32ad889aa7d4e800ef6f8b617de3, type: 2}
+    - target: {fileID: 7902105446567058292, guid: 6087954651a597842b31a2d8e37a9636,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59542abd54c312d48b3b6198e68fecc6, type: 2}
     - target: {fileID: 8641364061115149899, guid: 6087954651a597842b31a2d8e37a9636,
         type: 3}
       propertyPath: m_RootOrder
@@ -6731,6 +6797,7 @@ MonoBehaviour:
   Npc: {fileID: 1088730630258073995}
   bulletForce: 100
   animatorController: {fileID: 6541365169165139964}
+  reloadTime: 0
 --- !u!1 &1088730630258073995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8982317826281321713, guid: 6087954651a597842b31a2d8e37a9636,
