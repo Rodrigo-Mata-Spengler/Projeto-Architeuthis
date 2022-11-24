@@ -302,7 +302,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8522213474263135642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -442,6 +442,7 @@ MonoBehaviour:
   Life: 20
   maxLife: 20
   pointsGive: 0
+  animatorController: {fileID: 0}
 --- !u!54 &8522213474263135647
 Rigidbody:
   m_ObjectHideFlags: 0
