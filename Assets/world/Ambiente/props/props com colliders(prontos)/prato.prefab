@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4036553802548890514}
   - component: {fileID: 6773092438036674233}
   - component: {fileID: 1682119879800967056}
+  - component: {fileID: 1748947788703811870}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:plate_deep002
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1748947788703811870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242063881501051100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.410002, y: 11.032947, z: 2.6061873}
+  m_Center: {x: -26.230822, y: -33.428505, z: 78.481705}
 --- !u!1 &5305403084637809618
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4822021852218618216}
+  - component: {fileID: 908398997819765923}
   m_Layer: 0
   m_Name: prato
   m_TagString: Untagged
@@ -106,12 +121,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305403084637809618}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.021191921, y: 0.021191921, z: 0.021191921}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4036553802548890514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &908398997819765923
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305403084637809618}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.41
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

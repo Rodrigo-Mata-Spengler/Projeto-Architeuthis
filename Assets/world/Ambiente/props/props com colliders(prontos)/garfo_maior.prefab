@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8894951649592083721}
   - component: {fileID: 2994301164724990957}
   - component: {fileID: 8357636802523318617}
+  - component: {fileID: 2130208095589917874}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:fork_big002
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2130208095589917874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286286043849745256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3596857, y: 12.546261, z: 0.9256076}
+  m_Center: {x: -9.55203, y: -37.493393, z: 76.141525}
 --- !u!1 &8641411217981463211
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8982329519065792529}
+  - component: {fileID: 2433895636446018372}
   m_Layer: 0
   m_Name: garfo_maior
   m_TagString: Untagged
@@ -106,12 +121,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8641411217981463211}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.017071152, y: 0.017071152, z: 0.017071152}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8894951649592083721}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2433895636446018372
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641411217981463211}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.41
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

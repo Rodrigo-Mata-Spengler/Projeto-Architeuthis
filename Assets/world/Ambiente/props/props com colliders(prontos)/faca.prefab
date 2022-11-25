@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4024241040924894132}
+  - component: {fileID: 3394167378116833790}
   m_Layer: 0
   m_Name: faca
   m_TagString: Untagged
@@ -23,15 +24,31 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4364877867500189966}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.017071152, y: 0.017071152, z: 0.017071152}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4654368325878378349}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3394167378116833790
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364877867500189966}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.41
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8215890212223365495
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +60,7 @@ GameObject:
   - component: {fileID: 4654368325878378349}
   - component: {fileID: 5859555348059355199}
   - component: {fileID: 4794270857470155311}
+  - component: {fileID: 8275731303733461310}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:knife002
   m_TagString: Untagged
@@ -115,3 +133,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8275731303733461310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215890212223365495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.139346, y: 16.401047, z: 1.0679508}
+  m_Center: {x: -42.372375, y: -37.53717, z: 76.237274}
