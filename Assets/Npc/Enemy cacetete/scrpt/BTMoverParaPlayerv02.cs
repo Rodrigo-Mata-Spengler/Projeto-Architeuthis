@@ -26,11 +26,8 @@ public class BTMoverParaPlayerv02 : BTnode
         while (alvo)
         {
 
-            //npc.transform.LookAt(new Vector3(0, alvo.transform.position.y, 0));
-
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 2f)
             {
-                
                 status = Status.SUCCESS;
                 pupet.SetBool("IsIdle",true);
 
@@ -38,7 +35,6 @@ public class BTMoverParaPlayerv02 : BTnode
             }
             else
             {
-                //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
                 pupet.SetBool("IsIdle", false);
                 Controller.MoveToTarget(alvo, agent);
             }
