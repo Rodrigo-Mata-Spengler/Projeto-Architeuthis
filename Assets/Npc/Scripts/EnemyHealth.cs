@@ -17,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     private BTEnemyV01 Brain;
     private NavMeshAgent NavMesh;
 
+    private bool doOnce = true;
+
     [Space]
     public NpcAnimationController animatorController;
     private void Start()
@@ -46,8 +48,11 @@ public class EnemyHealth : MonoBehaviour
             animatorController.Death = true;
             GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
 
+            if (doOnce) 
+            {
+                NPCReset();
+            }
             
-            NPCReset();
 
         }
     }
@@ -65,6 +70,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void NPCReset()
     {
+        doOnce = false;
         this.gameObject.GetComponent<DropItem>().DropResources();
         Destroy(gameObject, 2f);
 
