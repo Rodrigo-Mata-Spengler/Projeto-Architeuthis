@@ -14,6 +14,7 @@ public class BTEnemyV01 : MonoBehaviour
     public Transform area;
 
     public GameObject rifle;
+    public GameObject PlayerHead;
 
     public bool InPlace;
 

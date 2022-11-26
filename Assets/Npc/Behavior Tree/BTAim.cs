@@ -16,9 +16,11 @@ public class BTAim: BTnode
         GameObject npc = bt.gameObject;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
+        GameObject PlaerHead = Controller.PlayerHead;
+
         
 
-        while (rifle.GetComponent<RifleNpc>().Aim(alvo))
+        while (rifle.GetComponent<RifleNpc>().Aim(PlaerHead))
         {
            
             status = Status.SUCCESS;

@@ -6872,7 +6872,7 @@ MonoBehaviour:
   Npc: {fileID: 1088730630258073995}
   bulletForce: 100
   animatorController: {fileID: 6541365169165139964}
-  reloadTime: 0
+  reloadTime: 2
 --- !u!1 &1088730630258073995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8982317826281321713, guid: 6087954651a597842b31a2d8e37a9636,
@@ -6946,6 +6946,7 @@ MonoBehaviour:
   Yrotation: 0
   area: {fileID: 0}
   rifle: {fileID: 844334511716341216}
+  PlayerHead: {fileID: 0}
   InPlace: 0
   agent: {fileID: 0}
   distToPlayer: 7.05
