@@ -21,6 +21,7 @@ TagManager:
   - BulletNpc
   - BulletPlayer
   - AudioManager
+  - TargetToNPC
   layers:
   - Default
   - TransparentFX

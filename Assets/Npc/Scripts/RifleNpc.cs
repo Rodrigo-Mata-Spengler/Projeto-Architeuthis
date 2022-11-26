@@ -37,11 +37,11 @@ public class RifleNpc : MonoBehaviour
         return true;
     }
 
-    public bool Aim(GameObject Player)
+    public bool Aim(GameObject Target)
     {
 
-        Npc.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y + 2.5f, Player.transform.position.z));
-        gameObject.transform.LookAt(new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z));
+        //Npc.transform.LookAt(new Vector3(Target.transform.position.x, Target.transform.position.y, Target.transform.position.z));
+        gameObject.transform.LookAt(new Vector3(Target.transform.position.x, Target.transform.position.y, Target.transform.position.z));
 
         return true;
     }

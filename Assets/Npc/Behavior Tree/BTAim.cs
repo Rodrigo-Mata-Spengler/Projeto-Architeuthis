@@ -16,13 +16,13 @@ public class BTAim: BTnode
         GameObject npc = bt.gameObject;
         BTEnemyV01 Controller = bt.GetComponent<BTEnemyV01>();
 
-        GameObject PlaerHead = Controller.PlayerHead;
+        GameObject Target = Controller.PlayerTarget;
 
         
 
-        while (rifle.GetComponent<RifleNpc>().Aim(PlaerHead))
+        while (rifle.GetComponent<RifleNpc>().Aim(Target))
         {
-           
+            npc.transform.LookAt(new Vector3(Target.transform.position.x, Target.transform.position.y, Target.transform.position.z));
             status = Status.SUCCESS;
             Print();
             yield break;

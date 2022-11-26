@@ -14,7 +14,8 @@ public class BTEnemyV01 : MonoBehaviour
     public Transform area;
 
     public GameObject rifle;
-    public GameObject PlayerHead;
+    [HideInInspector]
+    public GameObject PlayerTarget;
 
     public bool InPlace;
 
@@ -42,6 +43,7 @@ public class BTEnemyV01 : MonoBehaviour
 
     private void Start()
     {
+        PlayerTarget = GameObject.FindGameObjectWithTag("TargetToNPC");
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine(FindTargetsWithDelay(0.01f));
 
