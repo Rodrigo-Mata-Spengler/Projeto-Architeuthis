@@ -34,10 +34,17 @@ public class BTEnemyCAceteteV01 : MonoBehaviour
 
     [Range(0,100)]public float porcentagemdefender = 0;
 
+    public float velocidadeAndando;
+    public float velocidadeCorrendo;
+
+    public Animator ctrl;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine(FindTargetsWithDelay(0.01f));
+
+        agent.speed = velocidadeAndando;
 
         BTSequance SequenceA = new BTSequance();
 

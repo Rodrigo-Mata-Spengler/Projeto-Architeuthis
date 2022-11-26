@@ -21,6 +21,8 @@ public class BTMoverParaPlayerv02 : BTnode
         NavMeshAgent agent = bt.GetComponent<BTEnemyCAceteteV01>().agent;
         BTEnemyCAceteteV01 Controller = bt.GetComponent<BTEnemyCAceteteV01>();
 
+        Animator pupet = Controller.ctrl;
+
         while (alvo)
         {
 
@@ -28,13 +30,16 @@ public class BTMoverParaPlayerv02 : BTnode
 
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) <= 2f)
             {
+                
                 status = Status.SUCCESS;
+                pupet.SetBool("IsIdle",true);
 
                 yield break;
             }
             else
             {
                 //npc.transform.Translate(0, 0, 3 * Time.deltaTime);
+                pupet.SetBool("IsIdle", false);
                 Controller.MoveToTarget(alvo, agent);
             }
 

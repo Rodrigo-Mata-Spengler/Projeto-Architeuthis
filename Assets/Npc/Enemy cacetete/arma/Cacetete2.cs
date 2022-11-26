@@ -6,12 +6,10 @@ public class Cacetete2 : MonoBehaviour
 {
     [SerializeField] private Animator pupet;
 
-    [SerializeField] private float dano;
-
-    [SerializeField] private GameObject escudo;
+    [SerializeField] private bool escudo;
     private void Start()
     {
-        escudo.SetActive(false);
+        escudo = false;
         pupet.ResetTrigger("Atacar");
         pupet.ResetTrigger("Defender");
         pupet.ResetTrigger("Defender 2");
@@ -25,12 +23,12 @@ public class Cacetete2 : MonoBehaviour
     public void Defender()
     {
         pupet.SetTrigger("Defender");
-        escudo.SetActive(true);
+        escudo = true;
     }
 
     public void Soltar()
     {
         pupet.SetTrigger("Defender 2");
-        escudo.SetActive(false);
+        escudo = false;
     }
 }

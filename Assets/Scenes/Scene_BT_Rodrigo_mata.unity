@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: e41818ddeff66a647911272fb372cda9, type: 2}
+--- !u!1 &499653117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4636484055120481528, guid: 79ac9793838bed6498bc037a1d97a735,
+    type: 3}
+  m_PrefabInstance: {fileID: 1082129862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &499653119 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4669173309432738621, guid: 79ac9793838bed6498bc037a1d97a735,
+    type: 3}
+  m_PrefabInstance: {fileID: 1082129862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &499653120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499653117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1331d6fa0f4640969dd56d225d4bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pupet: {fileID: 499653119}
+  escudo: 0
 --- !u!1 &584327650
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +273,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522213474263135634, guid: 79ac9793838bed6498bc037a1d97a735,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
+        type: 3}
+      propertyPath: area
+      value: 
+      objectReference: {fileID: 584327654}
+    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
+        type: 3}
+      propertyPath: ctrl
+      value: 
+      objectReference: {fileID: 499653119}
+    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
+        type: 3}
+      propertyPath: velocidadeAndando
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8522213474263135635, guid: 79ac9793838bed6498bc037a1d97a735,
+        type: 3}
+      propertyPath: velocidadeCorrendo
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8522213474263135642, guid: 79ac9793838bed6498bc037a1d97a735,
         type: 3}

@@ -22,8 +22,9 @@ public class BTPlayerCloseOrInPointOfViewv02 : BTnode
 
         if (SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
         {
+            bt.gameObject.GetComponent<BTEnemyCAceteteV01>().agent.speed = bt.gameObject.GetComponent<BTEnemyCAceteteV01>().velocidadeCorrendo;
+            bt.gameObject.GetComponent<BTEnemyCAceteteV01>().ctrl.SetBool("IsRunnig", true);
             status = Status.SUCCESS;
-
         }
         else
         {
