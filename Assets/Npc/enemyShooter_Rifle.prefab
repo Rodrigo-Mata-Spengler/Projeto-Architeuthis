@@ -6973,8 +6973,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 20
-  maxLife: 1
+  maxLife: 20
   pointsGive: 0
+  pupet: {fileID: 0}
+  isCacetete: 0
   animatorController: {fileID: 6541365169165139964}
 --- !u!114 &6203371869160517199
 MonoBehaviour:

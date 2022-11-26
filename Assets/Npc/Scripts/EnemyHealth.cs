@@ -19,6 +19,10 @@ public class EnemyHealth : MonoBehaviour
 
     private bool doOnce = true;
 
+    [SerializeField] private Animator pupet;
+    [SerializeField] private bool isCacetete;
+    private BTEnemyCAceteteV01 brainCacetete;
+
     [Space]
     public NpcAnimationController animatorController;
     private void Start()
@@ -27,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         
         TotalPointsToPass = GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints;
 
+        brainCacetete = GetComponent<BTEnemyCAceteteV01>();
         Brain = GetComponent<BTEnemyV01>();
         NavMesh = GetComponent<NavMeshAgent>();
     }
@@ -40,12 +45,23 @@ public class EnemyHealth : MonoBehaviour
 
         if (Life <= 0)
         {
-            NavMesh.enabled = false;    
-            Brain.enabled = false;
-            animatorController.Shoot = false;
-            animatorController.Run = false;
-            animatorController.Walk = false;
-            animatorController.Death = true;
+            if (isCacetete)
+            {
+                NavMesh.enabled = false;
+                brainCacetete.enabled = false;
+
+                pupet.SetTrigger("Death");
+            }
+            else
+            {
+                NavMesh.enabled = false;
+                Brain.enabled = false;
+                animatorController.Shoot = false;
+                animatorController.Run = false;
+                animatorController.Walk = false;
+                animatorController.Death = true;
+            }
+            
             GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
 
             if (doOnce) 

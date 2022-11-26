@@ -246,6 +246,8 @@ MonoBehaviour:
   Life: 20
   maxLife: 20
   pointsGive: 0
+  pupet: {fileID: 4669173309432738621}
+  isCacetete: 1
   animatorController: {fileID: 0}
 --- !u!54 &8522213474263135647
 Rigidbody:
