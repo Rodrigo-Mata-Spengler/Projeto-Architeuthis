@@ -409,51 +409,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1448535887
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1448535888}
-  - component: {fileID: 1448535889}
-  m_Layer: 0
-  m_Name: escudo (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1448535888
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448535887}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.009499982, y: 1.398, z: 0.66}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7722112634596089775}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1448535889
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448535887}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &27547145526501073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,6 +1590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  cacetete: {fileID: 0}
 --- !u!1001 &13907833684114962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2157,6 +2113,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5679544ac599ffa469e1944cd242b0c6, type: 2}
+    - target: {fileID: -5332381557089450972, guid: c14a2116883ad2244a0cb9edc86f61d4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5332381557089450972, guid: c14a2116883ad2244a0cb9edc86f61d4,
+        type: 3}
+      propertyPath: m_TagString
+      value: BulletPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: -1847258492836607996, guid: c14a2116883ad2244a0cb9edc86f61d4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2179,6 +2145,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 294b3ca38ef062743ac1038ad54afdea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14a2116883ad2244a0cb9edc86f61d4, type: 3}
+--- !u!1 &6439970186740923488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5332381557089450972, guid: c14a2116883ad2244a0cb9edc86f61d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7827482627775576132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &945112181095653547
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439970186740923488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.009117071
+  m_Height: 0.10546592
+  m_Direction: 1
+  m_Center: {x: -0.00000020630073, y: 0.041415766, z: 0.00018073933}
 --- !u!1 &6945012607356470549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c14a2116883ad2244a0cb9edc86f61d4,
@@ -2219,7 +2205,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pupet: {fileID: 6276767078885226197}
   dano: 30
-  escudo: {fileID: 1448535887}
 --- !u!4 &7722112634596089775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c14a2116883ad2244a0cb9edc86f61d4,

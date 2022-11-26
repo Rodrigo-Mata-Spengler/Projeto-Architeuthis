@@ -678,22 +678,22 @@ PrefabInstance:
         type: 3}
       propertyPath: vida
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8845678691445840750}
     - target: {fileID: 5019928681176717716, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: atirador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6082050524494764627}
     - target: {fileID: 7468921389422762842, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: vida
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8845678691445840750}
     - target: {fileID: 7468921389422762842, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: atirador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6082050524494764627}
     - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: m_RootOrder

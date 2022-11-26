@@ -6522,12 +6522,12 @@ PrefabInstance:
         type: 3}
       propertyPath: vida
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3361071316592346278}
     - target: {fileID: 5019928681176717716, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: atirador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2204587541266606324}
     - target: {fileID: 6712908458042372736, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -6537,12 +6537,12 @@ PrefabInstance:
         type: 3}
       propertyPath: vida
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3361071316592346278}
     - target: {fileID: 7468921389422762842, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: atirador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2204587541266606324}
     - target: {fileID: 8691285731963410746, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: m_RootOrder
@@ -6974,8 +6974,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 20
-  maxLife: 1
+  maxLife: 20
   pointsGive: 0
+  pupet: {fileID: 0}
+  isCacetete: 0
   animatorController: {fileID: 6541365169165139964}
 --- !u!114 &6203371869160517199
 MonoBehaviour:

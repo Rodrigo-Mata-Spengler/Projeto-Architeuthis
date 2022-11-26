@@ -7,6 +7,7 @@ public class TakeDamage : MonoBehaviour
 
     private Health vida;
     [SerializeField] private float damage;
+    [SerializeField] private GameObject cacetete;
 
     private void Start()
     {
@@ -17,8 +18,19 @@ public class TakeDamage : MonoBehaviour
     {
         if (other.CompareTag("BulletNpc"))
         {
-            vida.DamageHealth(damage);
-            Destroy(other);
+            if (cacetete.active == true)
+            {
+                if (Input.GetButton("Fire2") == false)
+                {
+                    vida.DamageHealth(damage);
+                }
+            }
+            else
+            {
+                vida.DamageHealth(damage);
+                Destroy(other);
+            }
+            
         }
     }
 }

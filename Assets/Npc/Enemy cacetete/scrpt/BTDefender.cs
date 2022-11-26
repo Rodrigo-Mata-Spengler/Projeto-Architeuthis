@@ -24,6 +24,6 @@ public class BTDefender : BTnode
         yield return new WaitForSeconds(.5f);
 
 
-        yield return null;
+        yield break;
     }
 }
