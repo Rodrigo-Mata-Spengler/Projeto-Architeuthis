@@ -9,7 +9,7 @@ public class TakeDamegeEnemy : MonoBehaviour
     private BTEnemyCAceteteV01 atacante;
     [SerializeField] private float damage;
 
-    Cacetete2 arma;
+    public Cacetete2 arma;
     private void Start()
     {
         vida = gameObject.GetComponent<EnemyHealfhRef>().vida;

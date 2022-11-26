@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
                 NavMesh.enabled = false;
                 brainCacetete.enabled = false;
 
-                pupet.SetTrigger("Death");
+                pupet.SetBool("Death",true);
             }
             else
             {
