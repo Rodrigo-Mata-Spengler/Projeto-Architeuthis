@@ -26,8 +26,8 @@ public class AmmoPistol : MonoBehaviour
 
     [SerializeField] private float bulletvelocity;
 
-    public Transform NormalPosition;
-    public Transform AimPosition;
+    //public Transform NormalPosition;
+    //public Transform AimPosition;
     public Transform MainCamera;
     public Transform Torso;
 
@@ -51,7 +51,7 @@ public class AmmoPistol : MonoBehaviour
     public Vector3 RecoilRotationAiming = new Vector3(0.5f, 0.5f, 1.5f);
 
     [Header("State")]
-    public bool aiming;
+    public bool aiming = false;
 
     private Vector3 currentRotation;
     private Vector3 rot;
@@ -121,7 +121,7 @@ public class AmmoPistol : MonoBehaviour
         {
             StartCoroutine(OutSound(0.4f));
         }
-
+        /*
         if (Input.GetButton("Fire2"))
         {
             aiming = true;
@@ -132,7 +132,7 @@ public class AmmoPistol : MonoBehaviour
         }
 
         Aim(Input.GetMouseButton(1));
-
+        */
     }
 
     public bool GiveAmmo(int Ammoamount)
@@ -175,7 +175,7 @@ public class AmmoPistol : MonoBehaviour
         }
 
     }
-    public void Aim(bool IsAiming)
+    /*ublic void Aim(bool IsAiming)
     {
 
         if(IsAiming)
@@ -188,6 +188,7 @@ public class AmmoPistol : MonoBehaviour
             Torso.position = Vector3.Lerp(Torso.position, NormalPosition.position, Time.deltaTime * AimSpeed);
         }
     }
+        */
     public IEnumerator Reload(float seconds)
     {
         Reloading = true;
