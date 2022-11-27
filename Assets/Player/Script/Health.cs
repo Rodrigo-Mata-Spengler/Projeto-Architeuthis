@@ -20,6 +20,11 @@ public class Health : MonoBehaviour
     void Update()
     {
         UI();
+        if(Life < MaxLife)
+        {
+            Life += (0.5f * Time.deltaTime);
+        }
+        
     }
 
     public void DamageHealth(float damage)
