@@ -9,9 +9,9 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject optionsPanel;
     public GameObject comoJogar;
+    public GameObject credito;
 
-
-    public string CreditsSceneName;
+    public string scenaJogo;
 
 
     private void Start()
@@ -25,20 +25,21 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(scenaJogo);
     }
     public void Options()
     {
         mainMenu.SetActive(false);
         optionsPanel.SetActive(true);
         comoJogar.SetActive(false);
-
+        credito.SetActive(false);
     }
     public void ComoJogar()
     {
         mainMenu.SetActive(false);
         optionsPanel.SetActive(false);
         comoJogar.SetActive(true);
+        credito.SetActive(false);
     }
 
     public void VoltarMenu()
@@ -46,10 +47,14 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
         optionsPanel.SetActive(false);
         comoJogar.SetActive(false);
+        credito.SetActive(false);
     }
     public void Creditos()
     {
-        SceneManager.LoadScene(CreditsSceneName);
+        mainMenu.SetActive(false);
+        optionsPanel.SetActive(false);
+        comoJogar.SetActive(false);
+        credito.SetActive(true);
     }
     public void Quit()
     {
