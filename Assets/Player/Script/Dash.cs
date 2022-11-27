@@ -13,6 +13,8 @@ public class Dash : MonoBehaviour
 
     public KeyCode key;
 
+    [Header("AudioManager")]
+    [SerializeField] private AudioManager AudioManager;
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();
@@ -23,6 +25,7 @@ public class Dash : MonoBehaviour
         if (Input.GetKeyDown(key))
         {
             StartCoroutine(DashTimer());
+            
         }
     }
 
@@ -34,6 +37,7 @@ public class Dash : MonoBehaviour
         {
             controller.Move((Input.GetAxis("Horizontal") * transform.right + Input.GetAxis("Vertical") * transform.forward) * dashForca * Time.deltaTime);
             GetComponent<Stamina>().stamina -= Time.deltaTime * 18;
+            AudioManager.Play("Dash");
 
             yield return null;
         }

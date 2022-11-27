@@ -41,6 +41,9 @@ public class BTEnemyV01 : MonoBehaviour
     [Space]
     public NpcAnimationController animatorController;
 
+    [Space]
+    public EnemyHealth EnemyHealth;
+
     private void Start()
     {
         PlayerTarget = GameObject.FindGameObjectWithTag("TargetToNPC");

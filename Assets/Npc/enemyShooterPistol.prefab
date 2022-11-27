@@ -1121,8 +1121,8 @@ MonoBehaviour:
   InPlace: 0
   agent: {fileID: 0}
   distToPlayer: 7.05
-  viewRadius: 12.58
-  viewAngle: 93
+  viewRadius: 22.46
+  viewAngle: 133
   PlayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -1132,6 +1132,7 @@ MonoBehaviour:
   visibleTargets: []
   SeePlayer: 0
   animatorController: {fileID: 7584708592866489304}
+  EnemyHealth: {fileID: 8845678691445840750}
 --- !u!114 &7584708592866489304
 MonoBehaviour:
   m_ObjectHideFlags: 0

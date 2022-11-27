@@ -10,8 +10,14 @@ public class BTAtirar : BTnode
         Print();
 
         GameObject rifle = bt.gameObject.GetComponent<BTEnemyV01>().rifle;
+        GameObject npc = bt.gameObject;
 
-        if (rifle.GetComponent<RifleNpc>().Fire())
+        EnemyHealth enemyHealth = npc.GetComponent<EnemyHealth>();
+
+       
+
+
+        if (rifle.GetComponent<RifleNpc>().Fire() && enemyHealth.Life > 0)
         {
             status = Status.SUCCESS;
             Print();

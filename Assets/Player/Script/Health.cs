@@ -17,9 +17,16 @@ public class Health : MonoBehaviour
 
     private bool imortal = false;
 
+    [Header("AudioManager")]
+    [SerializeField] private AudioManager AudioManager;
+
     void Update()
     {
-        UI();
+        if(Life<=0)
+        {
+            AudioManager.Play("Death");
+        }
+        StartCoroutine(UI());
         if(Life < MaxLife)
         {
             Life += (0.5f * Time.deltaTime);
@@ -53,7 +60,7 @@ public class Health : MonoBehaviour
         }
         
     }
-    private void UI()
+    private IEnumerator UI()
     {
         if (Life < 70)
         {
@@ -86,10 +93,13 @@ public class Health : MonoBehaviour
 
         if (Life < 0)
         {
+            
             //chamar pause aqui
             //chamar painel de morte
             painelMorto.SetActive(true);
             //DeathPanel.SetActive(true);
+
+            yield return new WaitForSeconds(2.0f);
             LifeIMG4.enabled = true;
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
