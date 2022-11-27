@@ -6864,7 +6864,7 @@ MonoBehaviour:
   ammo: 0
   FireRate: 15
   NextTimeToFire: 10
-  pfBulletProjectile: {fileID: 8566028098003865991, guid: 0595d75c1f5a9474ea57c4048c3be821,
+  pfBulletProjectile: {fileID: 8566028098003865991, guid: dc980924676def2438ba9937f1e3445f,
     type: 3}
   spawnBulletPosition: {fileID: 4977915559009839571}
   ondeAtirar: {fileID: 9146070545614230987}
