@@ -37,6 +37,7 @@ public class TakeDamegeEnemy : MonoBehaviour
                 }
                 else
                 {
+                    arma.DanoAleatorio();
                     vida.DamageHealth(damage);
 
                     arma.DanoAleatorio();
