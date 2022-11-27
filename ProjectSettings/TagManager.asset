@@ -22,6 +22,8 @@ TagManager:
   - BulletPlayer
   - AudioManager
   - TargetToNPC
+  - Marmore
+  - Madeira
   layers:
   - Default
   - TransparentFX

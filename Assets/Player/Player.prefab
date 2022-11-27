@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166519570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.512, z: -0.597}
+  m_LocalPosition: {x: 0, y: 0.368, z: -0.597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359750861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11500021, y: -2.8099997, z: -0.5210002}
+  m_LocalPosition: {x: -0.006, y: -0, z: -0.253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -219,8 +219,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.18
-  MinDistance: 0.6
-  MaxDistance: 64.5
+  MinDistance: 0.2
+  MaxDistance: 12
   Pan2D: 0.037
   rolloffMode: 0
   BypassEffects: 0
@@ -434,7 +434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401747162669588020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11500021, y: -2.8099997, z: -0.5210002}
+  m_LocalPosition: {x: 0.145, y: -0.075, z: -0.102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -461,8 +461,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.18
-  MinDistance: 0.6
-  MaxDistance: 64.5
+  MinDistance: 0.2
+  MaxDistance: 12
   Pan2D: 0.037
   rolloffMode: 0
   BypassEffects: 0
@@ -586,7 +586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4800472389070923932
 Transform:
   m_ObjectHideFlags: 0
@@ -719,8 +719,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.18
-  MinDistance: 0.6
-  MaxDistance: 64.5
+  MinDistance: 0.2
+  MaxDistance: 12
   Pan2D: 0.037
   rolloffMode: 0
   BypassEffects: 0
@@ -851,13 +851,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.88
-  m_Radius: 0.29
+  m_Height: 1.85
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.09, z: -0.3}
+  m_Center: {x: 0, y: -0.11, z: -0.3}
 --- !u!114 &1997766071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +886,7 @@ MonoBehaviour:
   FpsController: {fileID: 6491714180580453790}
   FpsControllerPistol: {fileID: 2905266717319530777}
   FpsControllerBat: {fileID: 6276767078885226197}
+  AudioManager: {fileID: 0}
 --- !u!114 &1997766073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289fdf1900cacc7439e2c535f79ea069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 90
+  Life: 100
   MaxLife: 100
   LifeIMG1: {fileID: 0}
   LifeIMG2: {fileID: 0}
@@ -994,10 +995,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.36113358
-  m_Height: 1.8768656
+  m_Radius: 0.3136115
+  m_Height: 1.8294706
   m_Direction: 1
-  m_Center: {x: 0, y: -0.10156715, z: -0.27650452}
+  m_Center: {x: -0.0017380714, y: -0.12526464, z: -0.27650452}
 --- !u!1 &4154772183885250899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,8 +1056,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4274189034867705229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.056, y: -0.553, z: 0.334}
-  m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
+  m_LocalPosition: {x: 0.056, y: -0.417, z: 0.334}
+  m_LocalScale: {x: 0.5924893, y: 0.5924893, z: 0.5924893}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 272010750}
@@ -1074,7 +1075,7 @@ GameObject:
   - component: {fileID: 8641487216308637059}
   m_Layer: 3
   m_Name: Target to npc
-  m_TagString: Untagged
+  m_TagString: TargetToNPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6088410738495174846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1179,8 +1180,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.18
-  MinDistance: 0.6
-  MaxDistance: 64.5
+  MinDistance: 0.2
+  MaxDistance: 12
   Pan2D: 0.037
   rolloffMode: 0
   BypassEffects: 0
@@ -1330,10 +1331,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.35765934
-  m_Height: 1.8225379
+  m_Radius: 0.29
+  m_Height: 1.7169311
   m_Direction: 1
-  m_Center: {x: 0, y: -0.08873105, z: -0.28640652}
+  m_Center: {x: 0.011308193, y: -0.14153445, z: -0.276268}
 --- !u!114 &7088602665117199752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,7 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b1108fff70dd2498e68b87af47c6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 2
   cacetete: {fileID: 6945012607356470549}
 --- !u!1001 &13907833684114962
 PrefabInstance:
@@ -1476,7 +1477,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1148326977061529806, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
@@ -1699,7 +1700,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 06beac4df78ccab459de773037844438,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3159890857811493866, guid: 06beac4df78ccab459de773037844438,
         type: 3}

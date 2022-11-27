@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
@@ -44,6 +45,12 @@ public class MovePlayer : MonoBehaviour
     private float WalkAnimation;
 
     private float rotation = 0;
+
+
+    [Header("AudioManager")]
+    [SerializeField] private AudioManager AudioManager;
+
+
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();//pega o controlador do player
@@ -57,6 +64,8 @@ public class MovePlayer : MonoBehaviour
 
     private void Update()
     {
+
+
         float sensi = sensibilidade;
         mov = Input.GetAxis("Vertical") * transform.forward;
 
@@ -68,8 +77,32 @@ public class MovePlayer : MonoBehaviour
         FpsControllerPistol.SetFloat("Walk", WalkAnimation);
         FpsControllerBat.SetFloat("Walk", WalkAnimation);
 
+        //Walk sounds
+        /*
+        if(Physics.Raycast (transform.position, transform.TransformDirection(-Vector3.up), out RaycastHit hitinfo, 3f))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) *3, Color.yellow);
 
+            if(hitinfo.transform.gameObject.tag == "Marmore" && Input.GetAxis("Vertical") != 0 || hitinfo.transform.gameObject.tag == "Marmore" && Input.GetAxis("Horizontal") != 0)
+            {
+                AudioManager.Play("WalkMarble");
+            }
 
+            if (hitinfo.transform.gameObject.tag == "Madeira" && Input.GetAxis("Vertical") != 0 || hitinfo.transform.gameObject.tag == "Madeira" && Input.GetAxis("Horizontal") != 0)
+            {
+                AudioManager.Play("WalkWood");
+            }
+
+            
+
+            else if(Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+            {
+                AudioManager.StopPlaying("WalkWood");
+                AudioManager.StopPlaying("WalkMarble");
+            }
+            
+        }
+        */
 
         if (Input.GetKey(correr) && GetComponent<Stamina>().stamina > 0)
         {
@@ -129,5 +162,5 @@ public class MovePlayer : MonoBehaviour
         
     }
 
-    
+
 }
