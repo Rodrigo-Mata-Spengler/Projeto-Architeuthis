@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df2453da22baf64b8ee1289eaaf5236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: 2
+  drop: 0
   health: 20
   rifleAmmo: 20
   pistolaAmmo: 20
@@ -281,6 +281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Med_Kit_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e18537e0e49f9654c8cbcf89b07fe1a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e18537e0e49f9654c8cbcf89b07fe1a7, type: 3}
