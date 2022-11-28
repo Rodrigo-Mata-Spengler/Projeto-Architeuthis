@@ -18,13 +18,12 @@ public class Health : MonoBehaviour
     private bool imortal = false;
 
     [Header("AudioManager")]
-    [SerializeField] private AudioManager AudioManager;
-
+    [SerializeField] private AudioSource DeathAudio;
     void Update()
     {
         if(Life<=0)
         {
-            AudioManager.Play("Death");
+            DeathAudio.enabled = true;
         }
         StartCoroutine(UI());
         if(Life < MaxLife)

@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1674469817368343366}
   - component: {fileID: -4240403485082174925}
   - component: {fileID: 6645013576562991864}
+  - component: {fileID: -4731583261229285906}
   m_Layer: 9
   m_Name: BulletProjectilePistol
   m_TagString: BulletPlayer
@@ -256,3 +257,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!164 &-4731583261229285906
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691336868957659262}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -10000
+  m_RoomHF: -2826
+  m_DecayTime: 1
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27

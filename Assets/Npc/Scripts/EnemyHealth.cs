@@ -27,6 +27,9 @@ public class EnemyHealth : MonoBehaviour
 
     [Space]
     public NpcAnimationController animatorController;
+
+    [Header("AudioManager")]
+    [SerializeField] private AudioSource DeathAudio;
     private void Start()
     {
         Life = maxLife;
@@ -75,6 +78,7 @@ public class EnemyHealth : MonoBehaviour
 
                 if (doOnce)
                 {
+                    DeathAudio.enabled = true;
                     NPCReset();
                 }
             }
