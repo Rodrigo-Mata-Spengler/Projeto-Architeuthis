@@ -12,9 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Hall.unity
     guid: 308f4e4890511bb41a4a48cac1361402
   - enabled: 1
-    path: "Assets/Scenes/Scena de Cr\xE9ditos.unity"
-    guid: 83e86b8ddb13c494ab38b6d48953d7ab
+    path: Assets/Scenes/Cinematicas/Cinematica 1.unity
+    guid: 29d0652df3fbc6b4ca9f80681736016b
   - enabled: 1
-    path: Assets/Scenes/Scena final.unity
-    guid: 2bc429c142b6eb6498b0613837b4f701
+    path: Assets/Scenes/Cinematicas/Cinematica 2.unity
+    guid: b09d3d26bb5942d45ae64c174d4cc61a
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/Cinematica 3.unity
+    guid: 3a477267bbf7eb849a0942bfaf86db62
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/Cinematica 4.unity
+    guid: 0aeceba43266c4441897145121221987
+  - enabled: 1
+    path: Assets/Scenes/Cinematicas/Creditos.unity
+    guid: ef29c71076862294f82926b1b66e495f
   m_configObjects: {}
