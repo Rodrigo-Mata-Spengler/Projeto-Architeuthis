@@ -610,6 +610,8 @@ MonoBehaviour:
   pupet: {fileID: 4669173309432738621}
   defender: 0
   isBoss: 0
+  audio: {fileID: 8300000, guid: da5c76a018f010945a507bdce33d11a4, type: 3}
+  audioS: {fileID: 1544603858567643768}
 --- !u!4 &5409888588945446466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88f5aa091aad4ec4f9a0a941c11a26ba,
