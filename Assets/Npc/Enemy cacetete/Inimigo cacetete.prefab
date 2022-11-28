@@ -249,6 +249,7 @@ MonoBehaviour:
   pointsGive: 0
   pupet: {fileID: 4669173309432738621}
   isCacetete: 1
+  isBoss: 0
   animatorController: {fileID: 0}
 --- !u!54 &8522213474263135647
 Rigidbody:
@@ -298,6 +299,11 @@ PrefabInstance:
       propertyPath: arma
       value: 
       objectReference: {fileID: 499653120}
+    - target: {fileID: 3168421455634821080, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5019928681176717716, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: vida
@@ -411,7 +417,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 88f5aa091aad4ec4f9a0a941c11a26ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.104
+      value: -0.978
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88f5aa091aad4ec4f9a0a941c11a26ba,
         type: 3}
@@ -505,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pupet: {fileID: 4669173309432738621}
   defender: 0
+  isBoss: 0
 --- !u!4 &5409888588945446466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88f5aa091aad4ec4f9a0a941c11a26ba,
