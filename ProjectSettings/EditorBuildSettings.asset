@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Hall.unity
     guid: 308f4e4890511bb41a4a48cac1361402
   - enabled: 1
+    path: Assets/Scenes/SalaDeJantar.unity
+    guid: 997ca33d2a5a1d141af1415bbf179407
+  - enabled: 1
+    path: "Assets/Scenes/Escrit\xF3rio.unity"
+    guid: a93c78341aa1fd348a9d96325e123f6d
+  - enabled: 1
     path: Assets/Scenes/Cinematicas/Cinematica 1.unity
     guid: 29d0652df3fbc6b4ca9f80681736016b
   - enabled: 1

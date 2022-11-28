@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena: {fileID: 1452825881}
-  proximaScena: Main Menu
+  proximaScena: "Escrit\xF3rio"
 --- !u!328 &1452825881
 VideoPlayer:
   m_ObjectHideFlags: 0

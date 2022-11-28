@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena: {fileID: 443143545}
-  proximaScena: null
+  proximaScena: Hall
 --- !u!328 &443143545
 VideoPlayer:
   m_ObjectHideFlags: 0

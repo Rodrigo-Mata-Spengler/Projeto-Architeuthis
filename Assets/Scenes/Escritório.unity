@@ -10459,6 +10459,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2627427569941102251, guid: caf9cca7623f9954e8a2da47dc3edc80,
+        type: 3}
+      propertyPath: proximaScena
+      value: Cinematica 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf9cca7623f9954e8a2da47dc3edc80, type: 3}
 --- !u!1 &1179690464

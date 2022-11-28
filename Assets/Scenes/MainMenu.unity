@@ -969,7 +969,7 @@ MonoBehaviour:
   optionsPanel: {fileID: 1299596849}
   comoJogar: {fileID: 1500789398}
   credito: {fileID: 524178325}
-  scenaJogo: Hall
+  scenaJogo: Cinematica 1
 --- !u!114 &752845290
 MonoBehaviour:
   m_ObjectHideFlags: 0

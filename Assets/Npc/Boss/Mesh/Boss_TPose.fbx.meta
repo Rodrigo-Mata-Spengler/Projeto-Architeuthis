@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Corpo_inteiro
+    second: {fileID: 2100000, guid: 6241e796d2d898d47ab83ad2427cd7aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Faixas
     second: {fileID: 2100000, guid: 00c18ed9230aa3247b89afd2e841310b, type: 2}
   - first:

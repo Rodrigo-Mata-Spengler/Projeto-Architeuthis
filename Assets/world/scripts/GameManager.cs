@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]public bool ActiveText = false;
 
-    
+    [SerializeField] private string proximaScena;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(CurrentPoints > pointsToPass)
         {
-            SceneManager.LoadScene("Scena final");
+            SceneManager.LoadScene(proximaScena);
             //open door or send massage in the UI
         }
 

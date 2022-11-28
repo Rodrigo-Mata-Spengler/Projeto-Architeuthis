@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena: {fileID: 1116450469}
-  proximaScena: Main Menu
+  proximaScena: SalaDeJantar
 --- !u!328 &1116450469
 VideoPlayer:
   m_ObjectHideFlags: 0

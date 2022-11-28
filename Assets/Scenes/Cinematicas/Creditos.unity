@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena: {fileID: 743844634}
-  proximaScena: Main Menu
+  proximaScena: MainMenu
 --- !u!328 &743844634
 VideoPlayer:
   m_ObjectHideFlags: 0
