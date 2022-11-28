@@ -7,9 +7,11 @@ public class Stamina : MonoBehaviour
 {
     private float MaxStamina;
     public float stamina;
-    public Slider StaminaBar;
 
     public float GiveStaminaVelocity;
+
+    [Header("AudioManager")]
+    [SerializeField] private AudioSource TiredAudioInHead;
 
     private void Start()
     {
@@ -17,12 +19,21 @@ public class Stamina : MonoBehaviour
     }
     void Update()
     {
-        
-
         if(stamina < MaxStamina)
         {
             GiveStamina(GiveStaminaVelocity * Time.deltaTime);
         }
+
+        if(stamina < 10)
+        {
+            TiredAudioInHead.enabled = true;
+        }
+        else
+        {
+            TiredAudioInHead.enabled = false;
+        }
+
+        
     }
 
     public void TakeStamina(float TakeAmout)

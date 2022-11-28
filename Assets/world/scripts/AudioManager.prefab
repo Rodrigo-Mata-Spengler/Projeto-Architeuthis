@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 200160429130405871}
+  - component: {fileID: 6008616675348477102}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,3 +32,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6008616675348477102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291031311049249822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06f212ebded11049b9b1145c07f1a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: WalkWood
+    clip: {fileID: 8300000, guid: 11992e970c05a644ba9b5d7dc6857804, type: 3}
+    volume: 0.545
+    pitch: 1
+    loop: 1
+    SpatialBlend: 0
+    DopplerLevel: 0
+    Spread: 0
+    MinDistance: 0
+    MaxDistance: 0
+    source: {fileID: 0}
+  - name: WalkMarble
+    clip: {fileID: 8300000, guid: 16997de0d5838a24f979549f2200113a, type: 3}
+    volume: 0.496
+    pitch: 1
+    loop: 1
+    SpatialBlend: 0
+    DopplerLevel: 0
+    Spread: 0
+    MinDistance: 0
+    MaxDistance: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: 037c6bde4dd37964b87cee2d77eb8bc0, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 0
+    SpatialBlend: 1
+    DopplerLevel: 0.57
+    Spread: 360
+    MinDistance: 84
+    MaxDistance: 2355
+    source: {fileID: 0}
+  - name: Heal
+    clip: {fileID: 8300000, guid: 9ba11e0cf7bab0c439d96f32c454084c, type: 3}
+    volume: 0.205
+    pitch: 1
+    loop: 0
+    SpatialBlend: 0
+    DopplerLevel: 0
+    Spread: 0
+    MinDistance: 0
+    MaxDistance: 0
+    source: {fileID: 0}
+  - name: Damage
+    clip: {fileID: 8300000, guid: 7f9d34ede7363724fbb01bbebd529e6d, type: 3}
+    volume: 0.025
+    pitch: 1
+    loop: 0
+    SpatialBlend: 0.83
+    DopplerLevel: 0.08
+    Spread: 360
+    MinDistance: 10
+    MaxDistance: 50
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 00eb14c0ad1a1ef46a1033a7c56638ba, type: 3}
+    volume: 0.71
+    pitch: 1
+    loop: 0
+    SpatialBlend: 0
+    DopplerLevel: 0.15
+    Spread: 0
+    MinDistance: 0.26
+    MaxDistance: 0
+    source: {fileID: 0}

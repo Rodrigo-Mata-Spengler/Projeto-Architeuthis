@@ -9,6 +9,9 @@ public class TakeDamage : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private GameObject cacetete;
 
+    [Header("AudioManager")]
+    [SerializeField] private AudioManager AudioManager;
+
     private void Start()
     {
         vida = gameObject.GetComponent<HealfRef>().Vida;
@@ -23,11 +26,13 @@ public class TakeDamage : MonoBehaviour
                 if (Input.GetButton("Fire2") == false)
                 {
                     vida.DamageHealth(damage);
+                    AudioManager.Play("Damage");
                 }
             }
             else
             {
                 vida.DamageHealth(damage);
+                AudioManager.Play("Damage");
                 Destroy(other);
             }
             
