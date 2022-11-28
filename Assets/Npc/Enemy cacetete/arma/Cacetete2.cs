@@ -9,6 +9,9 @@ public class Cacetete2 : MonoBehaviour
     [SerializeField] public bool defender;
 
     [SerializeField] private bool isBoss;
+
+    [SerializeField] private AudioClip audio;
+    [SerializeField] private AudioSource audioS;
     private void Start()
     {
         defender = false;
@@ -18,6 +21,7 @@ public class Cacetete2 : MonoBehaviour
     public void Atacar()
     {
         pupet.SetTrigger("Atacar");
+        audioS.PlayOneShot(audio);
     }
 
     public void Defender()

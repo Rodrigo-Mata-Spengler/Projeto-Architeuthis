@@ -10,6 +10,8 @@ public class Cacetete : MonoBehaviour
 
     private bool batendo = false;
     private bool defendendo = false;
+    [SerializeField]private AudioClip audio;
+    [SerializeField] private AudioSource audioS;
 
     private void Update()
     {
@@ -17,6 +19,7 @@ public class Cacetete : MonoBehaviour
         {
             batendo = true;
             pupet.SetBool("Marretar", true);
+            audioS.PlayOneShot(audio);
         }
         if(Input.GetButtonUp("Fire1"))
         {

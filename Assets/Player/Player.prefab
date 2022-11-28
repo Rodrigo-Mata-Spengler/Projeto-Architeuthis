@@ -2974,6 +2974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pupet: {fileID: 6276767078885226197}
   dano: 30
+  audio: {fileID: 8300000, guid: da5c76a018f010945a507bdce33d11a4, type: 3}
+  audioS: {fileID: 8455393704529122342}
 --- !u!4 &7722112634596089775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c14a2116883ad2244a0cb9edc86f61d4,

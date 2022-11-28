@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena: {fileID: 726546959}
-  proximaScena: "Cr\xE9ditos"
+  proximaScena: Creditos
 --- !u!328 &726546959
 VideoPlayer:
   m_ObjectHideFlags: 0
