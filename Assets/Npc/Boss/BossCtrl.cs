@@ -51,7 +51,7 @@ public class BossCtrl : MonoBehaviour
         boss = gameObject.GetComponent<NavMeshAgent>();
 
         controller = gameObject.GetComponent<CharacterController>();
-        controller.enabled = false;
+        //controller.enabled = false;
 
         //bossMode = Behavior.Follow;
     }
@@ -132,7 +132,7 @@ public class BossCtrl : MonoBehaviour
     {
         inUse = true;
         boss.enabled = false;
-        controller.enabled = true;
+        //controller.enabled = true;
 
         int a = 0;
 
@@ -161,7 +161,7 @@ public class BossCtrl : MonoBehaviour
         }
 
         boss.enabled = true;
-        controller.enabled = false;
+        //controller.enabled = false;
         bossMode = Behavior.Idle;
         inUse = false;
         yield break;
@@ -200,8 +200,9 @@ public class BossCtrl : MonoBehaviour
     private void Special()
     {
         inUse = true;
-        boss.enabled = false;
-        controller.enabled = true;
+        //boss.enabled = false;
+        boss.isStopped = true;
+       // controller.enabled = true;
 
         StartCoroutine(SpecialMove());
     }
@@ -230,8 +231,9 @@ public class BossCtrl : MonoBehaviour
             yield return null;
         }
 
-        boss.enabled = true;
-        controller.enabled = false;
+        //boss.enabled = true;
+        boss.isStopped = false;
+        //controller.enabled = false;
         bossMode = Behavior.Idle;
         inUse = false;
         yield break;

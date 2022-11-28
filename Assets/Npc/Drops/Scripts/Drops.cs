@@ -12,7 +12,7 @@ public class Drops : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private int rifleAmmo;
     [SerializeField] private int pistolaAmmo;
-    [SerializeField] private Material[] mat;
+    [SerializeField] private GameObject[] mat;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -49,15 +49,21 @@ public class Drops : MonoBehaviour
         {
             case 0:
                 drop = tipoDrop.Cura;
-                gameObject.GetComponent<MeshRenderer>().material = mat[0];
+                mat[0].SetActive(true);
+                mat[1].SetActive(false);
+                mat[2].SetActive(false);
                 break;
             case 1:
                 drop = tipoDrop.AmmoRifle;
-                gameObject.GetComponent<MeshRenderer>().material = mat[1];
+                mat[0].SetActive(false);
+                mat[1].SetActive(true);
+                mat[2].SetActive(false);
                 break;
             case 2:
                 drop = tipoDrop.AmmoPistola;
-                gameObject.GetComponent<MeshRenderer>().material = mat[2];
+                mat[0].SetActive(false);
+                mat[1].SetActive(false);
+                mat[2].SetActive(true);
                 break;
         }
     }
