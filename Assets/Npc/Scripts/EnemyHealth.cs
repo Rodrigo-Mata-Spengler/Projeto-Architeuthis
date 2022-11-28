@@ -21,6 +21,8 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private Animator pupet;
     [SerializeField] private bool isCacetete;
+    [SerializeField] private bool isBoss;
+
     private BTEnemyCAceteteV01 brainCacetete;
 
     [Space]
@@ -45,31 +47,37 @@ public class EnemyHealth : MonoBehaviour
 
         if (Life <= 0)
         {
-            if (isCacetete)
+            if (isBoss)
             {
-                NavMesh.enabled = false;
-                brainCacetete.enabled = false;
+                GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
 
-                pupet.SetBool("Death",true);
             }
             else
             {
-                NavMesh.enabled = false;
-                Brain.enabled = false;
-                animatorController.Shoot = false;
-                animatorController.Run = false;
-                animatorController.Walk = false;
-                animatorController.Death = true;
-            }
-            
-            GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
+                if (isCacetete)
+                {
+                    NavMesh.enabled = false;
+                    brainCacetete.enabled = false;
 
-            if (doOnce) 
-            {
-                NPCReset();
-            }
-            
+                    pupet.SetBool("Death", true);
+                }
+                else
+                {
+                    NavMesh.enabled = false;
+                    Brain.enabled = false;
+                    animatorController.Shoot = false;
+                    animatorController.Run = false;
+                    animatorController.Walk = false;
+                    animatorController.Death = true;
+                }
 
+                GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;
+
+                if (doOnce)
+                {
+                    NPCReset();
+                }
+            }
         }
     }
 

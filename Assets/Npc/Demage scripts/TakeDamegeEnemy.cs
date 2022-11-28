@@ -8,6 +8,7 @@ public class TakeDamegeEnemy : MonoBehaviour
     private BTEnemyV01 atirador;
     private BTEnemyCAceteteV01 atacante;
     [SerializeField] private float damage;
+    [SerializeField] private bool isBoss;
 
     public Cacetete2 arma;
     private void Start()
@@ -39,10 +40,21 @@ public class TakeDamegeEnemy : MonoBehaviour
                 {
                     arma.DanoAleatorio();
                     vida.DamageHealth(damage);
-
-                    arma.DanoAleatorio();
                 }
                 atacante.SeePlayer = true;
+            }
+
+            if (isBoss)
+            {
+                if (arma.defender)
+                {
+                    arma.Dano();
+                }
+                else
+                {
+                    arma.DanoAleatorio();
+                    vida.DamageHealth(damage);
+                }
             }
             
         }

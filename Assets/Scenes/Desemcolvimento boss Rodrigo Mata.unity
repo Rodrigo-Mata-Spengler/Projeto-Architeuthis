@@ -589,5 +589,10 @@ PrefabInstance:
       propertyPath: alvo
       value: 
       objectReference: {fileID: 41901228}
+    - target: {fileID: 8614667132726302117, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46af999ef3642143b1f1103bcd6890c, type: 3}

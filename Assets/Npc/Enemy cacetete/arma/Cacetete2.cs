@@ -7,12 +7,12 @@ public class Cacetete2 : MonoBehaviour
     [SerializeField] private Animator pupet;
 
     [SerializeField] public bool defender;
+
+    [SerializeField] private bool isBoss;
     private void Start()
     {
         defender = false;
         pupet.ResetTrigger("Atacar");
-        pupet.ResetTrigger("Defender");
-        pupet.ResetTrigger("Defender 2");
     }
 
     public void Atacar()
@@ -39,16 +39,24 @@ public class Cacetete2 : MonoBehaviour
 
     public void DanoAleatorio()
     {
-        int a = Random.Range(1, 3);
-
-        if (a == 1)
+        if (isBoss)
         {
-            pupet.SetInteger("Dano",1);
+            pupet.SetTrigger("Dano");
         }else
         {
-            pupet.SetInteger("Dano", 2);
-        }
+            int a = Random.Range(1, 3);
 
-        pupet.SetInteger("Dano", 0);
+            if (a == 1)
+            {
+                pupet.SetInteger("Dano", 1);
+            }
+            else
+            {
+                pupet.SetInteger("Dano", 2);
+            }
+
+            pupet.SetInteger("Dano", 0);
+        }
+        
     }
 }

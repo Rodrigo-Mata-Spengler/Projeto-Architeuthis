@@ -42,6 +42,9 @@ public class BossCtrl : MonoBehaviour
 
     private bool inUse = false;
 
+    [Header("Animation")]
+    [SerializeField] private Animator anim;
+
 
     private void Start()
     {
@@ -75,7 +78,7 @@ public class BossCtrl : MonoBehaviour
                 Special();
                 break;
             case Behavior.Idle:
-
+                Idle();
                 break;
             default:
                 break;
@@ -122,6 +125,7 @@ public class BossCtrl : MonoBehaviour
     private void FollowPlayer()
     {
         boss.SetDestination(alvo.position);
+        anim.SetBool("IsIdle",false);
     }
 
     private void Dash()
@@ -151,6 +155,7 @@ public class BossCtrl : MonoBehaviour
         while (Time.time < starttime + dashTime)
         {
             controller.Move(dashForce * Time.deltaTime * (a * transform.right));
+            anim.SetInteger("Dash",a);
 
             yield return null;
         }
@@ -208,6 +213,7 @@ public class BossCtrl : MonoBehaviour
         while (Time.time < starttime + trazTime)
         {
             controller.Move(forçaPraTraz * Time.deltaTime * (-1 * transform.forward));
+            anim.SetTrigger("PreparaSpecial");
 
             yield return null;
         }
@@ -219,6 +225,7 @@ public class BossCtrl : MonoBehaviour
         while (Time.time < starttime + ataqueTime)
         {
             controller.Move(forcaAtaque * Time.deltaTime * (1 * transform.forward));
+            anim.SetTrigger("Special");
 
             yield return null;
         }
@@ -228,5 +235,10 @@ public class BossCtrl : MonoBehaviour
         bossMode = Behavior.Idle;
         inUse = false;
         yield break;
+    }
+
+    private void Idle()
+    {
+        anim.SetBool("IsIdle", true);
     }
 }
