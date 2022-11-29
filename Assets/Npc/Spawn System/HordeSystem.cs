@@ -40,7 +40,7 @@ public class HordeSystem : MonoBehaviour
         }
         for (int i = 0; i < hordaSpawn.Length; i++)
         {
-            hordaSpawn[i] = Random.Range(0, maxSizeSpawns-1);
+            hordaSpawn[i] = Random.Range(0, maxSizeSpawns);
         }
     }
 

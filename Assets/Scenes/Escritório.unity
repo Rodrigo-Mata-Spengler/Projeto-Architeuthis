@@ -5156,6 +5156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5444117362251419472, guid: 7350af167b4528b45883c958ab0ed472,
+        type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
 --- !u!95 &535675370 stripped
@@ -10666,6 +10671,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2627427569941102251, guid: caf9cca7623f9954e8a2da47dc3edc80,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627427569941102251, guid: caf9cca7623f9954e8a2da47dc3edc80,
+        type: 3}
+      propertyPath: pointsToPass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627427569941102251, guid: caf9cca7623f9954e8a2da47dc3edc80,
+        type: 3}
       propertyPath: proximaScena
       value: Cinematica 4
       objectReference: {fileID: 0}
@@ -12952,6 +12967,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1391184826}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392164701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392164704}
+  - component: {fileID: 1392164703}
+  - component: {fileID: 1392164702}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1392164702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392164701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1392164703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392164701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1392164704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392164701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1403753531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15170,6 +15253,11 @@ PrefabInstance:
       propertyPath: voltarFase
       value: SalaDeJantar
       objectReference: {fileID: 0}
+    - target: {fileID: 921572718110082786, guid: 6fc2075f865b512458a9e464afb0e6dc,
+        type: 3}
+      propertyPath: proximaFase
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 921572718793248974, guid: 6fc2075f865b512458a9e464afb0e6dc,
         type: 3}
       propertyPath: m_Name
@@ -16297,6 +16385,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8614667132726302108, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: Life
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614667132726302108, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: maxLife
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 8614667132726302115, guid: e46af999ef3642143b1f1103bcd6890c,
         type: 3}
       propertyPath: m_Name
@@ -16307,6 +16405,16 @@ PrefabInstance:
       propertyPath: alvo
       value: 
       objectReference: {fileID: 939507163}
+    - target: {fileID: 8614667132726302116, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: distanciaDeAtaque
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614667132726302117, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46af999ef3642143b1f1103bcd6890c, type: 3}
 --- !u!1001 &1692411304
