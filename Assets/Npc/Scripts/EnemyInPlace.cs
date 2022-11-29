@@ -8,7 +8,9 @@ public class EnemyInPlace : MonoBehaviour
     [SerializeField]GameObject ExitTrigger;
     [SerializeField] GameObject PrefabPlace;
 
-    private void OnTriggerEnter(Collider other)
+    //[SerializeField] Collider TriggerCollider;
+
+    private void OnTriggerStay(Collider other)
     {
 
         if (other.gameObject.CompareTag("Enemy"))
@@ -16,8 +18,16 @@ public class EnemyInPlace : MonoBehaviour
             other.GetComponent<BTEnemyV01>().InPlace = true;
             other.GetComponent<BTEnemyV01>().Yrotation = PrefabPlace.transform.eulerAngles.y;
 
+            ExitTrigger.SetActive(false);
+
+            /*
             ExitTrigger.SetActive(true);
             gameObject.SetActive(false);
+            */
+        }
+        else
+        {
+            ExitTrigger.SetActive(true);
         }
     }
 

@@ -8,7 +8,7 @@ public class EnemyOutOfPlace : MonoBehaviour
 
     [SerializeField] GameObject EnterTrigger;
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -16,6 +16,10 @@ public class EnemyOutOfPlace : MonoBehaviour
             other.GetComponent<BTEnemyV01>().InPlace = false;
             EnterTrigger.SetActive(true);
             gameObject.SetActive(false);    
+        }
+        else
+        {
+
         }
     }
 }
