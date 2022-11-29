@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4654368325878378349}
   - component: {fileID: 5859555348059355199}
   - component: {fileID: 4794270857470155311}
+  - component: {fileID: 8275731303733461310}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:knife002
   m_TagString: Untagged
@@ -115,3 +116,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8275731303733461310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215890212223365495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.139346, y: 16.401047, z: 1.0679508}
+  m_Center: {x: -42.372375, y: -37.53717, z: 76.237274}

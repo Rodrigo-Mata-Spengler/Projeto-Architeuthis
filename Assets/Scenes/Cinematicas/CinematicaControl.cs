@@ -14,7 +14,7 @@ public class CinematicaControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.anyKeyDown)
         {
             cena.Pause();
             SceneManager.LoadScene(proximaScena);

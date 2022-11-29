@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8894951649592083721}
   - component: {fileID: 2994301164724990957}
   - component: {fileID: 8357636802523318617}
+  - component: {fileID: 2130208095589917874}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:fork_big002
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2130208095589917874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286286043849745256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3596857, y: 12.546261, z: 0.9256076}
+  m_Center: {x: -9.55203, y: -37.493393, z: 76.141525}
 --- !u!1 &8641411217981463211
 GameObject:
   m_ObjectHideFlags: 0

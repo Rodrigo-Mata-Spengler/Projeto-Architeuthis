@@ -21,11 +21,7 @@ public class Cacetete2 : MonoBehaviour
     public void Atacar()
     {
         pupet.SetTrigger("Atacar");
-        if (!audioS.isPlaying)
-        {
-            audioS.PlayOneShot(audio);
-        }
-        
+        audioS.PlayOneShot(audio);
     }
 
     public void Defender()
