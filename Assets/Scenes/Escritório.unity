@@ -4978,7 +4978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &460559054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6043,7 +6043,7 @@ PrefabInstance:
     - target: {fileID: 5444117362251419472, guid: 7350af167b4528b45883c958ab0ed472,
         type: 3}
       propertyPath: damage
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7350af167b4528b45883c958ab0ed472, type: 3}
@@ -16945,7 +16945,7 @@ PrefabInstance:
     - target: {fileID: 921572718110082786, guid: 6fc2075f865b512458a9e464afb0e6dc,
         type: 3}
       propertyPath: proximaFase
-      value: 
+      value: Cinematica 4
       objectReference: {fileID: 0}
     - target: {fileID: 921572718793248974, guid: 6fc2075f865b512458a9e464afb0e6dc,
         type: 3}

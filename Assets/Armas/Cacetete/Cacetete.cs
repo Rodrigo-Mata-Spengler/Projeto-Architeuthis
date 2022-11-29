@@ -19,7 +19,7 @@ public class Cacetete : MonoBehaviour
         {
             batendo = true;
             pupet.SetBool("Marretar", true);
-            audioS.PlayOneShot(audio);
+            //audioS.PlayOneShot(audio);
         }
         if(Input.GetButtonUp("Fire1"))
         {

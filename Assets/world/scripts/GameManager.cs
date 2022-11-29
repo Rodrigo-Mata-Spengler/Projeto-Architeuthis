@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CurrentPoints > pointsToPass)
+        if(CurrentPoints >= pointsToPass)
         {
             SceneManager.LoadScene(proximaScena);
             //open door or send massage in the UI

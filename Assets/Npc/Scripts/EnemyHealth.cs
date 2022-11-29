@@ -30,6 +30,8 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("AudioManager")]
     [SerializeField] private AudioSource DeathAudio;
+
+    private bool doOnce2 = false;
     private void Start()
     {
         Life = maxLife;
@@ -48,8 +50,9 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
 
-        if (Life <= 0)
+        if (Life <= 0 && !doOnce2)
         {
+            doOnce2 = true;
             if (isBoss)
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().CurrentPoints += pointsGive;

@@ -27,7 +27,6 @@ public class TakeDamegeEnemy : MonoBehaviour
             {
                 vida.DamageHealth(damage);
                 atirador.SeePlayer = true;
-                Destroy(other);
             }
             
             if (atacante)
