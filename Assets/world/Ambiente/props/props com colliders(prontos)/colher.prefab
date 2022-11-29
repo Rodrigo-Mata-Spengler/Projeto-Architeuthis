@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4349351507222840348}
   - component: {fileID: 4740202931373093455}
   - component: {fileID: 984040616231545526}
-  - component: {fileID: 3623868417122411367}
   m_Layer: 0
   m_Name: props_sala_de_jantar__1_:spoon002
   m_TagString: Untagged
@@ -116,16 +115,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3623868417122411367
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8545879574821360719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.55, y: 17.63, z: -0.3}
-  m_Center: {x: -46.425995, y: -35.29995, z: 76.97433}

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df2453da22baf64b8ee1289eaaf5236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: 0
+  drop: 2
   health: 20
   rifleAmmo: 20
   pistolaAmmo: 20
@@ -302,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: daaed6ea09385674faf3104040c9ad21,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7487049941769742547, guid: daaed6ea09385674faf3104040c9ad21,
         type: 3}
