@@ -19,6 +19,9 @@ public class PauseMenu : MonoBehaviour
     public AmmoPistol pistola;
     public Ammo rifle;
 
+    public string proximaFase;
+    public string voltarFase;
+
     // Update is called once per frame
     void Update()
     {
@@ -97,7 +100,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
     public void imortal()
     {
@@ -110,5 +113,15 @@ public class PauseMenu : MonoBehaviour
     public void RifleBalasInfinitas()
     {
         rifle.BalasInfinitas();
+    }
+
+    public void IrParaProximaFase()
+    {
+        SceneManager.LoadScene(proximaFase);
+    }
+
+    public void VoltarAFaseAnterior()
+    {
+        SceneManager.LoadScene(voltarFase);
     }
 }
