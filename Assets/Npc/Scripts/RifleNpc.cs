@@ -25,9 +25,28 @@ public class RifleNpc : MonoBehaviour
 
     float speed = 1.5f;
     public float reloadTime;
+
+    [Header("RaycastShooter")]
+    public float damage;
+    public float Range = 100f;
+    public LayerMask PlayerLayer;
+    public LayerMask AmbienteLayer;
+    [Space]
+    public ParticleSystem ShootEffect;
+    public GameObject ImpactEffect;
+
+
+
+    [Header("Sounds")]
+    [HideInInspector] public AudioSource AudioSource;
+
+    public AudioClip ShootSound;
+
+
     private void Start()
     {
         ammo = Maxammo;
+        AudioSource = gameObject.GetComponent<AudioSource>();
     }
     
     public bool Recharge()
@@ -36,7 +55,10 @@ public class RifleNpc : MonoBehaviour
         ammo = Maxammo;
         return true;
     }
-
+    private void Update()
+    {
+        Debug.DrawRay(spawnBulletPosition.position, spawnBulletPosition.transform.forward, Color.yellow);
+    }
     public bool Aim(GameObject Target)
     {
 
@@ -47,6 +69,7 @@ public class RifleNpc : MonoBehaviour
     }
     public bool Fire()
     {
+
         animatorController.Shoot = false;
 
         if (ammo > 0 && Time.time >= NextTimeToFire)
@@ -54,10 +77,11 @@ public class RifleNpc : MonoBehaviour
             NextTimeToFire = Time.time + 1f / FireRate;
             ammo--;
 
-            Vector3 aimDir = (ondeAtirar.position - spawnBulletPosition.position).normalized;
-            GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce,ForceMode.Impulse);
+            //Vector3 aimDir = (ondeAtirar.position - spawnBulletPosition.position).normalized;
+            //GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            //bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce, ForceMode.Impulse);
 
+            Shoot();
 
             animatorController.Shoot = true;
             return true;
@@ -69,5 +93,36 @@ public class RifleNpc : MonoBehaviour
             animatorController.Walk = false;
             return false;
         }
+
+
+
+    }
+    public void Shoot()
+    {
+
+        RaycastHit hit;
+
+        ShootEffect.Play();
+
+        if (Physics.Raycast(spawnBulletPosition.transform.position, spawnBulletPosition.transform.forward, out hit, Range, PlayerLayer, QueryTriggerInteraction.Collide))
+        {
+            Health PlayerHealth = hit.transform.GetComponent<Health>();
+
+            Debug.DrawRay(spawnBulletPosition.position, spawnBulletPosition.transform.forward, Color.yellow);
+            if (PlayerHealth != null)
+            {
+                PlayerHealth.DamageHealth(damage);
+            }
+
+
+        }
+        else if (Physics.Raycast(spawnBulletPosition.transform.position, spawnBulletPosition.transform.forward, out hit, Range, AmbienteLayer))
+        {
+            GameObject ImpactGO = Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(ImpactGO, 2f);
+        }
+
+
+        AudioSource.PlayOneShot(ShootSound);
     }
 }

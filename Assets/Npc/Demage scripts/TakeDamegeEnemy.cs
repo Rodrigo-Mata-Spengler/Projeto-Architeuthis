@@ -19,6 +19,7 @@ public class TakeDamegeEnemy : MonoBehaviour
 
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BulletPlayer"))
@@ -58,4 +59,5 @@ public class TakeDamegeEnemy : MonoBehaviour
             
         }
     }
+    
 }

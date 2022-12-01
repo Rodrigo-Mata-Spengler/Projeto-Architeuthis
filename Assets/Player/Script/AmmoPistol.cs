@@ -38,6 +38,19 @@ public class AmmoPistol : MonoBehaviour
     [Space]
     public MovePlayer PlayerMoveScript;
 
+    [Header("RaycastShooter")]
+    public float damageHead;
+    public float damageBody;
+    public float Range = 100f;
+    public Camera fpsCam;
+    public LayerMask NPCHeadlayer;
+    public LayerMask NPCBodylayer;
+    public LayerMask AmbienteLayer;
+    [Space]
+    public ParticleSystem ShootEffect;
+    public GameObject ImpactEffect;
+    public GameObject BloodEffect;
+
     [Space]
 
     [Header("RecoilSettings")]
@@ -67,8 +80,15 @@ public class AmmoPistol : MonoBehaviour
 
 
     [Header("Sounds")]
+    
+    [HideInInspector]public AudioSource AudioSource;
+
     public AudioSource reloadSound;
     public AudioSource OutOfAmmoSound;
+
+    public AudioClip ShootSound;
+
+
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -77,6 +97,7 @@ public class AmmoPistol : MonoBehaviour
     }
     private void Start()
     {
+        AudioSource = gameObject.GetComponent<AudioSource>();
 
         HandGunAnimator = GetComponent<Animator>();
         
@@ -156,6 +177,51 @@ public class AmmoPistol : MonoBehaviour
     }
     public void Shoot()
     {
+        RaycastHit hit;
+
+        ShootEffect.Play();
+
+        currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
+
+        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range,NPCHeadlayer, QueryTriggerInteraction.Collide))
+        {
+            Debug.LogError(hit.transform.name);
+            EnemyHealth NPCHealth = hit.transform.GetComponent<EnemyHealth>();
+
+            if(NPCHealth != null)
+            {
+                GameObject BloodGO = Instantiate(BloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(BloodGO, 0.5f);
+                NPCHealth.DamageHealth(damageHead);
+            }
+            
+
+        }
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range, NPCBodylayer, QueryTriggerInteraction.Collide))
+        {
+            EnemyHealth NPCHealth = hit.transform.GetComponent<EnemyHealth>();
+           
+
+            if (NPCHealth != null)
+            {
+                GameObject BloodGO = Instantiate(BloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(BloodGO, 0.5f);
+                NPCHealth.DamageHealth(damageBody);
+                hit.transform.GetComponent<BTEnemyV01>().SeePlayer = true;
+            }
+
+            
+        }
+        else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range, AmbienteLayer))
+        {
+           GameObject ImpactGO =  Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(ImpactGO, 2f);
+        }
+
+        AudioSource.PlayOneShot(ShootSound);
+
+        /*
+
         if (aiming)
         {
             Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
@@ -173,7 +239,7 @@ public class AmmoPistol : MonoBehaviour
 
             currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
         }
-
+        */
     }
     /*ublic void Aim(bool IsAiming)
     {

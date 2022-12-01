@@ -35,6 +35,19 @@ public class Ammo : MonoBehaviour
 
     public float AimSpeed;
 
+    [Header("RaycastShooter")]
+    public float damageHead;
+    public float damageBody;
+    public float Range = 100f;
+    public Camera fpsCam;
+    public LayerMask NPCHeadlayer;
+    public LayerMask NPCBodylayer;
+    public LayerMask AmbienteLayer;
+    [Space]
+    public ParticleSystem ShootEffect;
+    public GameObject ImpactEffect;
+    public GameObject BloodEffect;
+
     [Space]
     public MovePlayer PlayerMoveScript;
 
@@ -67,8 +80,14 @@ public class Ammo : MonoBehaviour
 
 
     [Header("Sounds")]
+    [HideInInspector] public AudioSource AudioSource;
+
     public AudioSource reloadSound;
     public AudioSource OutOfAmmoSound;
+
+
+    public AudioClip ShootSound;
+
     private void FixedUpdate()
     {
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
@@ -77,7 +96,7 @@ public class Ammo : MonoBehaviour
     }
     private void Start()
     {
-       
+        AudioSource = gameObject.GetComponent<AudioSource>();
 
         HandGunAnimator = GetComponent<Animator>();
         
@@ -110,7 +129,10 @@ public class Ammo : MonoBehaviour
             
             Shoot();
             HandGunAnimator.SetBool("shoot", true);
-            
+            AudioSource.Stop();
+            //StartCoroutine(StopShootSound(0.0001f));
+
+
 
         }
         else
@@ -159,24 +181,59 @@ public class Ammo : MonoBehaviour
     }
     public void Shoot()
     {
-        if (aiming)
-        {
-            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce, ForceMode.Impulse);
 
-            currentRotation += new Vector3(-RecoilRotationAiming.x, Random.Range(-RecoilRotationAiming.y, RecoilRotationAiming.y), Random.Range(-RecoilRotationAiming.z, RecoilRotationAiming.z));
+        RaycastHit hit;
+
+        ShootEffect.Play();
+
+
+        currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range, NPCHeadlayer, QueryTriggerInteraction.Collide))
+        {
+            Debug.LogError(hit.transform.name);
+            EnemyHealth NPCHealth = hit.transform.GetComponent<EnemyHealth>();
+
+            if (NPCHealth != null)
+            {
+                GameObject BloodGO = Instantiate(BloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(BloodGO, 0.5f);
+                NPCHealth.DamageHealth(damageHead);
+            }
+
 
         }
-        else
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range, NPCBodylayer, QueryTriggerInteraction.Collide))
         {
-            Vector3 aimDir = (SphereDebug.position - spawnBulletPosition.position).normalized;
-            GameObject bullet = GameObject.Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            bullet.GetComponent<Rigidbody>().AddForce(aimDir * bulletForce, ForceMode.Impulse);
+            EnemyHealth NPCHealth = hit.transform.GetComponent<EnemyHealth>();
 
-            currentRotation += new Vector3(-RecoilRotation.x, Random.Range(-RecoilRotation.y, RecoilRotation.y), Random.Range(-RecoilRotation.z, RecoilRotation.z));
+
+            if (NPCHealth != null)
+            {
+                GameObject BloodGO = Instantiate(BloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(BloodGO, 0.5f);
+                NPCHealth.DamageHealth(damageBody);
+                hit.transform.GetComponent<BTEnemyV01>().SeePlayer = true;
+            }
+
+
         }
+        else if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range, AmbienteLayer))
+        {
+            GameObject ImpactGO = Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(ImpactGO, 2f);
+        }
+
         
+        AudioSource.PlayOneShot(ShootSound);
+        
+    }
+
+    public IEnumerator StopShootSound(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        AudioSource.Stop();
+
     }
     /*
     public void Aim(bool IsAiming)

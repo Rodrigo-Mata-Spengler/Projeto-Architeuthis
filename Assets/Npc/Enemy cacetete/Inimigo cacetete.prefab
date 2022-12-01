@@ -402,6 +402,11 @@ PrefabInstance:
       propertyPath: damage
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3942085765203976515, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5019928681176717716, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: vida
@@ -417,6 +422,11 @@ PrefabInstance:
       propertyPath: arma
       value: 
       objectReference: {fileID: 499653120}
+    - target: {fileID: 6326219317360060842, guid: 06fed553c74625047a229fe8d7bfd99c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 7468921389422762842, guid: 06fed553c74625047a229fe8d7bfd99c,
         type: 3}
       propertyPath: vida
