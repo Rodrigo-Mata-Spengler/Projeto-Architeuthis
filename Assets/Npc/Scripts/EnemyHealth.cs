@@ -84,6 +84,7 @@ public class EnemyHealth : MonoBehaviour
                     DeathAudio.enabled = true;
                     NPCReset();
                 }
+
             }
         }
     }

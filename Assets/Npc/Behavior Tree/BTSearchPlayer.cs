@@ -38,11 +38,12 @@ public class BTSearchPlayer : BTnode
                 rotY += 1f;
             }*/
 
-            if(SeePlayer == true )
+            if(SeePlayer == true || Inplace == true)
             {
                 status = Status.SUCCESS;
                 break;
             }
+            /*
             if (Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
             {
                 Inplace = false;
@@ -52,7 +53,7 @@ public class BTSearchPlayer : BTnode
                 
                 break;
             }
-
+            */
             yield return null;
         }
 

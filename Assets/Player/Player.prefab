@@ -5616,7 +5616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97b4b40971f2a949b982511041ea6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rifle: {fileID: 0}
+  rifle: {fileID: 7653583474307699946}
   pistola: {fileID: 430254160}
 --- !u!136 &74954386447007657
 CapsuleCollider:
@@ -17478,7 +17478,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.194
+      value: -0.186
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
@@ -17488,7 +17488,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.496
+      value: -0.391
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
@@ -17578,7 +17578,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1148326977061529806, guid: ed1fb2f81b8226641932e7001faece18,
         type: 3}

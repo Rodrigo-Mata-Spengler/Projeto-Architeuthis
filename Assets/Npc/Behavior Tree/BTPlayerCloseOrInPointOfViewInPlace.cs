@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BTPlayerCloseOrInPointOfView : BTnode
+public class BTPlayerCloseOrInPointOfViewInPlace : BTnode
 {
     public override IEnumerator Run(BehaviorTree bt)
     {
@@ -22,20 +22,25 @@ public class BTPlayerCloseOrInPointOfView : BTnode
 
         bool Inplace = bt.gameObject.GetComponent<BTEnemyV01>().InPlace;
 
-         
-
-
-        if(SeePlayer == true||Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
+        while(SeePlayer == false || Vector3.Distance(npc.transform.position, alvo.transform.position) > distToPlayer)
         {
-            status = Status.SUCCESS;
+            SeePlayer = bt.gameObject.GetComponent<BTEnemyV01>().SeePlayer;
+
+            if (SeePlayer == true || Vector3.Distance(npc.transform.position, alvo.transform.position) < distToPlayer)
+            {
+                status = Status.SUCCESS;
+                break;
+            }
+            yield return null;
+
 
         }
-        else
-        {
-            status = Status.FAILURE;
-        }
+
+
 
         Print();
         yield break;
     }
 }
+
+
