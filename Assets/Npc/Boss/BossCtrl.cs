@@ -51,9 +51,6 @@ public class BossCtrl : MonoBehaviour
         boss = gameObject.GetComponent<NavMeshAgent>();
 
         controller = gameObject.GetComponent<CharacterController>();
-        //controller.enabled = false;
-
-        //bossMode = Behavior.Follow;
     }
 
     private void Update()
@@ -89,13 +86,14 @@ public class BossCtrl : MonoBehaviour
     {
         if (!inUse)
         {
-            probabilidade = Random.Range(0, 100);
             if (Vector3.Distance(transform.position, alvo.position) >= distanciaDeAtaque)
             {
                 bossMode = Behavior.Follow;
             }
             else
             {
+                probabilidade = Random.Range(0, 100);
+
                 if (probabilidade <= ataqueProvabilidade)
                 {
                     bossMode = Behavior.Atack;
@@ -118,8 +116,7 @@ public class BossCtrl : MonoBehaviour
                     bossMode = Behavior.Idle;
                 }
             }
-        }
-        
+        }   
     }
 
     private void FollowPlayer()

@@ -18578,6 +18578,16 @@ PrefabInstance:
       propertyPath: alvo
       value: 
       objectReference: {fileID: 939507163}
+    - target: {fileID: 8614667132726302116, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: trazTime
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614667132726302116, guid: e46af999ef3642143b1f1103bcd6890c,
+        type: 3}
+      propertyPath: ataqueTime
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46af999ef3642143b1f1103bcd6890c, type: 3}
 --- !u!1001 &1692411304
