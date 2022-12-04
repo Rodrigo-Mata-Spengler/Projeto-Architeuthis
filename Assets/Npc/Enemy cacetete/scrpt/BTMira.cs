@@ -17,6 +17,7 @@ public class BTMira : BTnode
             Controller.transform.LookAt(alvo.transform);
             status = Status.RUNNING;
             Print();
+            yield break;
         }
         else
         {

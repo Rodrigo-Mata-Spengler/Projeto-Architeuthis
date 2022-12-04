@@ -10,6 +10,11 @@ public class TakeDamegeEnemy : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private bool isBoss;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip dano;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip defesa;
+
     public Cacetete2 arma;
     private void Start()
     {
@@ -48,10 +53,12 @@ public class TakeDamegeEnemy : MonoBehaviour
             {
                 if (arma.defender)
                 {
+                    source.PlayOneShot(defesa);
                     arma.Dano();
                 }
                 else
                 {
+                    source.PlayOneShot(dano);
                     arma.DanoAleatorio();
                     vida.DamageHealth(damage);
                 }
