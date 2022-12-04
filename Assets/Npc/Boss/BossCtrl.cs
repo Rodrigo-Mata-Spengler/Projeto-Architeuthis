@@ -45,7 +45,6 @@ public class BossCtrl : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator anim;
 
-
     private void Start()
     {
         boss = gameObject.GetComponent<NavMeshAgent>();
