@@ -8,10 +8,13 @@ public class Health : MonoBehaviour
     public float Life;
     public float MaxLife;
 
+
     public Image LifeIMG1;
     public Image LifeIMG2;
     public Image LifeIMG3;
     public Image LifeIMG4;
+
+    public Slider LifeSlider1;
 
     public GameObject painelMorto;
 
@@ -30,7 +33,8 @@ public class Health : MonoBehaviour
         {
             Life += (0.5f * Time.deltaTime);
         }
-        
+        LifeSlider1.value = Life;
+
     }
 
     public void DamageHealth(float damage)

@@ -10419,7 +10419,7 @@ MonoBehaviour:
   bulletForce: 100
   animatorController: {fileID: 3491263158445576666}
   reloadTime: 3
-  damage: 2
+  damage: 0.3
   Range: 100
   PlayerLayer:
     serializedVersion: 2
@@ -10444,16 +10444,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.31
+  m_Volume: 0.066
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 124
-  DopplerLevel: 0
+  DopplerLevel: 2
   MinDistance: 0.08
-  MaxDistance: 10
+  MaxDistance: 50
   Pan2D: 0.08
   rolloffMode: 1
   BypassEffects: 0
@@ -10503,7 +10503,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.7972222
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
